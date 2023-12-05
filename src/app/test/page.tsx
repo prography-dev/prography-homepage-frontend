@@ -1,5 +1,20 @@
 import Link from 'next/link';
 import styles from './test.module.scss';
+import '../../styles/fonts.scss';
+import Button from '@/components/common/button/Button';
+import {
+  IconArrowDown,
+  IconArrowLeft,
+  IconArrowRight,
+  IconArrowUp,
+  IconBehance,
+  IconDown,
+  IconGithub,
+  IconInstagram,
+  IconMenu,
+  IconRight,
+  LogoAsan,
+} from '@/components/common/icon';
 
 const Page = () => {
   return (
@@ -37,24 +52,21 @@ const Page = () => {
         <span className="pre_heading_3_underline">안녕하세요</span>
         <span className="pre_heading_4_underline">안녕하세요</span>
       </div>
-      <div>
-        <span>SF Pro</span>
-        <span className="sf_display_1">hello</span>
-        <span className="sf_display_2">hello</span>
-        <span className="sf_heading_1">hello</span>
-        <span className="sf_heading_2">hello</span>
-        <span className="sf_heading_3">hello</span>
-        <span className="sf_heading_4">hello</span>
-        <span className="sf_heading_5">hello</span>
-        <span className="sf_body_1">hello</span>
-        <span className="sf_body_2">hello</span>
-        <span className="sf_caption_1">hello</span>
-        <span className="sf_badge">hello</span>
-        <span className="sf_heading_3_underline">hello</span>
-        <span className="sf_heading_4_underline">hello</span>
+
+      <div className={styles.ButtonContainer}>
+        <IconArrowDown />
+        <IconArrowDown color="#1C1C1E" />
+        <IconArrowUp />
+        <IconArrowRight />
+        <IconArrowLeft />
+        <IconMenu />
+        <IconRight />
+        <IconDown />
+        <IconInstagram />
+        <IconGithub />
+        <IconBehance />
       </div>
-      <Link href="/">홈으로</Link>
-    </div>
+    </>
   );
 };
 
