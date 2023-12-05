@@ -1,22 +1,24 @@
-import styles from './test.module.scss';
 import '../../styles/fonts.scss';
 
-const Page: React.FC = () => {
+import Link from 'next/link';
+import styles from './test.module.scss';
+
+const Page = () => {
   return (
     <div className={styles.Container}>
       <div>
-        <button>gray300</button>
-        <button>gray500</button>
-        <button>gray700</button>
-        <button>gray800</button>
-        <button>gray900</button>
-        <button>white</button>
-        <button>red300</button>
-        <button>red500</button>
-        <button>red600</button>
-        <button>yellow500</button>
-        <button>red-gradation-100</button>
-        <button>red-gradation-200</button>
+        <button type="button">gray300</button>
+        <button type="button">gray500</button>
+        <button type="button">gray700</button>
+        <button type="button">gray800</button>
+        <button type="button">gray900</button>
+        <button type="button">white</button>
+        <button type="button">red300</button>
+        <button type="button">red500</button>
+        <button type="button">red600</button>
+        <button type="button">yellow500</button>
+        <button type="button">red-gradation-100</button>
+        <button type="button">red-gradation-200</button>
       </div>
       <div>
         <span>Pretendard</span>
@@ -46,6 +48,7 @@ const Page: React.FC = () => {
         <span className="sf_caption_1">hello</span>
         <span className="sf_caption_2">hello</span>
       </div>
+      <Link href="/">홈으로</Link>
     </div>
   );
 };
