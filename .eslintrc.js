@@ -25,7 +25,6 @@ module.exports = {
     'no-console': ['off'],
     'no-alert': ['off'],
     'import/prefer-default-export': ['off'],
-    'react-hooks/exhaustive-deps': ['warn'],
     'react/jsx-props-no-spreading': [0, { custom: 'ignore' }],
     'linebreak-style': 0,
     'prettier/prettier': 0,
@@ -45,5 +44,6 @@ module.exports = {
     'react/jsx-no-bind': 'off',
     'no-unused-expressions': 'off',
     'unused-imports/no-unused-imports': 'error',
+    'react/function-component-definition': 'off',
   },
 };
