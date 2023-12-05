@@ -2,59 +2,70 @@
 
 .Container {
   display: flex;
-  flex-direction: column;
   gap: 18px;
-  width: 20%;
+  margin: 50px;
 
-  button {
-    border: none;
-    height: 40px;
-    border-radius: 100px;
-
-  }
-  :nth-child(1) {
-    background-color: $gray300;
-  }
-  :nth-child(2) {
-    background-color: $gray500;
-    color: $white;
-  }
-  :nth-child(3) {
-    background-color: $gray700;
-    color: $white;
-  }
-  :nth-child(4) {
-    background-color: $gray800;
-    color: $white;
-  }
-  :nth-child(5) {
-    background-color: $gray900;
-    color: $white;
-  }
-  :nth-child(6) {
-    background-color: $white;
-    color: black;
-    border: 1px solid $gray900;
-  }
-  :nth-child(7) {
-    background-color: $red300;
-  }
-  :nth-child(8) {
-    background-color: $red500;
-    color: $white;
-  }
-  :nth-child(9) {
-    background-color: $red600;
-    color: $white;
-  }
-  :nth-child(10) {
-    background-color: $yellow500;
-  }
-  :nth-child(11) {
-    background: $red-gradation-100;
-  }
-  :nth-child(12) {
-    background: $red-gradation-200;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid $gray300;
+    padding: 40px;
   }
 
+  div:first-child {
+    gap: 18px;
+
+    button {
+      border: none;
+      width: 150px;
+      height: 40px;
+      border-radius: 100px;
+    }
+
+    :nth-child(1) {
+      background-color: $gray300;
+    }
+    :nth-child(2) {
+      background-color: $gray500;
+      color: $white;
+    }
+    :nth-child(3) {
+      background-color: $gray700;
+      color: $white;
+    }
+    :nth-child(4) {
+      background-color: $gray800;
+      color: $white;
+    }
+    :nth-child(5) {
+      background-color: $gray900;
+      color: $white;
+    }
+    :nth-child(6) {
+      background-color: $white;
+      color: black;
+      border: 1px solid $gray900;
+    }
+    :nth-child(7) {
+      background-color: $red300;
+    }
+    :nth-child(8) {
+      background-color: $red500;
+      color: $white;
+    }
+    :nth-child(9) {
+      background-color: $red600;
+      color: $white;
+    }
+    :nth-child(10) {
+      background-color: $yellow500;
+    }
+    :nth-child(11) {
+      background: $red-gradation-100;
+    }
+    :nth-child(12) {
+      background: $red-gradation-200;
+    }
+  }
 }
