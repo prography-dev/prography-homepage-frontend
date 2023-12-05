@@ -13,7 +13,7 @@ export default {
                 "node": true
             },
             "files": [
-                ".eslintrc.{js,cjs}"
+                ".eslintrc.{js,cjs,ts,tsx,scss}"
             ],
             "parserOptions": {
                 "sourceType": "script"
