@@ -12,6 +12,7 @@ interface ButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   fulled?: boolean;
+  children: ReactNode;
   type?: 'button' | 'submit' | 'reset';
 }
 
@@ -24,6 +25,7 @@ const Button: React.FC<ButtonProps> = props => {
     disabled,
     fulled,
     type = 'button',
+    children,
   } = props;
 
   const buttonClassName = useMemo(() => {
@@ -41,7 +43,7 @@ const Button: React.FC<ButtonProps> = props => {
       // eslint-disable-next-line react/button-has-type
       type={type}
     >
-      {label}
+      {children}
     </button>
   );
 };
