@@ -1,32 +1,49 @@
-export default {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "standard-with-typescript",
-        "plugin:react/recommended"
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'prettier', 'unused-imports'],
+  extends: [
+    'airbnb',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
+  rules: {
+    'react/prop-types': 0,
+    'no-extra-semi': 'error',
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
-    "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs,ts,tsx,scss}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
-}
+    'arrow-parens': ['warn', 'as-needed'],
+    'no-unused-vars': ['off'],
+    'no-console': ['off'],
+    'no-alert': ['off'],
+    'import/prefer-default-export': ['off'],
+    'react-hooks/exhaustive-deps': ['warn'],
+    'react/jsx-props-no-spreading': [0, { custom: 'ignore' }],
+    'linebreak-style': 0,
+    'prettier/prettier': 0,
+    'import/extensions': 0,
+    'no-use-before-define': 0,
+    'import/no-unresolved': 0,
+    'import/no-extraneous-dependencies': 0,
+    'no-shadow': 0,
+    'jsx-a11y/no-noninteractive-element-interactions': 0,
+    'jsx-a11y/control-has-associated-label': 'warn',
+    'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': 'warn',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'react/no-array-index-key': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-boolean-value': 'off',
+    'react/jsx-no-bind': 'off',
+    'no-unused-expressions': 'off',
+    'unused-imports/no-unused-imports': 'error',
+  },
+};
