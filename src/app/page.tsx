@@ -9,8 +9,8 @@ export default function Home() {
       <div style={{ display: 'block', background: 'black', padding: '30px' }}>
         <Button label="test" />
         <Button label="test" disabled />
-        <Button label="test" button_size="56" />
-        <Button label="test" button_size="48" />
+        <Button label="test" buttonSize="56" />
+        <Button label="test" buttonSize="48" />
       </div>
     </div>
   );
