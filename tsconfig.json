@@ -12,7 +12,6 @@
     "strictNullChecks": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "ESNext",
     "moduleResolution": "bundler",
     "moduleDetection": "force",
     "resolveJsonModule": true,
@@ -31,13 +30,14 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "module": "esnext"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -3,9 +3,9 @@ import styles from './StyledTest.module.scss';
 
 const StyledTest = () => {
   return (
-    <>
-      <button className={styles.button}>StyledTest</button>
-    </>
+    <button className={styles.button} type="button">
+      StyledTest
+    </button>
   );
 };
 

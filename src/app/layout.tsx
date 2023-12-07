@@ -1,20 +1,18 @@
 import '../styles/global.css';
 import '../styles/fonts.scss';
 
-export default function RootLayout(props: React.PropsWithChildren) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
-    <html>
+    <html lang="ko">
       <head>
-      <link
+        <link
           rel="stylesheet"
           as="style"
           crossOrigin=""
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
         />
       </head>
-      <body>
-          {props.children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
