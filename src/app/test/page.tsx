@@ -1,5 +1,3 @@
-import '../../styles/fonts.scss';
-
 import Link from 'next/link';
 import styles from './test.module.scss';
 
