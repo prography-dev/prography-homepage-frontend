@@ -1,5 +1,6 @@
 import '../styles/global.css';
 import '../styles/fonts.scss';
+import '../styles/colors.scss';
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
