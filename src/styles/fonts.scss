@@ -5,13 +5,15 @@
   $font-weight,
   $font-size,
   $line-height,
-  $letter-spacing
+  $letter-spacing,
+  $text-decoration: none
 ) {
   font-family: $font-family;
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
   letter-spacing: $letter-spacing;
+  text-decoration: $text-decoration;
 }
 
 .pre_display_1 {
@@ -58,8 +60,16 @@
   @include font-style($pretendard, 400, 16px, 24px, -0.25px);
 }
 
-.pre_caption_2 {
+.pre_badge {
   @include font-style($pretendard, 400, 14px, 20px, -0.25px);
+}
+
+.pre_heading_3_underline {
+  @include font-style($pretendard, 700, 32px, 40px, -0.25px, underline);
+}
+
+.pre_heading_4_underline {
+  @include font-style($pretendard, 700, 24px, 32px, -0.25px, underline);
 }
 
 .sf_display_1 {
@@ -106,6 +116,14 @@
   @include font-style($sf_pro, 400, 16px, 24px, 0px);
 }
 
-.sf_caption_2 {
+.sf_badge {
   @include font-style($sf_pro, 400, 14px, 20px, 0px);
+}
+
+.sf_heading_3_underline {
+  @include font-style($pretendard, 700, 32px, 40px, 0px, underline);
+}
+
+.sf_heading_4_underline {
+  @include font-style($pretendard, 700, 24px, 32px, 0px, underline);
 }
