@@ -6,13 +6,12 @@
   margin: 50px;
   padding: 50px;
   align-items: center;
+  border: 1px solid $gray300;
 
-  background-color: $gray500;
   div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid $gray300;
     padding: 40px;
   }
 }
