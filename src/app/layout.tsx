@@ -2,7 +2,8 @@ import '../styles/global.css';
 import '../styles/fonts.scss';
 import '../styles/colors.scss';
 
-import Footer from '@/components/Layout/Footer';
+import Footer from '@/components/Layout/footer/Footer';
+import Header from '@/components/Layout/header/Header';
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         />
       </head>
       <body>
+        <Header />
         {children}
         <Footer />
       </body>
