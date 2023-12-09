@@ -1,4 +1,5 @@
 'use client';
+
 import { IconProps } from '.';
 
 const IconArrowDown = ({
@@ -16,7 +17,7 @@ const IconArrowDown = ({
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path d="M3 8L12 17L21 8" stroke={color} stroke-width="1.5" />
+      <path d="M3 8L12 17L21 8" stroke={color} strokeWidth="1.5" />
     </svg>
   );
 };

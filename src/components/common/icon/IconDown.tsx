@@ -1,4 +1,5 @@
 'use client';
+
 import { IconProps } from '.';
 
 const IconDown = ({
@@ -19,8 +20,8 @@ const IconDown = ({
       <path
         d="M16.107 27.8215L6.39271 18.1072M16.107 27.8215L25.8213 18.1072M16.107 27.8215L16.107 3.60718"
         stroke={color}
-        stroke-width="1.5"
-        stroke-linecap="square"
+        strokeWidth="1.5"
+        strokeLinecap="square"
       />
     </svg>
   );

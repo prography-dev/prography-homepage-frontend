@@ -1,4 +1,5 @@
 'use client';
+
 import { IconProps } from '.';
 
 const IconMenu = ({
@@ -16,9 +17,9 @@ const IconMenu = ({
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path d="M2 4H22" stroke={color} stroke-width="1.5" />
-      <path d="M2 12H22" stroke={color} stroke-width="1.5" />
-      <path d="M2 20H22" stroke={color} stroke-width="1.5" />
+      <path d="M2 4H22" stroke={color} strokeWidth="1.5" />
+      <path d="M2 12H22" stroke={color} strokeWidth="1.5" />
+      <path d="M2 20H22" stroke={color} strokeWidth="1.5" />
     </svg>
   );
 };

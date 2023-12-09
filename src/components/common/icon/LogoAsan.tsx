@@ -1,11 +1,6 @@
 'use client';
 
-const LogoAsan = ({
-  width = 295,
-  height = 60,
-  color = 'white',
-  ...props
-}): JSX.Element => {
+const LogoAsan = ({ width = 295, height = 60 }): JSX.Element => {
   return (
     <svg
       width={width}

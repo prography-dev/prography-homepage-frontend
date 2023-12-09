@@ -1,11 +1,6 @@
 'use client';
-import { IconProps } from '.';
 
-const IconBehance = ({
-  size = 50,
-  color = 'white',
-  ...props
-}: IconProps): JSX.Element => {
+const IconBehance = (): JSX.Element => {
   return (
     <svg
       width="50"

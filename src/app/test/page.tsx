@@ -61,7 +61,7 @@ const Page = () => {
 
       <div className={styles.ButtonContainer}>
         <IconArrowDown />
-        <IconArrowDown color="#1C1C1E" />
+        <IconArrowDown />
         <IconArrowUp />
         <IconArrowRight />
         <IconArrowLeft />

@@ -1,4 +1,5 @@
 'use client';
+
 import { IconProps } from '.';
 
 const IconRight = ({
@@ -19,8 +20,8 @@ const IconRight = ({
       <path
         d="M28.2143 15.7143L18.5 25.4286M28.2143 15.7143L18.5 6M28.2143 15.7143H4"
         stroke={color}
-        stroke-width="1.5"
-        stroke-linecap="square"
+        strokeWidth="1.5"
+        strokeLinecap="square"
       />
     </svg>
   );

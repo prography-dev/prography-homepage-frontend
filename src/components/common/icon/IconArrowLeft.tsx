@@ -1,4 +1,5 @@
 'use client';
+
 import { IconProps } from '.';
 
 const IconArrowLeft = ({
@@ -19,7 +20,7 @@ const IconArrowLeft = ({
       <path
         d="M14.5 3.5L5.5 12.5L14.5 21.5"
         stroke={color}
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
     </svg>
   );

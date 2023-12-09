@@ -1,4 +1,5 @@
 'use client';
+
 import { IconProps } from '.';
 
 const IconClose = ({
@@ -16,7 +17,7 @@ const IconClose = ({
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path d="M6 6L26 26M26 6L6 26" stroke={color} stroke-width="1.5" />
+      <path d="M6 6L26 26M26 6L6 26" stroke={color} strokeWidth="1.5" />
     </svg>
   );
 };
