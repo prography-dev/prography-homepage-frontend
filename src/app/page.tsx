@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Button from '@/components/common/button/Button';
 
 export default function Home() {
   return (
@@ -13,6 +12,8 @@ export default function Home() {
         <Button label="test" buttonSize="48" />
       </div>
       <Link href="/project">프로젝트</Link>
+      <div className="sf_heading_2 red600">Hello! prography-hompage</div>
+      <Link href="/test">공통컴포넌트 보러 가기</Link>
     </div>
   );
 }

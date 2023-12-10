@@ -1,0 +1,34 @@
+@import '@/styles/const.scss';
+
+.FooterContainer {
+  height: 201px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 160px 0 120px 0;
+
+  .Footer_Top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .Icons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .Contact_Texts {
+      :first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .Line {
+    width: 32px;
+    height: 1px;
+    background-color: $gray400;
+  }
+}
