@@ -1,0 +1,14 @@
+@import '@/styles/fonts.scss';
+
+.pg-team-text {
+  @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+}
+
+.pg-team-wrapper {
+  margin-top: 56px;
+}
+
+.pg-team {
+  padding: 28px 48px;
+  margin: 0px 16px 16px 0px;
+}

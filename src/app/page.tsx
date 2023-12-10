@@ -4,6 +4,7 @@ import './page.scss';
 import Link from 'next/link';
 import Typo from '@/components/Home/Typo';
 import About from '@/components/Home/About';
+import OneTeam from '@/components/Home/OneTeam';
 import PageRouterButton from '@/components/Home/PageRouterButton';
 import Button from '@/components/common/button/Button';
 
@@ -27,6 +28,10 @@ export default function Home() {
         <PageRouterButton label="About" href="/about" />
       </div>
       <About />
+      <div className="pg-team-button-container">
+        <PageRouterButton label="One team" href="/about" />
+      </div>
+      <OneTeam />
       <div>
         <div className="sf_display_1">Hello! prography-hompage</div>
         <Link href="/test">공통컴포넌트 보러 가기</Link>
