@@ -1,10 +1,14 @@
 'use client';
 
 import './page.scss';
-
 import Link from 'next/link';
-import Button from '@/components/common/button/Button';
 import Typo from '@/components/Home/Typo';
+import About from '@/components/Home/About';
+import OneTeam from '@/components/Home/OneTeam';
+import PageRouterButton from '@/components/Home/PageRouterButton';
+
+import Button from '@/components/common/button/Button';
+import CommonWrapper from '@/components/common/layout/CommonWrapper';
 
 export default function Home() {
   const handleApplyButton = () => {
@@ -13,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <div className="pg-home-container">
+    <CommonWrapper>
       <div className="pg-typo-container">
         <Typo />
       </div>
@@ -22,6 +26,14 @@ export default function Home() {
           9기 지원
         </Button>
       </div>
+      <div className="pg-about-button-container">
+        <PageRouterButton label="About" href="/about" />
+      </div>
+      <About />
+      <div className="pg-team-button-container">
+        <PageRouterButton label="One team" href="/about" />
+      </div>
+      <OneTeam />
       <div>
         <div className="sf_display_1">Hello! prography-hompage</div>
         <Link href="/test">공통컴포넌트 보러 가기</Link>
@@ -35,6 +47,6 @@ export default function Home() {
         <div className="sf_heading_2 red600">Hello! prography-hompage</div>
         <Link href="/test">공통컴포넌트 보러 가기</Link>
       </div>
-    </div>
+    </CommonWrapper>
   );
 }

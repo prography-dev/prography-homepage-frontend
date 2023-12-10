@@ -1,9 +1,5 @@
 @import '@/components/common/button/Button.scss';
 
-.pg-home-container {
-  max-width: 1033px;
-}
-
 .pg-typo-container {
   margin-top: 210px;
 }
@@ -14,4 +10,12 @@
   button {
     @include button-style(24px, 32px, 24px, 48px !important);
   }
+}
+
+.pg-about-button-container {
+  margin: 330px 0px 64px;
+}
+
+.pg-team-button-container {
+  margin: 332px 0px 16px;
 }
