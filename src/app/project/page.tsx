@@ -1,9 +1,12 @@
 'use client';
 
+import './page.scss';
+
 import React, { useEffect, useState } from 'react';
 
+import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import Modal from '@/components/Project/Modal';
-import ProjectCard from '@/components/Project/ProjectCard';
+import ProjectCardContainer from '@/components/Project/ProjectCardContainer';
 
 const Project = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,10 +46,12 @@ const Project = () => {
   }, [isModalOpen]);
 
   return (
-    <div>
-      <div className="sf_heading_1">Project</div>
-      <div className="sf_body_2">Project</div>
-      <ProjectCard />
+    <CommonWrapper>
+      <div className="page-title">
+        <div className="sf_heading_1">Project</div>
+        <div className="sf_body_2">12 Experiences in Prography</div>
+      </div>
+      <ProjectCardContainer />
 
       {/* 프로젝트-1 페이지로 이동하는 링크 */}
       <a href="/project/project-1">project-1</a>
@@ -62,7 +67,7 @@ const Project = () => {
         <p>This is the content of the modal.</p>
         <p>You can put any content or components here.</p>
       </Modal>
-    </div>
+    </CommonWrapper>
   );
 };
 
