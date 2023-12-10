@@ -1,22 +1,31 @@
 import Image from 'next/image';
-import styles from './Header.module.scss';
+import Link from 'next/link';
 import Button from '@/components/common/button/Button';
+import styles from './Header.module.scss';
 
 const Header = () => {
   return (
     <header className={styles.HeaderContainer}>
       <div className={styles.Content}>
-        <Image
-          width={138}
-          height={48}
-          src="/assets/logos/logo_prography.svg"
-          alt="logo"
-        />
+        <Link href="/">
+          <Image
+            width={138}
+            height={48}
+            src="/assets/logos/logo_prography.svg"
+            alt="logo"
+          />
+        </Link>
 
         <ul>
-          <li className="pre_caption_1">About</li>
-          <li className="pre_caption_1">Project</li>
-          <li className="pre_caption_1">Contact</li>
+          <li className="pre_caption_1">
+            <Link href="/about">About</Link>
+          </li>
+          <li className="pre_caption_1">
+            <Link href="/project">Project</Link>
+          </li>
+          <li className="pre_caption_1">
+            <Link href="/contact">Contact</Link>
+          </li>
           <li>
             <Button buttonSize="48">9기 지원</Button>
           </li>
