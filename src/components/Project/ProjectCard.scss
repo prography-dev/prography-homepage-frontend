@@ -1,8 +1,8 @@
 @import '@/styles/const.scss';
 
 .card-container {
-  width: 370px;
-  height: 606px;
+  max-width: 370px;
+  max-height: 606px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,22 +12,19 @@
   padding: 12px 12px 24px;
 
   .image-container {
+    position: relative;
     width: 345px;
     height: 430px;
     border-radius: 20px;
     overflow: hidden;
-
-    > img {
-      object-fit: cover;
-    }
   }
 
   .text-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 346px;
-    height: 124px;
+    max-width: 346px;
+    max-height: 124px;
     padding: 0px 8px;
   }
 
@@ -51,6 +48,17 @@
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
+  }
+}
+.card-container:hover {
+  cursor: pointer;
+  transform: translateY(-20px);
+  background-color: $gray800;
+  transition: transform 0.3s;
+  border: none;
+
+  .skill-tag {
+    background-color: $gray700;
   }
 }
 

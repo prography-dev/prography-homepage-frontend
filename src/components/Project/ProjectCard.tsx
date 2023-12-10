@@ -7,10 +7,10 @@ const ProjectCard = () => {
     <div className="card-container">
       <div className="image-container">
         <Image
-          width={345}
-          height={430}
           src="/assets/images/cat.jpg"
           alt="thumbnail"
+          layout="fill"
+          objectFit="cover"
         />
       </div>
       <div className="text-container">
