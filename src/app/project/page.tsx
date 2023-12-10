@@ -1,52 +1,9 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-
 'use client';
 
 import React, { useEffect, useState } from 'react';
 
-const Modal = ({ isOpen, onClose, children }) => {
-  return (
-    <>
-      {isOpen && (
-        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-        <div className="modal-overlay" onClick={onClose}>
-          <div className="modal" onClick={e => e.stopPropagation()}>
-            <button type="button" className="close-button" onClick={onClose}>
-              Close
-            </button>
-            {children}
-          </div>
-        </div>
-      )}
-      <style>{`
-        .modal-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .modal {
-          background: white;
-          padding: 20px;
-          border-radius: 8px;
-        }
-
-        .close-button {
-          background: #ffcad6;
-          border: none;
-          padding: 8px 16px;
-          cursor: pointer;
-        }
-      `}</style>
-    </>
-  );
-};
+import Modal from '@/components/Project/Modal';
+import ProjectCard from '@/components/Project/ProjectCard';
 
 const Project = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,8 +43,10 @@ const Project = () => {
   }, [isModalOpen]);
 
   return (
-    <div style={{ backgroundColor: '#FFCAD6' }}>
-      <h1>Project</h1>
+    <div>
+      <div className="sf_heading_1">Project</div>
+      <div className="sf_body_2">Project</div>
+      <ProjectCard />
 
       {/* 프로젝트-1 페이지로 이동하는 링크 */}
       <a href="/project/project-1">project-1</a>
