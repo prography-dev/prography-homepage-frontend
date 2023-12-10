@@ -1,3 +1,5 @@
+@import '@/styles/fonts.scss';
+
 .pg-typo-container {
   margin-top: 58px;
 }
@@ -11,6 +13,11 @@
 }
 
 .pg-team-button-container {
+  margin: 120px 0px 8px;
+}
+
+.pg-schedule-head {
+  @extend .sf_heading_3;
   margin: 120px 0px 8px;
 }
 
