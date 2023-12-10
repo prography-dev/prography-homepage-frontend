@@ -1,0 +1,129 @@
+@import '@/styles/const.scss';
+
+@mixin font-style(
+  $font-family,
+  $font-weight,
+  $font-size,
+  $line-height,
+  $letter-spacing,
+  $text-decoration: none
+) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-decoration: $text-decoration;
+}
+
+.pre_display_1 {
+  @include font-style($pretendard, 700, 120px, 136px, -2px);
+}
+
+.pre_display_2 {
+  @include font-style($pretendard, 700, 110px, 130px, -2px);
+}
+
+.pre_heading_1 {
+  @include font-style($pretendard, 700, 64px, 72px, -2px);
+}
+
+.pre_heading_2 {
+  @include font-style($pretendard, 700, 48px, 56px, -0.25px);
+}
+
+.pre_heading_3 {
+  @include font-style($pretendard, 700, 32px, 40px, -0.25px);
+}
+
+.pre_heading_4 {
+  @include font-style($pretendard, 700, 24px, 32px, -0.25px);
+}
+
+.pre_heading_5 {
+  @include font-style($pretendard, 700, 20px, 32px, -0.25px);
+}
+
+.pre_heading_6 {
+  @include font-style($pretendard, 400, 16px, 24px, -0.25px);
+}
+
+.pre_body_1 {
+  @include font-style($pretendard, 400, 24px, 32px, -0.25px);
+}
+
+.pre_body_2 {
+  @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+}
+
+.pre_caption_1 {
+  @include font-style($pretendard, 400, 16px, 24px, -0.25px);
+}
+
+.pre_badge {
+  @include font-style($pretendard, 400, 14px, 20px, -0.25px);
+}
+
+.pre_heading_3_underline {
+  @include font-style($pretendard, 700, 32px, 40px, -0.25px, underline);
+}
+
+.pre_heading_4_underline {
+  @include font-style($pretendard, 700, 24px, 32px, -0.25px, underline);
+}
+
+.sf_display_1 {
+  @include font-style($sf_pro, 700, 120px, 136px, 0px);
+}
+
+.sf_display_2 {
+  @include font-style($sf_pro, 700, 110px, 130px, 0px);
+}
+
+.sf_heading_1 {
+  @include font-style($sf_pro, 700, 64px, 72px, 0px);
+}
+
+.sf_heading_2 {
+  @include font-style($sf_pro, 700, 48px, 56px, 0px);
+}
+
+.sf_heading_3 {
+  @include font-style($sf_pro, 700, 32px, 40px, 0px);
+}
+
+.sf_heading_4 {
+  @include font-style($sf_pro, 700, 24px, 32px, 0px);
+}
+
+.sf_heading_5 {
+  @include font-style($sf_pro, 700, 20px, 32px, 0px);
+}
+
+.sf_heading_6 {
+  @include font-style($sf_pro, 400, 16px, 24px, 0px);
+}
+
+.sf_body_1 {
+  @include font-style($sf_pro, 400, 24px, 32px, 0px);
+}
+
+.sf_body_2 {
+  @include font-style($sf_pro, 400, 20px, 32px, 0px);
+}
+
+.sf_caption_1 {
+  @include font-style($sf_pro, 400, 16px, 24px, 0px);
+}
+
+.sf_badge {
+  @include font-style($sf_pro, 400, 14px, 20px, 0px);
+}
+
+.sf_heading_3_underline {
+  @include font-style($pretendard, 700, 32px, 40px, 0px, underline);
+}
+
+.sf_heading_4_underline {
+  @include font-style($pretendard, 700, 24px, 32px, 0px, underline);
+}

@@ -1,0 +1,67 @@
+// Primary Color
+.red300 {
+  color: #ffcad6;
+}
+.red400 {
+  color: #ff87a2;
+}
+.red500 {
+  color: #fa2454;
+}
+.red600 {
+  color: #da0f3d;
+}
+
+// Primary Gradation
+.red_gradation_100 {
+  background: linear-gradient(90deg, #ffffff, #ffcad6);
+}
+
+.red_gradation_200 {
+  background: linear-gradient(90deg, #ff87a2, #fa2454);
+}
+
+// Secondary Color
+.yellow500 {
+  color: #ffb904;
+}
+.blue500 {
+  color: #1033ff;
+}
+.orange500 {
+  color: #ff6929;
+}
+.purple500 {
+  color: #b251ff;
+}
+
+// Grayscale Color
+.gray900 {
+  color: #111113;
+}
+.gray800 {
+  color: #1c1c1e;
+}
+.gray700 {
+  color: #333336;
+}
+.gray600 {
+  color: #47474b;
+}
+.gray500 {
+  color: #45484e;
+}
+.gray400 {
+  color: #9fa0ab;
+}
+.gray300 {
+  color: #e1e3ed;
+}
+.white {
+  color: #ffffff;
+}
+
+// Transparent
+.gray_trans_100 {
+  color: rgba(0, 0, 0, 0.7);
+}

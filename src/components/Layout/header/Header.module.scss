@@ -1,0 +1,34 @@
+@import '@/styles/const.scss';
+
+.HeaderContainer {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .Content {
+    margin: 16px 0;
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+
+    img {
+      cursor: pointer;
+    }
+
+    ul {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    li {
+      cursor: pointer;
+    }
+  }
+}

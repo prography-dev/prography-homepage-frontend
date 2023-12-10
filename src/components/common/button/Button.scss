@@ -1,0 +1,76 @@
+@import '@/styles/const.scss';
+
+@mixin button-style($font-size, $line-height, $paddingx, $paddingy) {
+  font-family: Pretendard;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  border-radius: 100px;
+  font-size: $font-size;
+  line-height: $line-height;
+  padding-top: $paddingx;
+  padding-bottom: $paddingx;
+  padding-left: $paddingy;
+  padding-right: $paddingy;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+
+  &.SIZE_80 {
+    @include button-style(24px, 32px, 24px, 48px);
+  }
+
+  &.SIZE_56 {
+    @include button-style(16px, 20px, 18px, 24px);
+  }
+
+  &.SIZE_48 {
+    @include button-style(16px, 24px, 12px, 24px);
+  }
+
+  &.SIZE_80,
+  &.SIZE_56 {
+    &.fulled {
+      width: 100%;
+    }
+
+    &.primary {
+      background: $white;
+      color: $gray900;
+
+      &:hover {
+        background: linear-gradient(90deg, white, transparent) $red300;
+        transition: background-color 1s;
+        place-content: center;
+      }
+
+      &:disabled {
+        background: $gray300;
+        color: $gray500;
+      }
+    }
+  }
+
+  &.SIZE_48 {
+    &.fulled {
+      width: 100%;
+    }
+
+    &.primary {
+      background: $red500;
+      color: $white;
+
+      &:hover {
+        background: linear-gradient(90deg, $red500, transparent) #ff87a2;
+        transition: background-color 1s;
+        place-content: center;
+      }
+
+      &:disabled {
+        background: $gray300;
+        color: $gray500;
+      }
+    }
+  }
+}
