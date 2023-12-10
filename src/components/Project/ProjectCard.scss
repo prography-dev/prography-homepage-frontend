@@ -1,0 +1,62 @@
+@import '@/styles/const.scss';
+
+.card-container {
+  width: 370px;
+  height: 606px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid $gray600;
+  border-radius: 32px;
+  padding: 12px 12px 24px;
+
+  .image-container {
+    width: 345px;
+    height: 430px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    > img {
+      object-fit: cover;
+    }
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 346px;
+    height: 124px;
+    padding: 0px 8px;
+  }
+
+  .title-div {
+    display: flex;
+    gap: 4px;
+
+    .title {
+      max-width: 298px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .nth {
+      margin-top: 5px;
+    }
+  }
+
+  .tag-div {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+}
+
+.skill-tag {
+  border-radius: 100px;
+  padding: 8px 12px;
+  background-color: $gray800;
+  width: fit-content;
+}
