@@ -1,0 +1,19 @@
+@import '@/styles/fonts.scss';
+
+.pg-countup-container {
+  display: flex;
+}
+
+.pg-countup-wrapper {
+  .pg-countup-value {
+    @include font-style($sf_pro, 700, 120px, 136px, 0px);
+  }
+
+  .pg-countup-label {
+    @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+  }
+
+  &:last-child {
+    margin-left: 100px;
+  }
+}

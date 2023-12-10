@@ -1,10 +1,11 @@
 'use client';
 
 import './page.scss';
-
 import Link from 'next/link';
-import Button from '@/components/common/button/Button';
 import Typo from '@/components/Home/Typo';
+import About from '@/components/Home/About';
+import PageRouterButton from '@/components/Home/PageRouterButton';
+import Button from '@/components/common/button/Button';
 
 export default function Home() {
   const handleApplyButton = () => {
@@ -22,6 +23,10 @@ export default function Home() {
           9기 지원
         </Button>
       </div>
+      <div className="pg-about-button-container">
+        <PageRouterButton label="About" href="/about" />
+      </div>
+      <About />
       <div>
         <div className="sf_display_1">Hello! prography-hompage</div>
         <Link href="/test">공통컴포넌트 보러 가기</Link>
