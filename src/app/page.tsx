@@ -1,8 +1,10 @@
 'use client';
 
 import './page.scss';
-import Typo from '@/components/Home/Typo';
+
+import Link from 'next/link';
 import Button from '@/components/common/button/Button';
+import Typo from '@/components/Home/Typo';
 
 export default function Home() {
   const handleApplyButton = () => {
@@ -20,18 +22,19 @@ export default function Home() {
           9기 지원
         </Button>
       </div>
-    <div>
-      <div className="sf_display_1">Hello! prography-hompage</div>
-      <Link href="/test">공통컴포넌트 보러 가기</Link>
-      <div style={{ display: 'block', background: 'black', padding: '30px' }}>
-        <Button label="test" />
-        <Button label="test" disabled />
-        <Button label="test" buttonSize="56" />
-        <Button label="test" buttonSize="48" />
+      <div>
+        <div className="sf_display_1">Hello! prography-hompage</div>
+        <Link href="/test">공통컴포넌트 보러 가기</Link>
+        <div style={{ display: 'block', background: 'black', padding: '30px' }}>
+          <Button>test</Button>
+          <Button disabled>test</Button>
+          <Button buttonSize="56">test</Button>
+          <Button buttonSize="48">test</Button>
+        </div>
+        <Link href="/project">프로젝트</Link>
+        <div className="sf_heading_2 red600">Hello! prography-hompage</div>
+        <Link href="/test">공통컴포넌트 보러 가기</Link>
       </div>
-      <Link href="/project">프로젝트</Link>
-      <div className="sf_heading_2 red600">Hello! prography-hompage</div>
-      <Link href="/test">공통컴포넌트 보러 가기</Link>
     </div>
   );
 }
