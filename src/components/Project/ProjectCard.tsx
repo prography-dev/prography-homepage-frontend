@@ -15,7 +15,7 @@ const ProjectCard = () => {
       </div>
       <div className="text-container">
         <div className="title-div">
-          <span className="sf_heading_5 white title">I GO BOSS</span>
+          <span className="sf_heading_5 title">I GO BOSS</span>
           <span className="sf_caption_1 gray400 nth">8th</span>
         </div>
         <div className="tag-div">
@@ -31,7 +31,7 @@ const ProjectCard = () => {
 };
 
 export const SkillTags = ({ label }: { label: string }) => {
-  return <div className="skill-tag white">{label}</div>;
+  return <div className="skill-tag">{label}</div>;
 };
 
 export default ProjectCard;
