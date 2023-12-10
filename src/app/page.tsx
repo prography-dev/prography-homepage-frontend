@@ -6,7 +6,9 @@ import Typo from '@/components/Home/Typo';
 import About from '@/components/Home/About';
 import OneTeam from '@/components/Home/OneTeam';
 import PageRouterButton from '@/components/Home/PageRouterButton';
+
 import Button from '@/components/common/button/Button';
+import CommonWrapper from '@/components/common/layout/CommonWrapper';
 
 export default function Home() {
   const handleApplyButton = () => {
@@ -15,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <div className="pg-home-container">
+    <CommonWrapper>
       <div className="pg-typo-container">
         <Typo />
       </div>
@@ -45,6 +47,6 @@ export default function Home() {
         <div className="sf_heading_2 red600">Hello! prography-hompage</div>
         <Link href="/test">공통컴포넌트 보러 가기</Link>
       </div>
-    </div>
+    </CommonWrapper>
   );
 }
