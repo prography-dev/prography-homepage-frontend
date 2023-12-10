@@ -30,8 +30,8 @@ const ProjectCard = () => {
   );
 };
 
-export const SkillTags = ({ label }: { label: string }) => {
-  return <div className="skill-tag">{label}</div>;
+const SkillTags = ({ label }: { label: string }) => {
+  return <div className="skill-tag sf_badge">{label}</div>;
 };
 
 export default ProjectCard;
