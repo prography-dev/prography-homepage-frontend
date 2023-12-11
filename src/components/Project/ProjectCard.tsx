@@ -1,8 +1,34 @@
 import './ProjectCard.scss';
 
 import Image from 'next/image';
+import { PROJECT_DATA } from './PROJECT_DATA';
 
-const ProjectCard = () => {
+export interface ProjectProps {
+  projects: {
+    id: number;
+    title: string;
+    description: string;
+    generation: number;
+    thumbnailUrl: string;
+    imageUrl: string;
+    stacks: string[];
+    users: {
+      id: number;
+      name: string;
+      part: string;
+    }[];
+    socials: {
+      type: string;
+      landingUrl: string;
+    }[];
+  }[];
+  pageNumber: number;
+  pageSize: number;
+  totalPages: number;
+  totalCount: number;
+}
+
+const ProjectCard: React.FC = () => {
   return (
     <div className="card-container">
       <div className="image-container">
@@ -15,15 +41,17 @@ const ProjectCard = () => {
       </div>
       <div className="text-container">
         <div className="title-div">
-          <span className="sf_heading_5 title">I GO BOSS</span>
-          <span className="sf_caption_1 gray400 nth">8th</span>
+          <span className="sf_heading_5 title">
+            {PROJECT_DATA.projects[0].title}
+          </span>
+          <span className="sf_caption_1 gray400 nth">
+            {PROJECT_DATA.projects[0].generation}th
+          </span>
         </div>
         <div className="tag-div">
-          <SkillTags label="JAVA" />
-          <SkillTags label="iOS" />
-          <SkillTags label="Gradle" />
-          <SkillTags label="Design" />
-          <SkillTags label="Spring Boot" />
+          {PROJECT_DATA.projects[0].stacks.map((el, idx) => (
+            <SkillTags key={idx} label={el} />
+          ))}
         </div>
       </div>
     </div>
