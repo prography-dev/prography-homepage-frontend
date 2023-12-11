@@ -24,7 +24,6 @@ export const PROJECT_DATA: ProjectProps = {
           part: 'Android',
         },
       ],
-
       socials: [
         {
           type: 'INSTAGRAM',
@@ -68,8 +67,4 @@ export const PROJECT_DATA: ProjectProps = {
       ],
     },
   ],
-  pageNumber: 0,
-  pageSize: 2,
-  totalPages: 1,
-  totalCount: 2,
 };

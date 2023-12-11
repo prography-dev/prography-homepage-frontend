@@ -22,10 +22,6 @@ export interface ProjectProps {
       landingUrl: string;
     }[];
   }[];
-  pageNumber: number;
-  pageSize: number;
-  totalPages: number;
-  totalCount: number;
 }
 
 const ProjectCard: React.FC = () => {
