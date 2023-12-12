@@ -1,3 +1,5 @@
+'use client';
+
 import './ProjectCard.scss';
 
 import Image from 'next/image';
@@ -8,12 +10,16 @@ export interface ProjectProps {
     ProjectCardData,
     'thumbnailUrl' | 'title' | 'generation' | 'stacks'
   >;
-  onClick?: () => void;
+  onChange: (target: string) => void;
 }
 
-const ProjectCard = ({ project, onClick }: ProjectProps) => {
+const ProjectCard = ({ project, onChange }: ProjectProps) => {
+  const onClickCard = (e: React.MouseEvent<HTMLDivElement>) => {
+    onChange(e.currentTarget.id);
+  };
+
   return (
-    <div className="card-container" onClick={onClick}>
+    <div className="card-container" id={project.title} onClick={onClickCard}>
       <div className="image-container">
         <Image
           src={`${project.thumbnailUrl}`}

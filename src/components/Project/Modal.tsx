@@ -1,14 +1,13 @@
-'use client';
-
 import './Modal.scss';
 
 export interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
-  children: React.ReactNode;
+  selectedCard: string;
 }
 
-const Modal = ({ isOpen, onClose, children }: ProjectModalProps) => {
+const Modal = ({ isOpen, onClose, selectedCard }: ProjectModalProps) => {
+  console.log(selectedCard);
   return (
     <div>
       {isOpen && (
@@ -17,7 +16,8 @@ const Modal = ({ isOpen, onClose, children }: ProjectModalProps) => {
             <button type="button" className="close-button" onClick={onClose}>
               Close
             </button>
-            {children}
+            <p className="black">모달모달</p>
+            <p className="black">내용입력하기</p>
           </div>
         </div>
       )}

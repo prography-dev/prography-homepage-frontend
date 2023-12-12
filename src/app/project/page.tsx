@@ -12,6 +12,7 @@ import ProjectCardContainer from '@/components/Project/ProjectCardContainer';
 
 const Project = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState('');
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -21,22 +22,30 @@ const Project = () => {
     setIsModalOpen(false);
   };
 
+  const onSelectCard = (target: string) => {
+    setSelectedCard(target);
+  };
+
   return (
     <CommonWrapper>
       <div className="page-title">
         <div className="sf_heading_1">Project</div>
         <div className="sf_body_2">12 Experiences in Prography</div>
       </div>
-      <ProjectCardContainer projects={PROJECT_DATA} />
+      <ProjectCardContainer
+        projects={PROJECT_DATA}
+        onChange={e => onSelectCard(e)}
+      />
 
       <button type="button" onClick={openModal}>
         Open Modal
       </button>
 
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <p className="black">모달모달</p>
-        <p className="black">내용입력하기</p>
-      </Modal>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        selectedCard={selectedCard}
+      />
       <div className="arrow-icon-div">
         <Icon80RoundButton />
       </div>
