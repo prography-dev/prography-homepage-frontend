@@ -1,10 +1,14 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-
 'use client';
 
 import './Modal.scss';
 
-const Modal = ({ isOpen, onClose, children }) => {
+export interface ProjectModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
+
+const Modal = ({ isOpen, onClose, children }: ProjectModalProps) => {
   return (
     <div>
       {isOpen && (

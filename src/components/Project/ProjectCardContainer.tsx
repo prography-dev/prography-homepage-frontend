@@ -2,18 +2,18 @@ import './ProjectCardContainer.scss';
 
 import ProjectCard from './ProjectCard';
 
-const ProjectCardContainer = () => {
+import { ProjectCardData } from '@/apis/project';
+
+export interface ProjectCardContainerProps {
+  projects: ProjectCardData[];
+}
+
+const ProjectCardContainer = ({ projects }: ProjectCardContainerProps) => {
   return (
     <div className="pjt-card-container">
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      {projects.map(el => (
+        <ProjectCard project={el} />
+      ))}
     </div>
   );
 };
