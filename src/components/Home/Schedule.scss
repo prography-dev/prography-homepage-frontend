@@ -1,0 +1,32 @@
+@import '@/styles/fonts.scss';
+
+.break-point {
+  display: none;
+}
+
+.pg-schedule-text {
+  @extend .pre_heading_6;
+  margin: 8px 0px 40px;
+  display: inline-block;
+}
+
+.pg-schedule-wrapper {
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  .pg-schedule-date {
+    @extend .sf_heading_6;
+  }
+
+  .pg-schedule-name {
+    @extend .pre_caption_1;
+    margin-top: 4px;
+  }
+}
+
+@media (min-width: 1280px) {
+  @import './Schedule.1280.scss';
+}

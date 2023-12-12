@@ -1,4 +1,5 @@
 @import '@/components/common/button/Button.scss';
+@import '@/styles/fonts.scss';
 
 .pg-typo-container {
   margin-top: 210px;
@@ -18,4 +19,9 @@
 
 .pg-team-button-container {
   margin: 332px 0px 16px;
+}
+
+.pg-schedule-head {
+  @include font-style($sf_pro, 700, 64px, 72px, 0px);
+  margin: 362px - 16px 0px 16px;
 }

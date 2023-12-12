@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Typo from '@/components/Home/Typo';
 import About from '@/components/Home/About';
 import OneTeam from '@/components/Home/OneTeam';
+import Schedule from '@/components/Home/Schedule';
 import PageRouterButton from '@/components/Home/PageRouterButton';
 
 import Button from '@/components/common/button/Button';
@@ -34,6 +35,8 @@ export default function Home() {
         <PageRouterButton label="One team" href="/about" />
       </div>
       <OneTeam />
+      <h3 className="pg-schedule-head white">9th Schedule</h3>
+      <Schedule />
       <div>
         <div className="sf_display_1">Hello! prography-hompage</div>
         <Link href="/test">공통컴포넌트 보러 가기</Link>
