@@ -11,11 +11,13 @@ export interface ProjectProps {
     'thumbnailUrl' | 'title' | 'generation' | 'stacks'
   >;
   onChange: (target: string) => void;
+  onClick: () => void;
 }
 
-const ProjectCard = ({ project, onChange }: ProjectProps) => {
+const ProjectCard = ({ project, onChange, onClick }: ProjectProps) => {
   const onClickCard = (e: React.MouseEvent<HTMLDivElement>) => {
     onChange(e.currentTarget.id);
+    onClick();
   };
 
   return (

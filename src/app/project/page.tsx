@@ -35,11 +35,8 @@ const Project = () => {
       <ProjectCardContainer
         projects={PROJECT_DATA}
         onChange={e => onSelectCard(e)}
+        onClick={openModal}
       />
-
-      <button type="button" onClick={openModal}>
-        Open Modal
-      </button>
 
       <Modal
         isOpen={isModalOpen}
