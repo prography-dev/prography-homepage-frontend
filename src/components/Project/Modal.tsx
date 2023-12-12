@@ -1,5 +1,7 @@
 import './Modal.scss';
 
+import { IconClose } from '../common/icon';
+
 export interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -13,9 +15,9 @@ const Modal = ({ isOpen, onClose, selectedCard }: ProjectModalProps) => {
       {isOpen && (
         <div className="modal-overlay" onClick={onClose}>
           <div className="modal" onClick={e => e.stopPropagation()}>
-            <button type="button" className="close-button" onClick={onClose}>
-              Close
-            </button>
+            <div className="close-button-div">
+              <IconClose onClick={onClose} className="close-button" />
+            </div>
             <p className="black">모달모달</p>
             <p className="black">내용입력하기</p>
           </div>
