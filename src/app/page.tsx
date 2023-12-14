@@ -37,6 +37,9 @@ export default function Home() {
       <OneTeam />
       <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
       <Schedule />
+      <div className={styles.PgProjectButtonContainer}>
+        <PageRouterButton label="Project" href="/project" />
+      </div>
       <div>
         {/* <div className="sf_display_1">Hello! prography-hompage</div> */}
         <Link href="/test">공통컴포넌트 보러 가기</Link>
