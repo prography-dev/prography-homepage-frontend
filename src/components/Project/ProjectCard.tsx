@@ -17,6 +17,7 @@ export interface ProjectProps {
 const ProjectCard = ({ project, onChange, onClick }: ProjectProps) => {
   const onClickCard = (e: React.MouseEvent<HTMLDivElement>) => {
     onChange(e.currentTarget.id);
+    // TODO(meaningood): 구현 예정
     onClick();
   };
 

@@ -19,10 +19,11 @@ const ProjectCardContainer = ({
   };
   return (
     <div className="pjt-card-container">
-      {projects.map(el => (
+      {projects.map((el, idx) => (
         <ProjectCard
+          key={idx}
           project={el}
-          onChange={e => selectedCard(e)}
+          onChange={selectedCard}
           onClick={onClick}
         />
       ))}
