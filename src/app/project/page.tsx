@@ -2,45 +2,29 @@
 
 import './page.scss';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
 import Modal from '@/components/Project/Modal';
+import { PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 import ProjectCardContainer from '@/components/Project/ProjectCardContainer';
 
 const Project = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [prevUrl, setPrevUrl] = useState('');
+  const [selectedCard, setSelectedCard] = useState('');
 
   const openModal = () => {
-    // 모달이 열릴 때 현재 URL을 기억
-    setPrevUrl(window.location.href);
-    // 모달을 열고 URL 변경
     setIsModalOpen(true);
-    window.history.pushState({ path: '' }, '', `/project/project-1`);
   };
 
   const closeModal = () => {
-    // 모달을 닫고 이전 URL로 돌아가기
     setIsModalOpen(false);
-    window.history.pushState({ path: prevUrl }, '', prevUrl);
   };
 
-  // 모달이 닫힐 때 이전 URL로 돌아가기 위한 useEffect
-  useEffect(() => {
-    const handlePopState = () => {
-      if (isModalOpen) {
-        setIsModalOpen(false);
-      }
-    };
-
-    window.addEventListener('popstate', handlePopState);
-
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, [isModalOpen]);
+  const onSelectCard = (target: string) => {
+    setSelectedCard(target);
+  };
 
   return (
     <CommonWrapper>
@@ -48,17 +32,17 @@ const Project = () => {
         <div className="sf_heading_1">Project</div>
         <div className="sf_body_2">12 Experiences in Prography</div>
       </div>
-      <ProjectCardContainer />
-      {/* 모달 열기 버튼 */}
-      <button type="button" onClick={openModal}>
-        Open Modal
-      </button>
+      <ProjectCardContainer
+        projects={PROJECT_DATA}
+        onChange={e => onSelectCard(e)}
+        onClick={openModal}
+      />
 
-      {/* 모달 */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <p className="black">This is the content of the modal.</p>
-        <p className="black">You can put any content or components here.</p>
-      </Modal>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        selectedCard={selectedCard}
+      />
       <div className="arrow-icon-div">
         <Icon80RoundButton />
       </div>

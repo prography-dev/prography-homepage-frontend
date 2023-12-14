@@ -17,14 +17,20 @@ const Header = () => {
         </Link>
 
         <ul>
-          <li className="pre_caption_1">
-            <Link href="/about">About</Link>
+          <li>
+            <Link href="/about" className="sf_caption_1">
+              About
+            </Link>
           </li>
-          <li className="pre_caption_1">
-            <Link href="/project">Project</Link>
+          <li>
+            <Link href="/project" className="sf_caption_1">
+              Project
+            </Link>
           </li>
-          <li className="pre_caption_1">
-            <Link href="/contact">Contact</Link>
+          <li>
+            <Link href="/contact" className="sf_caption_1">
+              Contact
+            </Link>
           </li>
           <li>
             <Button buttonSize="48">9기 지원</Button>
