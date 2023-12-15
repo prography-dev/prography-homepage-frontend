@@ -1,12 +1,13 @@
 @import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
 
-.faq-container {
+.FaqContainer {
   display: flex;
   flex-direction: column;
   margin-top: 48px;
 }
 
-.faq-item-container {
+.FaqItemContainer {
   width: 100%;
   padding: 40px;
   border-radius: 20px;
@@ -16,7 +17,9 @@
   margin-bottom: 16px;
   background-color: $gray900;
 
-  .title {
+  .FaqTitle {
+    @extend .pre_heading_5;
+
     text-align: left;
 
     display: flex;
@@ -24,7 +27,8 @@
     color: $white;
   }
 
-  .content {
+  .FaqContent {
+    @extend .pre_body_2;
     border-top: 1px solid $gray700;
     padding-top: 40px;
     margin-top: 40px;

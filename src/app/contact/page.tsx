@@ -4,19 +4,19 @@ import React from 'react';
 import Link from 'next/link';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
-import './page.scss';
+import styles from './page.module.scss';
 import FaqList from '@/components/Contact/FaqList';
 
 const FaqPage = () => {
   return (
     <CommonWrapper>
-      <div className="page-title">
+      <div className={styles.PageTitleWrapper}>
         <p className="pre_heading_1">
           프로그라피를
           <br />더 알아가고 싶다면
         </p>
 
-        <div className="contact">
+        <div className={styles.ContactWrapper}>
           <Link
             className="sf_heading_3_underline"
             target="_blank"

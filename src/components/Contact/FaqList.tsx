@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { FAQ_DATA, FaqData } from './FAQ_DATA';
-import './FaqList.scss';
+import styles from './FaqList.module.scss';
 import { IconArrowDown, IconArrowUp } from '../common/icon';
 
 type FaqItem = FaqData & {
@@ -34,21 +34,21 @@ const FaqList = () => {
   };
 
   return (
-    <div className="faq-container">
+    <div className={styles.FaqContainer}>
       {faqList.map((item, idx) => (
         <div
-          className="faq-item-container"
+          className={styles.FaqItemContainer}
           key={idx}
           onClick={() => onClickFaqItem(item.question, !item.selected)}
         >
-          <p className="pre_heading_5 title">
+          <p className={styles.FaqTitle}>
             {item.question}
 
             {item.selected ? <IconArrowUp /> : <IconArrowDown />}
           </p>
           {item.selected && (
             <p
-              className="pre_body_2 content"
+              className={styles.FaqContent}
               dangerouslySetInnerHTML={{ __html: item.answer }}
             />
           )}

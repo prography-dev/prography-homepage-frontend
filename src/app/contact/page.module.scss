@@ -1,12 +1,12 @@
 @import '@/styles/const.scss';
 
-.page-title {
+.PageTitleWrapper {
   display: flex;
   flex-direction: column;
   gap: 88px;
   margin: 122px 0px 160px;
 
-  .contact {
+  .ContactWrapper {
     a {
       color: $red500;
       display: block;
