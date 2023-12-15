@@ -38,7 +38,7 @@ export default function Home() {
       <h3 className="pg-schedule-head white">9th Schedule</h3>
       <Schedule />
       <div>
-        <div className="sf_display_1">Hello! prography-hompage</div>
+        {/* <div className="sf_display_1">Hello! prography-hompage</div> */}
         <Link href="/test">공통컴포넌트 보러 가기</Link>
         <div style={{ display: 'block', background: 'black', padding: '30px' }}>
           <Button>test</Button>
