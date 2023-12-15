@@ -11,13 +11,13 @@ const IconClose = ({
     <svg
       width={size}
       height={size}
+      viewBox={`0 0 ${size} ${size}`}
       fill="none"
-      viewBox="0 0 24 24"
-      color={color}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path d="M6 6L26 26M26 6L6 26" stroke={color} strokeWidth="1.5" />
+      <path d="M20.5 3L3 20.5" stroke={color} strokeWidth="1.2" />
+      <path d="M20.5 20.5L3 3" stroke={color} strokeWidth="1.2" />
     </svg>
   );
 };

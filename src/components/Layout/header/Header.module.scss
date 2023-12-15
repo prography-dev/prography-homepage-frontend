@@ -1,36 +1,120 @@
 @import '@/styles/const.scss';
 
+@mixin header-content {
+  .HeaderLogo {
+    height: 32px;
+  }
+
+  img {
+    width: 92px;
+    height: 32px;
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  li {
+    cursor: pointer;
+  }
+}
+
+@mixin common-header-styles {
+  @include header-content;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+}
+
+.HeaderContainer,
+.MobileMenuContainer {
+  @include common-header-styles;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .HeaderContainer {
   position: sticky;
   top: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 99;
-  height: 80px;
+  flex-direction: column;
 
   .Content {
-    margin: 16px 0;
-    width: 1140px;
+    margin: 8px 20px;
+    width: calc(100% - 16px);
     display: flex;
     justify-content: space-between;
     color: $white;
+    align-items: center;
 
-    img {
-      cursor: pointer;
-    }
-
-    ul {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-      align-items: center;
-    }
-
+    ul,
     li {
-      cursor: pointer;
+      display: none;
     }
+  }
+
+  @media (min-width: 1280px) {
+    height: 80px;
+    .Content {
+      margin: 16px 0;
+      width: 1140px;
+      align-items: initial;
+
+      img {
+        width: 138px;
+        height: 48px;
+      }
+
+      ul {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+        align-items: center;
+      }
+
+      li {
+        display: inline;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+  }
+}
+
+.MobileMenuContainer {
+  top: 48px;
+  height: 100vh;
+  padding: 12px;
+  width: 100%;
+
+  .HeaderLogo,
+  img {
+    display: none;
+  }
+
+  svg {
+    margin-left: auto;
+    display: block;
+  }
+
+  ul {
+    text-align: center;
+    margin: auto 0;
+  }
+
+  li {
+    margin-bottom: 32px;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  @media (min-width: 1280px) {
+    display: none;
   }
 }
