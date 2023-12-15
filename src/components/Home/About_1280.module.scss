@@ -1,15 +1,15 @@
 @import '@/styles/fonts.scss';
 
-.pg-countup-container {
+.PgCountupContainer {
   display: flex;
 }
 
-.pg-countup-wrapper {
-  .pg-countup-value {
+.PgCountupWrapper {
+  .PgCountupValue {
     @include font-style($sf_pro, 700, 120px, 136px, 0px);
   }
 
-  .pg-countup-label {
+  .PgCountupLabel {
     @include font-style($pretendard, 400, 20px, 32px, -0.25px);
   }
 
