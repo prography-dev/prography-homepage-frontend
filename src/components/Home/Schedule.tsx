@@ -1,4 +1,4 @@
-import './Schedule.scss';
+import styles from './Schedule.module.scss';
 
 interface TimeTableProps {
   startDate: string;
@@ -32,17 +32,17 @@ const Schedule = () => {
   ];
   return (
     <>
-      <div className="pg-schedule-text white">
+      <div className={styles.PgScheduleText}>
         프로그라피는 정규 세션을 중심으로 여러 Culture Program을 진행합니다.{' '}
-        <div className="break-point" />
+        <div className={styles.BreakPoint} />
         지원 관련 문의는 이메일 또는 Contact 페이지의 FAQ를 확인해 주세요.
       </div>
       {timeTable.map(({ startDate, endDate, name }) => (
-        <div className="pg-schedule-wrapper" key={startDate + name}>
-          <p className="pg-schedule-date white">
+        <div className={styles.PgScheduleWrapper} key={startDate + name}>
+          <p className={styles.PgScheduleDate}>
             {startDate} {startDate !== endDate && `- ${endDate}`}
           </p>
-          <p className="pg-schedule-name white">{name}</p>
+          <p className={styles.PgScheduleName}>{name}</p>
         </div>
       ))}
     </>

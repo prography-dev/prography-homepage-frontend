@@ -1,24 +1,24 @@
 @import '@/styles/fonts.scss';
 
-.break-point {
+.BreakPoint {
   display: block;
 }
 
-.pg-schedule-text {
+.PgScheduleText {
   @include font-style($pretendard, 400, 20px, 32px, -0.25px);
   margin: 16px 0px 56px;
 }
 
-.pg-schedule-wrapper {
+.PgScheduleWrapper {
   display: flex;
   margin-bottom: 44px;
 
-  .pg-schedule-date {
+  .PgScheduleDate {
     width: 211px;
     @include font-style($sf_pro, 700, 24px, 32px, 0px);
   }
 
-  .pg-schedule-name {
+  .PgScheduleName {
     @include font-style($pretendard, 400, 24px, 32px, -0.25px);
     margin-top: 0px;
   }
