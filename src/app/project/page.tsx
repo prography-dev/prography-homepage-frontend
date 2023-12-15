@@ -6,11 +6,11 @@ import React, { useState } from 'react';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
-import Modal from '@/components/Project/Modal';
+import Modal from '@/components/Modal/Modal';
 import { PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 import ProjectCardContainer from '@/components/Project/ProjectCardContainer';
 
-const Project = () => {
+const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState('');
 
@@ -50,4 +50,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default Page;
