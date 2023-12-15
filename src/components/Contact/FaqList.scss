@@ -1,0 +1,33 @@
+@import '@/styles/const.scss';
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+}
+
+.faq-item-container {
+  width: 100%;
+  padding: 40px;
+  border-radius: 20px;
+  justify: space-between;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-bottom: 16px;
+  background-color: $gray900;
+
+  .title {
+    text-align: left;
+
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+  }
+
+  .content {
+    border-top: 1px solid $gray700;
+    padding-top: 40px;
+    margin-top: 40px;
+    color: $gray300;
+  }
+}

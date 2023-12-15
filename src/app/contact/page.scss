@@ -1,0 +1,18 @@
+@import '@/styles/const.scss';
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  margin: 122px 0px 160px;
+
+  .contact {
+    a {
+      color: $red500;
+      display: block;
+    }
+    a:first-child {
+      margin-bottom: 32px;
+    }
+  }
+}
