@@ -1,9 +1,17 @@
 @import '@/styles/fonts.scss';
 
 .sf_h3_to_h1 {
-  @include font-style($sf_pro, 700, 64px, 72px, 0px);
+  @include font-style($sf_pro, 700, 32px, 40px, 0px);
 
-  @media (max-width: 1280px) {
-    @include font-style($sf_pro, 700, 32px, 40px, 0px);
+  @media (min-width: 1280px) {
+    @include font-style($sf_pro, 700, 64px, 72px, 0px);
+  }
+}
+
+.sf_c1_to_b1 {
+  @include font-style($sf_pro, 400, 16px, 24px, 0px);
+
+  @media (min-width: 1280px) {
+    @include font-style($sf_pro, 400, 24px, 32px, 0px);
   }
 }
