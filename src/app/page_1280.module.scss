@@ -1,11 +1,11 @@
 @import '@/components/common/button/Button.scss';
 @import '@/styles/fonts.scss';
 
-.pg-typo-container {
+.PgTypoContainer {
   margin-top: 210px;
 }
 
-.pg-apply-button-container {
+.PgApplyButtonContainer {
   margin-top: 40px;
 
   button {
@@ -13,15 +13,15 @@
   }
 }
 
-.pg-about-button-container {
+.PgAboutButtonContainer {
   margin: 330px 0px 64px;
 }
 
-.pg-team-button-container {
+.PgTeamButtonContainer {
   margin: 332px 0px 16px;
 }
 
-.pg-schedule-head {
+.PgScheduleHead {
   @include font-style($sf_pro, 700, 64px, 72px, 0px);
   margin: 362px - 16px 0px 16px;
 }

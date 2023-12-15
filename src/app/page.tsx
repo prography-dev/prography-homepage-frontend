@@ -1,7 +1,7 @@
 'use client';
 
-import './page.scss';
 import Link from 'next/link';
+import styles from './page.module.scss';
 import Typo from '@/components/Home/Typo';
 import About from '@/components/Home/About';
 import OneTeam from '@/components/Home/OneTeam';
@@ -19,23 +19,23 @@ export default function Home() {
 
   return (
     <CommonWrapper>
-      <div className="pg-typo-container">
+      <div className={styles.PgTypoContainer}>
         <Typo />
       </div>
-      <div className="pg-apply-button-container">
+      <div className={styles.PgApplyButtonContainer}>
         <Button buttonSize="56" onClick={handleApplyButton}>
           9기 지원
         </Button>
       </div>
-      <div className="pg-about-button-container">
+      <div className={styles.PgAboutButtonContainer}>
         <PageRouterButton label="About" href="/about" />
       </div>
       <About />
-      <div className="pg-team-button-container">
+      <div className={styles.PgTeamButtonContainer}>
         <PageRouterButton label="One team" href="/about" />
       </div>
       <OneTeam />
-      <h3 className="pg-schedule-head white">9th Schedule</h3>
+      <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
       <Schedule />
       <div>
         {/* <div className="sf_display_1">Hello! prography-hompage</div> */}

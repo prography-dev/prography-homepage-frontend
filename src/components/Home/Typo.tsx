@@ -1,5 +1,5 @@
-import './Typo.scss';
 import { TypeAnimation } from 'react-type-animation';
+import styles from './Typo.module.scss';
 
 const Typo = () => {
   // 텍스트 이동간 대기 시간
@@ -21,19 +21,19 @@ const Typo = () => {
 
   return (
     <div className="pg-text-container">
-      <span className="pg-text white">Create new&nbsp;</span>
-      <div className="break-1" />
-      <span className="pg-text white">value&nbsp;</span>
-      <div className="break-2" />
-      <span className="pg-text white">with&nbsp;</span>
-      <div className="break-1" />
+      <span className={styles.pgText}>Create new&nbsp;</span>
+      <div className={styles.Break1} />
+      <span className={styles.pgText}>value&nbsp;</span>
+      <div className={styles.Break2} />
+      <span className={styles.pgText}>with&nbsp;</span>
+      <div className={styles.Break1} />
       <TypeAnimation
         sequence={sequence}
         wrapper="span"
         speed={10}
         cursor={false}
         deletionSpeed={10}
-        className="pg-text pg-text-typo"
+        className={`${styles.pgText} ${styles.pgTextTypo}`}
         repeat={Infinity}
       />
     </div>

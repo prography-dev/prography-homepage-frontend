@@ -1,19 +1,19 @@
 @import '@/styles/const.scss';
 @import '@/styles/fonts.scss';
 
-.break-1 {
+.Break1 {
   width: 100%;
 }
 
-.break-2 {
+.Break2 {
   display: none;
 }
 
-.pg-text {
+.pgText {
   @extend .sf_heading_2;
 }
 
-.pg-text-typo {
+.pgTextTypo {
   color: $red500;
 
   &::after {
@@ -34,5 +34,5 @@
 }
 
 @media (min-width: 1280px) {
-  @import './Typo.1280.scss';
+  @import './Typo_1280.module.scss';
 }

@@ -1,7 +1,7 @@
-import './CommonWrapper.scss';
+import styles from './CommonWrapper.module.scss';
 
 const CommonWrapper = ({ children }: React.PropsWithChildren) => {
-  return <div className="pg-common-wrapper">{children}</div>;
+  return <div className={styles.PgCommonWrapper}>{children}</div>;
 };
 
 export default CommonWrapper;

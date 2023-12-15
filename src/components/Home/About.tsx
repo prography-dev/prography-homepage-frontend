@@ -1,6 +1,6 @@
-import './About.scss';
 import { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
+import styles from './About.module.scss';
 
 interface CountProps {
   applicant: number;
@@ -21,23 +21,26 @@ const About = () => {
   }, []);
 
   const defaultOptions = {
-    'aria-busy': loading,
-    className: 'pg-countup-value',
+    className: styles.PgCountupValue,
     enableScrollSpy: true,
     redraw: true,
   };
 
   return (
-    <div className="pg-countup-container">
-      <div className="pg-countup-wrapper">
-        <CountUp end={count.applicant} {...defaultOptions} />
-        <span className="pg-countup-value">+</span>
-        <p className="pg-countup-label">평균 지원자</p>
+    <div className={styles.PgCountupContainer}>
+      <div className={styles.PgCountupWrapper}>
+        <CountUp
+          end={count.applicant}
+          aria-busy={loading}
+          {...defaultOptions}
+        />
+        <span className={styles.PgCountupValue}>+</span>
+        <p className={styles.PgCountupLabel}>평균 지원자</p>
       </div>
-      <div className="pg-countup-wrapper" aria-busy={loading}>
-        <CountUp end={count.project} {...defaultOptions} />
-        <span className="pg-countup-value">+</span>
-        <p className="pg-countup-label">프로젝트</p>
+      <div className={styles.PgCountupWrapper}>
+        <CountUp end={count.project} aria-busy={loading} {...defaultOptions} />
+        <span className={styles.PgCountupValue}>+</span>
+        <p className={styles.PgCountupLabel}>프로젝트</p>
       </div>
     </div>
   );

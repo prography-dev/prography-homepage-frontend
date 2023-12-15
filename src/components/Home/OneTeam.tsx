@@ -1,4 +1,4 @@
-import './OneTeam.scss';
+import styles from './OneTeam.module.scss';
 
 interface TeamProps {
   value: string;
@@ -39,14 +39,14 @@ const OneTeam = () => {
   ];
   return (
     <>
-      <p className="pg-team-text white">
+      <p className={styles.PgTeamText}>
         PO, 마케터, 디자이너, 개발자가 한 팀을 이뤄 완성도 높은 서비스를
         만듭니다.
       </p>
-      <div className="pg-team-wrapper">
+      <div className={styles.PgTeamWrapper}>
         {pgTeam.map(({ value, backgroundColor }) => (
           <div
-            className="pg-team white"
+            className={styles.PgTeam}
             style={{ backgroundColor }}
             key={value}
           >

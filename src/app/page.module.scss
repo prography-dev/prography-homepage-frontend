@@ -1,26 +1,26 @@
 @import '@/styles/fonts.scss';
 
-.pg-typo-container {
+.PgTypoContainer {
   margin-top: 58px;
 }
 
-.pg-apply-button-container {
+.PgApplyButtonContainer {
   margin-top: 32px;
 }
 
-.pg-about-button-container {
+.PgAboutButtonContainer {
   margin: 120px 0px 40px;
 }
 
-.pg-team-button-container {
+.PgTeamButtonContainer {
   margin: 120px 0px 8px;
 }
 
-.pg-schedule-head {
+.PgScheduleHead {
   @extend .sf_heading_3;
   margin: 120px 0px 8px;
 }
 
 @media (min-width: 1280px) {
-  @import './page.1280.scss';
+  @import './page_1280.module.scss';
 }

@@ -1,13 +1,13 @@
 @import '@/styles/const.scss';
 @import '@/styles/fonts.scss';
 
-.pg-countup-wrapper {
-  .pg-countup-value {
+.PgCountupWrapper {
+  .PgCountupValue {
     @extend .sf_heading_1;
     color: $white;
   }
 
-  .pg-countup-label {
+  .PgCountupLabel {
     @extend .pre_heading_6;
     color: $white;
   }
@@ -18,5 +18,5 @@
 }
 
 @media (min-width: 1280px) {
-  @import './About.1280.scss';
+  @import './About_1280.module.scss';
 }
