@@ -1,7 +1,7 @@
 @import '@/styles/const.scss';
 
 @mixin header-content {
-  .header-logo {
+  .HeaderLogo {
     height: 32px;
   }
 
@@ -25,8 +25,8 @@
   z-index: 99;
 }
 
-.header-container,
-.mobile-header-container {
+.HeaderContainer,
+.MobileMenuContainer {
   @include common-header-styles;
   display: flex;
   flex-direction: column;
@@ -34,13 +34,13 @@
   justify-content: space-between;
 }
 
-.header-container {
+.HeaderContainer {
   position: sticky;
   top: 0;
   width: 100%;
   flex-direction: column;
 
-  .content {
+  .Content {
     margin: 8px 20px;
     width: calc(100% - 16px);
     display: flex;
@@ -56,7 +56,7 @@
 
   @media (min-width: 1280px) {
     height: 80px;
-    .content {
+    .Content {
       margin: 16px 0;
       width: 1140px;
       align-items: initial;
@@ -84,13 +84,13 @@
   }
 }
 
-.mobile-header-container {
+.MobileMenuContainer {
   top: 48px;
   height: 100vh;
   padding: 12px;
   width: 100%;
 
-  .header-logo,
+  .HeaderLogo,
   img {
     display: none;
   }

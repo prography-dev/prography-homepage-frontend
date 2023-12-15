@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Button from '@/components/common/button/Button';
-import './Header.scss';
+import styles from './Header.module.scss';
 import { IconClose, IconMenu } from '@/components/common/icon';
 
 const Header = () => {
@@ -11,11 +11,15 @@ const Header = () => {
 
   return (
     <header
-      className="header-container"
+      className={styles.HeaderContainer}
       style={{ position: isMobileMenuOpen ? 'absolute' : 'sticky' }}
     >
-      <div className={isMobileMenuOpen ? 'mobile-header-container' : 'content'}>
-        <Link href="/" className="header-logo">
+      <div
+        className={
+          isMobileMenuOpen ? styles.MobileMenuContainer : styles.Content
+        }
+      >
+        <Link href="/" className={styles.HeaderLogo}>
           <img src="/assets/logos/logo_prography.svg" alt="logo" />
         </Link>
 
