@@ -3,7 +3,7 @@
 import { IconProps } from '.';
 
 const IconClose = ({
-  size = 24,
+  size = 20,
   color = 'white',
   ...props
 }: IconProps): JSX.Element => {
@@ -11,13 +11,12 @@ const IconClose = ({
     <svg
       width={size}
       height={size}
-      fill="none"
-      viewBox="0 0 24 24"
+      viewBox="0 0 22 22"
       color={color}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path d="M6 6L26 26M26 6L6 26" stroke={color} strokeWidth="1.5" />
+      <path d="M1 1L21 21M21 1L1 21" stroke={color} strokeWidth="1.5" />
     </svg>
   );
 };

@@ -1,0 +1,63 @@
+@import '@/styles/const.scss';
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba($black, 0.5);
+  opacity: 0;
+  visibility: hidden;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    animation: slideUp 0.15s ease-in-out;
+  }
+
+  .modal-project {
+    background-color: $gray900;
+    border-radius: 8px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    overflow: hidden;
+    border-radius: 30px;
+
+    .close-button-div {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      .close-button {
+        all: unset;
+        cursor: pointer;
+        width: 58px;
+        height: 58px;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  }
+}
+
+.modal-wrapper {
+  width: 100%;
+  max-width: 1180px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
