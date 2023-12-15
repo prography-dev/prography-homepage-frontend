@@ -1,18 +1,18 @@
 @import '@/styles/fonts.scss';
 
-.break-1 {
+.break1 {
   display: none;
 }
 
-.break-2 {
+.break2 {
   display: block;
 }
 
-.pg-text {
+.pgText {
   @include font-style($pretendard, 700, 120px, 136px, 0px);
 }
 
-.pg-text-typo {
+.pgTextTypo {
   &::after {
     width: 4px;
     height: 136px;
