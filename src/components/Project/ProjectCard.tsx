@@ -4,6 +4,7 @@ import './ProjectCard.scss';
 
 import Image from 'next/image';
 import { ProjectCardData } from '@/apis/project';
+import StackTag from '../common/stackTag/StackTag';
 
 export interface ProjectProps {
   project: Pick<
@@ -40,16 +41,12 @@ const ProjectCard = ({ project, onChange, onClick }: ProjectProps) => {
         </div>
         <div className="tag-div">
           {project.stacks.map((el, idx) => (
-            <SkillTags key={idx} label={el} />
+            <StackTag key={idx} label={el} font="sf_badge" />
           ))}
         </div>
       </div>
     </div>
   );
-};
-
-const SkillTags = ({ label }: { label: string }) => {
-  return <div className="skill-tag sf_badge">{label}</div>;
 };
 
 export default ProjectCard;
