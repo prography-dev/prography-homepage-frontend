@@ -1,7 +1,7 @@
-import './Modal.scss';
-
 import { IconClose } from '../common/icon';
+import ModalContents from './ModalContents';
 import ModalTitle from './ModalTitle';
+import styles from './Modal.module.scss';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -15,22 +15,26 @@ const Modal = ({ isOpen, onClose, selectedCard }: ProjectModalProps) => {
     <div>
       {isOpen && (
         <div
-          className={`modal-overlay ${isOpen ? 'open' : ''}`}
+          className={`${styles.ModalOverlay} ${isOpen ? 'Open' : 'Close'}`}
           onClick={onClose}
         >
-          <div className="modal-project" onClick={e => e.stopPropagation()}>
-            <div className="close-button-div">
+          <div
+            className={styles.ModalProject}
+            onClick={e => e.stopPropagation()}
+          >
+            <div className={styles.CloseButtonDiv}>
               <button
                 type="button"
                 aria-label="close button"
                 onClick={onClose}
-                className="close-button"
+                className={styles.CloseButton}
               >
                 <IconClose />
               </button>
             </div>
-            <div className="modal-wrapper">
+            <div className={styles.ModalWrapper}>
               <ModalTitle />
+              <ModalContents />
             </div>
           </div>
         </div>

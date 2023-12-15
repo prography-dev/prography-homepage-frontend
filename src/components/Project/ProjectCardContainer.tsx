@@ -1,7 +1,6 @@
-import './ProjectCardContainer.scss';
-
 import ProjectCard from './ProjectCard';
 import { ProjectCardData } from '@/apis/project';
+import styles from './ProjectCardContainer.module.scss';
 
 export interface ProjectCardContainerProps {
   projects: ProjectCardData[];
@@ -18,7 +17,7 @@ const ProjectCardContainer = ({
     onChange(target);
   };
   return (
-    <div className="pjt-card-container">
+    <div className={styles.pjt_card_container}>
       {projects.map((el, idx) => (
         <ProjectCard
           key={idx}
