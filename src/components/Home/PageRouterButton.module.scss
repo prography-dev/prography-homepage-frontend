@@ -1,16 +1,16 @@
 @import '@/styles/fonts.scss';
 @import '@/styles/const.scss';
 
-.pg-router-container {
+.PgRouterContainer {
   display: inline-flex;
   align-items: center;
 }
 
-.pg-router-label {
+.PgRouterLabel {
   @extend .pre_heading_3;
 }
 
-.pg-icon-wrapper {
+.PgIconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,5 +22,5 @@
 }
 
 @media (min-width: 1280px) {
-  @import './PageRouterButton.1280.scss';
+  @import './PageRouterButton_1280.module.scss';
 }

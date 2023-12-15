@@ -1,5 +1,5 @@
-import './PageRouterButton.scss';
 import Link from 'next/link';
+import styles from './PageRouterButton.module.scss';
 import IconRight from '../common/icon/IconRight';
 
 interface ButtonProps {
@@ -11,9 +11,9 @@ const PageRouterButton: React.FC<ButtonProps> = props => {
   const { label, href } = props;
 
   return (
-    <Link href={href} className="pg-router-container">
-      <span className="pg-router-label white">{label}</span>
-      <div className="pg-icon-wrapper">
+    <Link href={href} className={styles.PgRouterContainer}>
+      <span className={styles.PgRouterLabel}>{label}</span>
+      <div className={styles.PgIconWrapper}>
         <IconRight size={16} />
       </div>
     </Link>
