@@ -1,0 +1,11 @@
+.ContentsWrapper {
+  width: 100%;
+  margin: 28px 0 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+@media (min-width: 1280px) {
+  @import './ModalContents_1280.module.scss';
+}
