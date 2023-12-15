@@ -15,3 +15,11 @@
     @include font-style($sf_pro, 400, 24px, 32px, 0px);
   }
 }
+
+.sf_bd_to_c1 {
+  @include font-style($sf_pro, 400, 14px, 20px, 0px);
+
+  @media (min-width: 1280px) {
+    @include font-style($sf_pro, 400, 16px, 24px, 0px);
+  }
+}

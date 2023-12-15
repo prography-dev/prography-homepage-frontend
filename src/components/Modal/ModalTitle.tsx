@@ -18,9 +18,9 @@ const ModalTitle = () => {
         </div>
       </div>
       <div className="tag-div">
-        <StackTag label="JAVA" font="sf_caption" />
-        <StackTag label="JAVA" font="sf_caption" />
-        <StackTag label="JAVA" font="sf_caption" />
+        <StackTag label="JAVA" font="sf_bd_to_c1" />
+        <StackTag label="JAVA" font="sf_bd_to_c1" />
+        <StackTag label="JAVA" font="sf_bd_to_c1" />
       </div>
     </div>
   );
