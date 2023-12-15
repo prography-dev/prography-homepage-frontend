@@ -23,3 +23,11 @@
     @include font-style($sf_pro, 400, 16px, 24px, 0px);
   }
 }
+
+.pre_h6_to_h5 {
+  @include font-style($pretendard, 400, 16px, 24px, -0.25px);
+
+  @media (min-width: 1280px) {
+    @include font-style($pretendard, 700, 20px, 32px, -0.25px);
+  }
+}

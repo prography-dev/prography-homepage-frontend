@@ -1,5 +1,6 @@
 import { IconClose } from '../common/icon';
 import ModalContents from './ModalContents';
+import ModalCrew from './ModalCrew';
 import ModalTitle from './ModalTitle';
 import styles from './Modal.module.scss';
 
@@ -35,6 +36,7 @@ const Modal = ({ isOpen, onClose, selectedCard }: ProjectModalProps) => {
             <div className={styles.ModalWrapper}>
               <ModalTitle />
               <ModalContents />
+              <ModalCrew />
             </div>
           </div>
         </div>

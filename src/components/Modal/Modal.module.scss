@@ -17,6 +17,7 @@
   height: 100%;
   z-index: 100;
   background-color: rgba($black, 0.5);
+  overflow-y: auto;
 
   .Open {
     opacity: 1;
@@ -31,12 +32,10 @@
 
   .ModalProject {
     background-color: $gray900;
-    border-radius: 8px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     width: 100%;
-    height: calc(100vh - 80px);
     margin-top: 80px;
-    overflow: hidden;
-    border-radius: 30px;
 
     .CloseButtonDiv {
       display: flex;
