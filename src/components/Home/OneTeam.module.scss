@@ -1,16 +1,16 @@
 @import '@/styles/fonts.scss';
 
-.pg-team-text {
+.PgTeamText {
   @extend .pre_caption_1;
 }
 
-.pg-team-wrapper {
+.PgTeamWrapper {
   display: flex;
   flex-wrap: wrap;
   margin-top: 40px;
 }
 
-.pg-team {
+.PgTeam {
   @extend .sf_heading_5;
   padding: 8px 16px;
   border-radius: 100px;
@@ -22,5 +22,5 @@
 }
 
 @media (min-width: 1280px) {
-  @import './OneTeam.1280.scss';
+  @import './OneTeam_1280.module.scss';
 }
