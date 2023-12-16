@@ -1,0 +1,11 @@
+<<<<<<< HEAD:src/components/Project/ProjectCardContainer.module.scss
+.PjtCardContainer {
+=======
+.pjt-card-container {
+>>>>>>> parent of 5be6d60 (🔨 scss module 추가....):src/components/Project/ProjectCardContainer.scss
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // grid-template-columns: repeat(auto-fill, minmax(30%, auto));
+  gap: 28px 16px;
+  margin-bottom: 70px;
+}

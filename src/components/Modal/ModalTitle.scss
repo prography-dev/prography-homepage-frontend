@@ -1,23 +1,23 @@
-.TitleWrapper {
+.title-wrapper {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
-.Contents {
+.contents {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.TextDiv {
+.text-div {
   min-width: 353px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.Icons {
+.icons {
   :first-child {
     margin-right: 8px;
   }
@@ -28,12 +28,12 @@
   }
 }
 
-.TagDiv {
+.tag-div {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
 @media (min-width: 1280px) {
-  @import './ModalTitle_1280.module.scss';
+  @import './ModalTitle.1280.scss';
 }

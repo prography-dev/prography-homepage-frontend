@@ -9,7 +9,7 @@
   }
 }
 
-.ModalOverlay {
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,32 +17,32 @@
   height: 100%;
   z-index: 100;
   background-color: rgba($black, 0.5);
+<<<<<<< HEAD:src/components/Modal/Modal.module.scss
   overflow-y: auto;
+=======
+  opacity: 0;
+  visibility: hidden;
+>>>>>>> parent of 5be6d60 (🔨 scss module 추가....):src/components/Modal/Modal.scss
 
-  .Open {
+  &.open {
     opacity: 1;
     visibility: visible;
     animation: slideUp 0.15s ease-in-out;
   }
 
-  .Close {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .ModalProject {
+  .modal-project {
     background-color: $gray900;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     width: 100%;
     margin-top: 80px;
 
-    .CloseButtonDiv {
+    .close-button-div {
       display: flex;
       justify-content: flex-end;
       width: 100%;
 
-      .CloseButton {
+      .close-button {
         all: unset;
         cursor: pointer;
         width: 58px;
@@ -54,7 +54,7 @@
   }
 }
 
-.ModalWrapper {
+.modal-wrapper {
   width: 100%;
   max-width: 1180px;
   padding: 0 20px;
