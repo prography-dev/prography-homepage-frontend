@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Button from '../common/button/Button';
 import styles from './ModalCrew.module.scss';
 
 const ModalCrew = () => {
@@ -95,6 +96,13 @@ const ModalCrew = () => {
           <div className={`${styles.CrewPart} pre_h6_to_h5 gray400`}>
             Designer
           </div>
+        </div>
+        <div className={styles.ProjectContact}>
+          <div className="pre_c1_to_b2">
+            위 프로젝트를 응원하고 싶거나
+            <br />더 알고 싶다면 이메일을 보내주세요.
+          </div>
+          <Button buttonSize="56">프로젝트 문의</Button>
         </div>
       </div>
     </div>

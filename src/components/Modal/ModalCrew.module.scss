@@ -38,6 +38,19 @@
   font-weight: 700;
 }
 
+.ProjectContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
+  background-color: $gray800;
+  border-radius: 32px;
+  padding: 32px 50px;
+  margin-top: 12px;
+}
+
 @media (min-width: 1280px) {
   @import './ModalCrew_1280.module.scss';
 }

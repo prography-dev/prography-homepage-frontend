@@ -31,3 +31,11 @@
     @include font-style($pretendard, 700, 20px, 32px, -0.25px);
   }
 }
+
+.pre_c1_to_b2 {
+  @include font-style($pretendard, 400, 16px, 24px, -0.25px);
+
+  @media (min-width: 1280px) {
+    @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+  }
+}
