@@ -1,4 +1,4 @@
-import './ProjectCardContainer.scss';
+import styles from './ProjectCardContainer.module.scss';
 
 import ProjectCard from './ProjectCard';
 import { ProjectCardData } from '@/apis/project';
@@ -18,11 +18,7 @@ const ProjectCardContainer = ({
     onChange(target);
   };
   return (
-<<<<<<< HEAD
     <div className={styles.PjtCardContainer}>
-=======
-    <div className="pjt-card-container">
->>>>>>> parent of 5be6d60 (🔨 scss module 추가....)
       {projects.map((el, idx) => (
         <ProjectCard
           key={idx}

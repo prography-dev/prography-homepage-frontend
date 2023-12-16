@@ -17,12 +17,7 @@
   height: 100%;
   z-index: 100;
   background-color: rgba($black, 0.5);
-<<<<<<< HEAD:src/components/Modal/Modal.module.scss
   overflow-y: auto;
-=======
-  opacity: 0;
-  visibility: hidden;
->>>>>>> parent of 5be6d60 (🔨 scss module 추가....):src/components/Modal/Modal.scss
 
   &.open {
     opacity: 1;

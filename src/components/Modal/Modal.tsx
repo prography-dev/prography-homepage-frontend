@@ -1,11 +1,8 @@
 import './Modal.scss';
 
 import { IconClose } from '../common/icon';
-<<<<<<< HEAD
 import ModalContents from './ModalContents';
 import ModalCrew from './ModalCrew';
-=======
->>>>>>> parent of 5be6d60 (🔨 scss module 추가....)
 import ModalTitle from './ModalTitle';
 
 interface ProjectModalProps {
@@ -36,11 +33,8 @@ const Modal = ({ isOpen, onClose, selectedCard }: ProjectModalProps) => {
             </div>
             <div className="modal-wrapper">
               <ModalTitle />
-<<<<<<< HEAD
               <ModalContents />
               <ModalCrew />
-=======
->>>>>>> parent of 5be6d60 (🔨 scss module 추가....)
             </div>
           </div>
         </div>

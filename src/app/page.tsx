@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import styles from './page.module.scss';
-
 import Typo from '@/components/Home/Typo';
 import About from '@/components/Home/About';
 import OneTeam from '@/components/Home/OneTeam';
