@@ -1,0 +1,12 @@
+@import '@/styles/const.scss';
+
+.PgHomeProjectImage {
+  width: 345px;
+  height: 430px;
+}
+
+.PgHomeProjectText {
+  .PgHomeProjectTitle {
+    @include font-style($sf_pro, 700, 20px, 32px, 0px);
+  }
+}

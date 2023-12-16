@@ -6,6 +6,7 @@ import Typo from '@/components/Home/Typo';
 import About from '@/components/Home/About';
 import OneTeam from '@/components/Home/OneTeam';
 import Schedule from '@/components/Home/Schedule';
+import Project from '@/components/Home/Project';
 import PageRouterButton from '@/components/Home/PageRouterButton';
 
 import Button from '@/components/common/button/Button';
@@ -18,28 +19,31 @@ export default function Home() {
   };
 
   return (
-    <CommonWrapper>
-      <div className={styles.PgTypoContainer}>
-        <Typo />
-      </div>
-      <div className={styles.PgApplyButtonContainer}>
-        <Button buttonSize="56" onClick={handleApplyButton}>
-          9기 지원
-        </Button>
-      </div>
-      <div className={styles.PgAboutButtonContainer}>
-        <PageRouterButton label="About" href="/about" />
-      </div>
-      <About />
-      <div className={styles.PgTeamButtonContainer}>
-        <PageRouterButton label="One team" href="/about" />
-      </div>
-      <OneTeam />
-      <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
-      <Schedule />
-      <div className={styles.PgProjectButtonContainer}>
-        <PageRouterButton label="Project" href="/project" />
-      </div>
+    <>
+      <CommonWrapper>
+        <div className={styles.PgTypoContainer}>
+          <Typo />
+        </div>
+        <div className={styles.PgApplyButtonContainer}>
+          <Button buttonSize="56" onClick={handleApplyButton}>
+            9기 지원
+          </Button>
+        </div>
+        <div className={styles.PgAboutButtonContainer}>
+          <PageRouterButton label="About" href="/about" />
+        </div>
+        <About />
+        <div className={styles.PgTeamButtonContainer}>
+          <PageRouterButton label="One team" href="/about" />
+        </div>
+        <OneTeam />
+        <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
+        <Schedule />
+        <div className={styles.PgProjectButtonContainer}>
+          <PageRouterButton label="Project" href="/project" />
+        </div>
+      </CommonWrapper>
+      <Project />
       <div>
         {/* <div className="sf_display_1">Hello! prography-hompage</div> */}
         <Link href="/test">공통컴포넌트 보러 가기</Link>
@@ -53,6 +57,6 @@ export default function Home() {
         <div className="sf_heading_2 red600">Hello! prography-hompage</div>
         <Link href="/test">공통컴포넌트 보러 가기</Link>
       </div>
-    </CommonWrapper>
+    </>
   );
 }

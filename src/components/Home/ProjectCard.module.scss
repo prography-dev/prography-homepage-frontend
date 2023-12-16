@@ -1,0 +1,29 @@
+@import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
+
+.PgHomeProjectWrapper {
+  width: 100%;
+}
+
+.PgHomeProjectImage {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.PgHomeProjectText {
+  margin-top: 16px;
+
+  .PgHomeProjectTitle {
+    @extend .sf_heading_6;
+  }
+
+  .PgHomeProjectGeneration {
+    @extend .sf_caption_1;
+    color: $gray400;
+    margin-left: 4px;
+  }
+}
+
+@media (min-width: 1280px) {
+  @import './ProjectCard_1280.module.scss';
+}
