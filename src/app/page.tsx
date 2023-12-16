@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import styles from './page.module.scss';
+
 import Typo from '@/components/Home/Typo';
 import About from '@/components/Home/About';
 import OneTeam from '@/components/Home/OneTeam';
@@ -44,19 +44,6 @@ export default function Home() {
         </div>
       </CommonWrapper>
       <Project />
-      <div>
-        {/* <div className="sf_display_1">Hello! prography-hompage</div> */}
-        <Link href="/test">공통컴포넌트 보러 가기</Link>
-        <div style={{ display: 'block', background: 'black', padding: '30px' }}>
-          <Button>test</Button>
-          <Button disabled>test</Button>
-          <Button buttonSize="56">test</Button>
-          <Button buttonSize="48">test</Button>
-        </div>
-        <Link href="/project">프로젝트</Link>
-        <div className="sf_heading_2 red600">Hello! prography-hompage</div>
-        <Link href="/test">공통컴포넌트 보러 가기</Link>
-      </div>
     </>
   );
 }
