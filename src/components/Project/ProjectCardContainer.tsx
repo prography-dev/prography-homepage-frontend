@@ -17,7 +17,7 @@ const ProjectCardContainer = ({
     onChange(target);
   };
   return (
-    <div className={styles.pjt_card_container}>
+    <div className={styles.PjtCardContainer}>
       {projects.map((el, idx) => (
         <ProjectCard
           key={idx}
