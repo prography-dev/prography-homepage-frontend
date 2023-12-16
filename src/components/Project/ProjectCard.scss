@@ -57,14 +57,7 @@
   transition: transform 0.3s;
   border: none;
 
-  .skill-tag {
+  .stack-tag {
     background-color: $gray700;
   }
-}
-
-.skill-tag {
-  border-radius: 100px;
-  padding: 8px 12px;
-  background-color: $gray800;
-  width: fit-content;
 }

@@ -1,6 +1,8 @@
 import './Modal.scss';
 
 import { IconClose } from '../common/icon';
+import ModalContents from './ModalContents';
+import ModalCrew from './ModalCrew';
 import ModalTitle from './ModalTitle';
 
 interface ProjectModalProps {
@@ -31,6 +33,8 @@ const Modal = ({ isOpen, onClose, selectedCard }: ProjectModalProps) => {
             </div>
             <div className="modal-wrapper">
               <ModalTitle />
+              <ModalContents />
+              <ModalCrew />
             </div>
           </div>
         </div>

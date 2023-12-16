@@ -1,1 +1,39 @@
-@import '@/styles/fonts.scss';
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text-div {
+  min-width: 353px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.icons {
+  :first-child {
+    margin-right: 8px;
+  }
+
+  > svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.tag-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (min-width: 1280px) {
+  @import './ModalTitle.1280.scss';
+}

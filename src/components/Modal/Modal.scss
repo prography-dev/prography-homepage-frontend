@@ -17,8 +17,7 @@
   height: 100%;
   z-index: 100;
   background-color: rgba($black, 0.5);
-  opacity: 0;
-  visibility: hidden;
+  overflow-y: auto;
 
   &.open {
     opacity: 1;
@@ -28,12 +27,10 @@
 
   .modal-project {
     background-color: $gray900;
-    border-radius: 8px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     width: 100%;
-    height: calc(100vh - 80px);
     margin-top: 80px;
-    overflow: hidden;
-    border-radius: 30px;
 
     .close-button-div {
       display: flex;
