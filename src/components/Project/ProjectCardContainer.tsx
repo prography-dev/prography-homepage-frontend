@@ -1,7 +1,7 @@
-import styles from './ProjectCardContainer.module.scss';
-
+import React from 'react';
 import ProjectCard from './ProjectCard';
 import { ProjectCardData } from '@/apis/project';
+import styles from './ProjectCardContainer.module.scss';
 
 export interface ProjectCardContainerProps {
   projects: ProjectCardData[];
@@ -17,6 +17,7 @@ const ProjectCardContainer = ({
   const selectedCard = (target: string) => {
     onChange(target);
   };
+
   return (
     <div className={styles.PjtCardContainer}>
       {projects.map((el, idx) => (
