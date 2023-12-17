@@ -3,16 +3,18 @@
 import './page.scss';
 
 import React, { useState } from 'react';
+import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
 import Modal from '@/components/Modal/Modal';
-import { PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 import ProjectCardContainer from '@/components/Project/ProjectCardContainer';
+import { ProjectCardData } from '@/apis/project';
 
 const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState('');
+  const [projectDetail, setProjectDetail] =
+    useState<ProjectCardData>(EMPTY_DATA);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -23,7 +25,8 @@ const Page = () => {
   };
 
   const onSelectCard = (target: string) => {
-    setSelectedCard(target);
+    const projectIdx = PROJECT_DATA.findIndex(el => el.title === target);
+    setProjectDetail(PROJECT_DATA[projectIdx]);
   };
 
   return (
@@ -34,15 +37,11 @@ const Page = () => {
       </div>
       <ProjectCardContainer
         projects={PROJECT_DATA}
-        onChange={e => onSelectCard(e)}
+        onChange={onSelectCard}
         onClick={openModal}
       />
 
-      <Modal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        selectedCard={selectedCard}
-      />
+      <Modal isOpen={isModalOpen} onClose={closeModal} data={projectDetail} />
       <div className="arrow-icon-div">
         <Icon80RoundButton />
       </div>

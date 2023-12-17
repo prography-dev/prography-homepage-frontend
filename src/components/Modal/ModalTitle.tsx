@@ -1,15 +1,20 @@
 import { IconBehance, IconInstagram } from '../common/icon';
 
+import { ProjectCardData } from '@/apis/project';
 import StackTag from '../common/stackTag/StackTag';
 import styles from './ModalTitle.module.scss';
 
-const ModalTitle = () => {
+const ModalTitle = ({
+  generation,
+  title,
+  stacks,
+}: Pick<ProjectCardData, 'generation' | 'title' | 'stacks'>) => {
   return (
     <div className={styles.TitleWrapper}>
       <div className={styles.Contents}>
         <div className={styles.TextDiv}>
-          <div className="sf_c1_to_b1 gray400">9th</div>
-          <div className="sf_h3_to_h1">FREITAG</div>
+          <div className="sf_c1_to_b1 gray400">{generation}th</div>
+          <div className="sf_h3_to_h1">{title}</div>
         </div>
         <div className={styles.Icons}>
           <IconInstagram />
@@ -17,9 +22,9 @@ const ModalTitle = () => {
         </div>
       </div>
       <div className={styles.TagDiv}>
-        <StackTag label="JAVA" font="sf_bd_to_c1" />
-        <StackTag label="JAVA" font="sf_bd_to_c1" />
-        <StackTag label="JAVA" font="sf_bd_to_c1" />
+        {stacks.map((el, idx) => (
+          <StackTag key={idx} label={el} font="sf_bd_to_c1" />
+        ))}
       </div>
     </div>
   );
