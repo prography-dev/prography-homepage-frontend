@@ -16,6 +16,20 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           crossOrigin=""
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
         />
+        <link rel="icon" href="/assets/favicon.ico" />
+        <meta
+          name="description"
+          content="디자이너와 개발자가 함께 즐겁게 성장하는 커뮤니티, Prography"
+        />
+        <meta property="og:locale" content="ko_KR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="프로그라피" />
+        <meta
+          property="og:description"
+          content="디자이너와 개발자가 함께 즐겁게 성장하는 커뮤니티, Prography"
+        />
+        <meta property="og:title" content="프로그라피" />
+        <title>Prography</title>
       </head>
       <body>
         <Header />
