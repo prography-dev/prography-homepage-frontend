@@ -1,8 +1,8 @@
 @import '@/styles/const.scss';
 
-.card-container {
-  max-width: 370px;
-  max-height: 606px;
+.CardContainer {
+  width: 370px;
+  height: 606px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,53 +11,52 @@
   border-radius: 32px;
   padding: 12px 12px 24px;
 
-  .image-container {
+  .ImageContainer {
     position: relative;
-    width: 345px;
+    width: 100%;
     height: 430px;
     border-radius: 20px;
     overflow: hidden;
   }
 
-  .text-container {
+  .TextContainer {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 346px;
-    max-height: 124px;
     padding: 0px 8px;
   }
 
-  .title-div {
+  .TitleDiv {
     display: flex;
     gap: 4px;
 
-    .title {
+    .Title {
       max-width: 298px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    .nth {
+    .Nth {
       margin-top: 5px;
     }
   }
 
-  .tag-div {
+  .TagDiv {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
+    flex: 1;
   }
 }
-.card-container:hover {
+.CardContainer:hover {
   cursor: pointer;
   transform: translateY(-20px);
   background-color: $gray800;
   transition: transform 0.3s;
   border: none;
 
-  .stack-tag {
+  .StackTag {
     background-color: $gray700;
   }
 }

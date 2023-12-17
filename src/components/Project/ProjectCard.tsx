@@ -1,10 +1,9 @@
 'use client';
 
-import './ProjectCard.scss';
-
 import Image from 'next/image';
 import { ProjectCardData } from '@/apis/project';
 import StackTag from '../common/stackTag/StackTag';
+import styles from './ProjectCard.module.scss';
 
 export interface ProjectProps {
   project: Pick<
@@ -23,8 +22,12 @@ const ProjectCard = ({ project, onChange, onClick }: ProjectProps) => {
   };
 
   return (
-    <div className="card-container" id={project.title} onClick={onClickCard}>
-      <div className="image-container">
+    <div
+      className={styles.CardContainer}
+      id={project.title}
+      onClick={onClickCard}
+    >
+      <div className={styles.ImageContainer}>
         <Image
           src={`${project.thumbnailUrl}`}
           alt="thumbnail"
@@ -32,14 +35,16 @@ const ProjectCard = ({ project, onChange, onClick }: ProjectProps) => {
           objectFit="cover"
         />
       </div>
-      <div className="text-container">
-        <div className="title-div">
-          <span className="sf_heading_5 title">{project.title}</span>
-          <span className="sf_caption_1 gray400 nth">
+      <div className={styles.TextContainer}>
+        <div className={styles.TitleDiv}>
+          <span className={`${styles.Title} sf_heading_5`}>
+            {project.title}
+          </span>
+          <span className={`${styles.Nth} sf_caption_1 gray400`}>
             {project.generation}th
           </span>
         </div>
-        <div className="tag-div">
+        <div className={styles.TagDiv}>
           {project.stacks.map((el, idx) => (
             <StackTag key={idx} label={el} font="sf_badge" />
           ))}

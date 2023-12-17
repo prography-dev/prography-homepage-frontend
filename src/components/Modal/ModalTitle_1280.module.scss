@@ -1,21 +1,21 @@
-.title-wrapper {
+.TitleWrapper {
   gap: 16px;
 }
 
-.contents {
+.Contents {
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
 }
 
-.text-div {
+.TextDiv {
   width: 720px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.icons {
+.Icons {
   :first-child {
     margin-right: 16px;
   }
