@@ -2,7 +2,7 @@
 
 @keyframes slideUp {
   from {
-    transform: translateY(20%);
+    transform: translateY(50%);
   }
   to {
     transform: translateY(0);
@@ -19,15 +19,20 @@
   background-color: rgba($black, 0.5);
   overflow-y: auto;
 
-  .Open {
+  &.Open {
     opacity: 1;
     visibility: visible;
-    animation: slideUp 0.15s ease-in-out;
+    animation: slideUp 0.2s ease-in-out;
   }
 
   .Close {
     opacity: 0;
     visibility: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
   }
 
   .ModalProject {

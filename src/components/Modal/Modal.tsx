@@ -4,14 +4,24 @@ import ModalCrew from './ModalCrew';
 import ModalTitle from './ModalTitle';
 import { ProjectCardData } from '@/apis/project';
 import styles from './Modal.module.scss';
+import ViewOtherPjt from './ViewOtherPjt';
 
 interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
   data: ProjectCardData;
+  onClickPjtInModal: (target: string) => void;
 }
 
-const Modal = ({ isOpen, onClose, data }: ProjectModalProps) => {
+const Modal = ({
+  isOpen,
+  onClose,
+  data,
+  onClickPjtInModal,
+}: ProjectModalProps) => {
+  const onSelectOtherPjt = (target: string) => {
+    onClickPjtInModal(target);
+  };
   return (
     <div>
       {isOpen && (
@@ -46,6 +56,11 @@ const Modal = ({ isOpen, onClose, data }: ProjectModalProps) => {
                 imageUrl={data.imageUrl}
               />
               <ModalCrew users={data.users} />
+              <ViewOtherPjt
+                currentTitle={data.title}
+                onSelectOtherPjt={onSelectOtherPjt}
+                onClick={onClose}
+              />
             </div>
           </div>
         </div>

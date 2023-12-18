@@ -1,0 +1,19 @@
+.OtherPjtWrapper {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+
+  > div:nth-child(2) {
+    margin: 24px 0 20px;
+    row-gap: 20px;
+  }
+}
+
+.ArrowIconDiv {
+  text-align: center;
+  cursor: pointer;
+}
+
+.Hidden {
+  display: none;
+}

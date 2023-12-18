@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 import { isPcDevice, isTabletDevice } from '@/utils/device';
 
@@ -22,6 +22,7 @@ const Page = () => {
   const [projectDetail, setProjectDetail] =
     useState<ProjectCardData>(EMPTY_DATA);
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentTitle, setCurrentTitle] = useState('');
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -35,9 +36,22 @@ const Page = () => {
     const projectIdx = PROJECT_DATA.findIndex(el => el.title === target);
     setProjectDetail(PROJECT_DATA[projectIdx]);
   };
+
   const handlePageChange = () => {
     setCurrentPage(currentPage + 1);
   };
+
+  const onClickPjtInModal = (target: string) => {
+    setCurrentTitle(target);
+  };
+
+  useEffect(() => {
+    if (currentTitle === '') return;
+
+    const projectIdx = PROJECT_DATA.findIndex(el => el.title === currentTitle);
+    setProjectDetail(PROJECT_DATA[projectIdx]);
+    setIsModalOpen(true);
+  }, [currentTitle]);
 
   let pagenationCount: number;
   if (isPcDevice()) {
@@ -62,7 +76,12 @@ const Page = () => {
         onClick={openModal}
       />
 
-      <Modal isOpen={isModalOpen} onClose={closeModal} data={projectDetail} />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        data={projectDetail}
+        onClickPjtInModal={onClickPjtInModal}
+      />
       <div
         className={`${styles.ArrowIconDiv} ${
           isAllProjects ? styles.Hidden : ''
