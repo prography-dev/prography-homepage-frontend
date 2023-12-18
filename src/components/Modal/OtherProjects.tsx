@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import ProjectCardContainer from '../Project/ProjectCardContainer';
-import styles from './ViewOtherPjt.module.scss';
+import styles from './OtherProjects.module.scss';
 import { PROJECT_DATA } from '../Project/PROJECT_DATA';
 import { ProjectCardData } from '@/apis/project';
 import Icon80RoundButton from '../common/icon/Icon80RoundButton';
@@ -14,17 +14,17 @@ const itemsPerPage = {
   mobile: 4,
 };
 
-interface ViewOtherPjt {
+interface OtherProjectsProps {
   currentTitle: string;
   onSelectOtherPjt: (selectedNewPjt: string) => void;
   onClick: () => void;
 }
 
-const ViewOtherPjt = ({
+const OtherProjects = ({
   currentTitle,
   onSelectOtherPjt,
   onClick,
-}: ViewOtherPjt) => {
+}: OtherProjectsProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [projectData, setProjectData] =
     useState<ProjectCardData[]>(PROJECT_DATA);
@@ -80,4 +80,4 @@ const ViewOtherPjt = ({
   );
 };
 
-export default ViewOtherPjt;
+export default OtherProjects;

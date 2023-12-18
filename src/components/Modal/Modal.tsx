@@ -4,7 +4,7 @@ import ModalCrew from './ModalCrew';
 import ModalTitle from './ModalTitle';
 import { ProjectCardData } from '@/apis/project';
 import styles from './Modal.module.scss';
-import ViewOtherPjt from './ViewOtherPjt';
+import OtherProjects from './OtherProjects';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -56,7 +56,7 @@ const Modal = ({
                 imageUrl={data.imageUrl}
               />
               <ModalCrew users={data.users} />
-              <ViewOtherPjt
+              <OtherProjects
                 currentTitle={data.title}
                 onSelectOtherPjt={onSelectOtherPjt}
                 onClick={onClose}
