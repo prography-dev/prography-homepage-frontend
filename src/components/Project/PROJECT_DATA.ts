@@ -76,7 +76,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 2,
-    title: '둥둥',
+    title: '둥둥1',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -125,7 +125,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 3,
-    title: '둥둥',
+    title: '둥둥2',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -169,7 +169,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 4,
-    title: '둥둥',
+    title: '둥둥3',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -218,7 +218,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 5,
-    title: '둥둥',
+    title: '둥둥4',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -267,7 +267,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 6,
-    title: '둥둥',
+    title: '둥둥5',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -316,7 +316,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 7,
-    title: '둥둥',
+    title: '둥둥6',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -365,7 +365,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 8,
-    title: '둥둥',
+    title: '둥둥7',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -414,7 +414,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 9,
-    title: '둥둥',
+    title: '둥둥8',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -463,7 +463,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 9,
-    title: '둥둥',
+    title: '둥둥9',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -512,7 +512,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 9,
-    title: '둥둥',
+    title: '둥둥10',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -561,7 +561,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 9,
-    title: '둥둥',
+    title: '둥둥11',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
