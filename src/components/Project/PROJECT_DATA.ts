@@ -61,11 +61,6 @@ export const PROJECT_DATA: ProjectCardData[] = [
         name: '강민성',
         part: 'Android',
       },
-      {
-        id: 125,
-        name: '강민성',
-        part: 'Android',
-      },
     ],
     socials: [
       {
@@ -134,6 +129,11 @@ export const PROJECT_DATA: ProjectCardData[] = [
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
     users: [
+      {
+        id: 1,
+        name: '또범우',
+        part: 'Designer',
+      },
       {
         id: 1,
         name: '또범우',
