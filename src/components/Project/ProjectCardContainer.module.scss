@@ -1,7 +1,9 @@
 .PjtCardContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  // grid-template-columns: repeat(auto-fill, minmax(30%, auto));
-  gap: 28px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 30%;
+  column-gap: 15px;
+  row-gap: 28px;
   margin-bottom: 70px;
+  width: 100%;
 }

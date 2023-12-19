@@ -2,14 +2,14 @@
 
 @keyframes slideUp {
   from {
-    transform: translateY(20%);
+    transform: translateY(50%);
   }
   to {
     transform: translateY(0);
   }
 }
 
-.modal-overlay {
+.ModalOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,25 +19,35 @@
   background-color: rgba($black, 0.5);
   overflow-y: auto;
 
-  &.open {
+  &.Open {
     opacity: 1;
     visibility: visible;
-    animation: slideUp 0.15s ease-in-out;
+    animation: slideUp 0.2s ease-in-out;
   }
 
-  .modal-project {
+  .Close {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+
+  .ModalProject {
     background-color: $gray900;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     width: 100%;
     margin-top: 80px;
 
-    .close-button-div {
+    .CloseButtonDiv {
       display: flex;
       justify-content: flex-end;
       width: 100%;
 
-      .close-button {
+      .CloseButton {
         all: unset;
         cursor: pointer;
         width: 58px;
@@ -49,7 +59,7 @@
   }
 }
 
-.modal-wrapper {
+.ModalWrapper {
   width: 100%;
   max-width: 1180px;
   padding: 0 20px;

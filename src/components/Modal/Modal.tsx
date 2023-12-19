@@ -1,40 +1,66 @@
-import './Modal.scss';
-
 import { IconClose } from '../common/icon';
 import ModalContents from './ModalContents';
 import ModalCrew from './ModalCrew';
 import ModalTitle from './ModalTitle';
+import { ProjectCardData } from '@/apis/project';
+import styles from './Modal.module.scss';
+import OtherProjects from './OtherProjects';
 
 interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
-  selectedCard: string;
+  data: ProjectCardData;
+  onClickPjtInModal: (target: string) => void;
 }
 
-const Modal = ({ isOpen, onClose, selectedCard }: ProjectModalProps) => {
-  console.log(selectedCard);
+const Modal = ({
+  isOpen,
+  onClose,
+  data,
+  onClickPjtInModal,
+}: ProjectModalProps) => {
+  const onSelectOtherPjt = (target: string) => {
+    onClickPjtInModal(target);
+  };
   return (
     <div>
       {isOpen && (
         <div
-          className={`modal-overlay ${isOpen ? 'open' : ''}`}
+          className={`${styles.ModalOverlay} ${
+            isOpen ? styles.Open : styles.Close
+          }`}
           onClick={onClose}
         >
-          <div className="modal-project" onClick={e => e.stopPropagation()}>
-            <div className="close-button-div">
+          <div
+            className={styles.ModalProject}
+            onClick={e => e.stopPropagation()}
+          >
+            <div className={styles.CloseButtonDiv}>
               <button
                 type="button"
                 aria-label="close button"
                 onClick={onClose}
-                className="close-button"
+                className={styles.CloseButton}
               >
                 <IconClose />
               </button>
             </div>
-            <div className="modal-wrapper">
-              <ModalTitle />
-              <ModalContents />
-              <ModalCrew />
+            <div className={styles.ModalWrapper}>
+              <ModalTitle
+                generation={data.generation}
+                title={data.title}
+                stacks={data.stacks}
+              />
+              <ModalContents
+                description={data.description}
+                imageUrl={data.imageUrl}
+              />
+              <ModalCrew users={data.users} />
+              <OtherProjects
+                currentTitle={data.title}
+                onSelectOtherPjt={onSelectOtherPjt}
+                onClick={onClose}
+              />
             </div>
           </div>
         </div>
