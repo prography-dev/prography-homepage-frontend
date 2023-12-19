@@ -25,9 +25,9 @@ const Footer = () => {
             alt="behance"
           />
         </div>
-        <div className={`${styles.Contact_Texts} gray400`}>
-          <span className="sf_heading_5">Contact</span>
-          <span className="sf_body_2">prography@gmail.com</span>
+        <div className={`${styles.Contact_Texts}`}>
+          <span className="sf_heading_5 gray400">Contact</span>
+          <span className="sf_body_2 gray400">prography@gmail.com</span>
         </div>
       </div>
       <div className={styles.Line} />
