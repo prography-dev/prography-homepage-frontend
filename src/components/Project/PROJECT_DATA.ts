@@ -27,7 +27,7 @@ export const EMPTY_DATA: ProjectCardData = {
 export const PROJECT_DATA: ProjectCardData[] = [
   {
     id: 1,
-    title: 'I GO BOSS',
+    title: 'I GO BOSS 5 ',
     description: '둥다리당당저녁뭐먹지',
     generation: 8,
     thumbnailUrl:
@@ -120,7 +120,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 3,
-    title: '둥둥2',
+    title: '7인프로젝트',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -132,12 +132,17 @@ export const PROJECT_DATA: ProjectCardData[] = [
       {
         id: 1,
         name: '또범우',
-        part: 'Designer',
+        part: 'Product Owner',
       },
       {
         id: 1,
         name: '또범우',
         part: 'Designer',
+      },
+      {
+        id: 222,
+        name: '또민성',
+        part: 'Product Owner',
       },
       {
         id: 222,
@@ -169,7 +174,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 4,
-    title: '둥둥3',
+    title: '사람8명',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
@@ -178,6 +183,16 @@ export const PROJECT_DATA: ProjectCardData[] = [
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
     users: [
+      {
+        id: 1,
+        name: '또범우',
+        part: 'Designer',
+      },
+      {
+        id: 1,
+        name: '또범우',
+        part: 'Designer',
+      },
       {
         id: 1,
         name: '또범우',
