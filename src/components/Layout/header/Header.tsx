@@ -61,7 +61,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Button buttonSize="48">9기 지원</Button>
+            <Button buttonSize="56">9기 지원</Button>
           </li>
         </ul>
       </div>
