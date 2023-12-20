@@ -1,11 +1,12 @@
 import '@/styles/const.scss';
 
-export type RoundButtonType = {
-  size?: number;
-  arrowColor?: string;
-  circleColor?: string;
-  fill?: string;
-};
+export type RoundButtonType = Partial<{
+  size: number;
+  arrowColor: string;
+  circleColor: string;
+  fill: string;
+  rotate: number;
+}>;
 
 const Icon80RoundButton = ({
   size = 80,
