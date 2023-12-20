@@ -36,6 +36,15 @@
 
 .NumberButtonDiv {
   cursor: pointer;
+
+  > svg:hover {
+    > path {
+      stroke: $gray800;
+    }
+    > circle {
+      fill: white;
+    }
+  }
 }
 
 .NumberButtonDisabled {

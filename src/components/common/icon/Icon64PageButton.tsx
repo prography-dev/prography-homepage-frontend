@@ -1,4 +1,5 @@
 import { RoundButtonType } from './Icon80RoundButton';
+import '@/styles/const.scss';
 
 const Icon64PageButton = ({
   size = 64,

@@ -113,7 +113,9 @@ const OtherProjects = ({
               }`}
               onClick={handlePageCountDown}
             >
-              <Icon64PageButton />
+              <Icon64PageButton
+                arrowColor={currentPage === 1 ? '#47474B' : 'white'}
+              />
             </div>
             {totalPage.map(el => (
               <div
@@ -134,7 +136,12 @@ const OtherProjects = ({
               }`}
               onClick={handlePageCountUp}
             >
-              <Icon64PageButton rotate={180} />
+              <Icon64PageButton
+                rotate={180}
+                arrowColor={
+                  currentPage === lastPageNumber ? '#47474B' : 'white'
+                }
+              />
             </div>
           </div>
         </>
