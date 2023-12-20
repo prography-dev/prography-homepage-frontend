@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
   images: {
     // FIXME(meaningood): 추후 이미지 서버 도메인으로 변경
