@@ -1,7 +1,7 @@
 .PjtCardContainer {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 15px;
+  justify-content: space-between;
   row-gap: 28px;
   margin-bottom: 70px;
   width: 100%;
