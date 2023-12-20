@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.Line} />
-      <div className="pre_heading_6 gray600">
+      <div className="sf_caption_1 gray600">
         © 2024 Prography. ALL RIGHTS RESERVED.
       </div>
     </div>
