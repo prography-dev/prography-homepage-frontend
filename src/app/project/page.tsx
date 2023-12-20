@@ -81,6 +81,7 @@ const Page = () => {
         onClose={closeModal}
         data={projectDetail}
         onClickPjtInModal={onClickPjtInModal}
+        otherProjects={PROJECT_DATA}
       />
       <div
         className={`${styles.ArrowIconDiv} ${

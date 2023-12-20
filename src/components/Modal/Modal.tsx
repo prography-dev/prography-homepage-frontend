@@ -11,6 +11,7 @@ interface ProjectModalProps {
   onClose: () => void;
   data: ProjectCardData;
   onClickPjtInModal: (target: string) => void;
+  otherProjects: ProjectCardData[];
 }
 
 const Modal = ({
@@ -18,6 +19,7 @@ const Modal = ({
   onClose,
   data,
   onClickPjtInModal,
+  otherProjects,
 }: ProjectModalProps) => {
   const onSelectOtherPjt = (target: string) => {
     onClickPjtInModal(target);
@@ -60,6 +62,7 @@ const Modal = ({
                 currentTitle={data.title}
                 onSelectOtherPjt={onSelectOtherPjt}
                 onClick={onClose}
+                otherProjects={otherProjects}
               />
             </div>
           </div>

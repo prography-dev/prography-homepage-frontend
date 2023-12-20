@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import ProjectCardContainer from '../Project/ProjectCardContainer';
 import styles from './OtherProjects.module.scss';
-import { PROJECT_DATA } from '../Project/PROJECT_DATA';
 import { ProjectCardData } from '@/apis/project';
 import Icon80RoundButton from '../common/icon/Icon80RoundButton';
 import { isPcDevice, isTabletDevice } from '@/utils/device';
@@ -18,16 +17,18 @@ interface OtherProjectsProps {
   currentTitle: string;
   onSelectOtherPjt: (selectedNewPjt: string) => void;
   onClick: () => void;
+  otherProjects: ProjectCardData[];
 }
 
 const OtherProjects = ({
   currentTitle,
   onSelectOtherPjt,
   onClick,
+  otherProjects,
 }: OtherProjectsProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [projectData, setProjectData] =
-    useState<ProjectCardData[]>(PROJECT_DATA);
+    useState<ProjectCardData[]>(otherProjects);
 
   const handlePageChange = () => {
     setCurrentPage(currentPage + 1);
@@ -35,12 +36,12 @@ const OtherProjects = ({
 
   // 현재 열려있는 프로젝트 제외, Other Projects 배열
   useEffect(() => {
-    const onCurrentProject = PROJECT_DATA.findIndex(
+    const onCurrentProject = otherProjects.findIndex(
       el => el.title === currentTitle,
     );
     const updatedProjectData = [
-      ...PROJECT_DATA.slice(0, onCurrentProject),
-      ...PROJECT_DATA.slice(onCurrentProject + 1),
+      ...otherProjects.slice(0, onCurrentProject),
+      ...otherProjects.slice(onCurrentProject + 1),
     ];
     setProjectData(updatedProjectData);
   }, []);
