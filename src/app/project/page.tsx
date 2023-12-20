@@ -1,21 +1,28 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 import { isPcDevice, isTabletDevice } from '@/utils/device';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
 import Modal from '@/components/Modal/Modal';
-import ProjectCardContainer from '@/components/Project/ProjectCardContainer';
 import { ProjectCardData } from '@/apis/project';
 import styles from './page.module.scss';
+import usePc from '@/hooks/usePc';
+import useTablet from '@/hooks/useTablet';
 
 const itemsPerPage = {
   pc: 9,
   tablet: 8,
   mobile: 4,
 };
+
+const ProjectCardContainer = dynamic(
+  () => import('@/components/Project/ProjectCardContainer'),
+  { ssr: false },
+);
 
 const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -61,6 +68,20 @@ const Page = () => {
   } else {
     pagenationCount = itemsPerPage.mobile;
   }
+
+  const isChangeTablet = useTablet();
+  const isChangePc = usePc();
+
+  useEffect(() => {
+    if (isChangePc) {
+      pagenationCount = itemsPerPage.pc;
+    } else if (isChangeTablet) {
+      pagenationCount = itemsPerPage.tablet;
+    } else {
+      pagenationCount = itemsPerPage.mobile;
+    }
+    setCurrentPage(1);
+  }, [isChangeTablet, isChangePc]);
 
   const isAllProjects = pagenationCount * currentPage >= 12;
 
