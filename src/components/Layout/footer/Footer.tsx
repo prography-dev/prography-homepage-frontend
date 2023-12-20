@@ -26,8 +26,8 @@ const Footer = () => {
           />
         </div>
         <div className={`${styles.Contact_Texts}`}>
-          <span className="sf_heading_5 gray400">Contact</span>
-          <span className="sf_body_2 gray400">prography@gmail.com</span>
+          <span className="sf_h6_to_h5 gray400">Contact</span>
+          <span className="sf_c1_to_b2 gray400">prography@gmail.com</span>
         </div>
       </div>
       <div className={styles.Line} />

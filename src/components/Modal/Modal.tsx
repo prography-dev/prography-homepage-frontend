@@ -5,6 +5,7 @@ import ModalTitle from './ModalTitle';
 import { ProjectCardData } from '@/apis/project';
 import styles from './Modal.module.scss';
 import OtherProjects from './OtherProjects';
+import Footer from '../Layout/footer/Footer';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -66,6 +67,7 @@ const Modal = ({
               />
             </div>
           </div>
+          <Footer />
         </div>
       )}
     </div>

@@ -39,3 +39,19 @@
     @include font-style($pretendard, 400, 20px, 32px, -0.25px);
   }
 }
+
+.sf_h6_to_h5 {
+  @include font-style($sf_pro, 700, 16px, 24px, 0px);
+
+  @media (min-width: 1280px) {
+    @include font-style($sf_pro, 700, 20px, 32px, 0px);
+  }
+}
+
+.sf_c1_to_b2 {
+  @include font-style($sf_pro, 400, 16px, 24px, 0px);
+
+  @media (min-width: 1280px) {
+    @include font-style($sf_pro, 400, 20px, 32px, 0px);
+  }
+}
