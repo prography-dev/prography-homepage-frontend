@@ -6,6 +6,7 @@ import Link from 'next/link';
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import styles from './page.module.scss';
 import FaqList from '@/components/Contact/FaqList';
+import AsanDonation from '@/components/common/donation/AsanDonation';
 
 const FaqPage = () => {
   return (
@@ -37,6 +38,9 @@ const FaqPage = () => {
 
       <p className="sf_heading_1">FAQ</p>
       <FaqList />
+      <div className={styles.DonationWrapper}>
+        <AsanDonation />
+      </div>
     </CommonWrapper>
   );
 };

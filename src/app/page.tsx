@@ -7,6 +7,7 @@ import About from '@/components/Home/About';
 import OneTeam from '@/components/Home/OneTeam';
 import Schedule from '@/components/Home/Schedule';
 import Project from '@/components/Home/Project';
+import AsanDonation from '@/components/common/donation/AsanDonation';
 import PageRouterButton from '@/components/Home/PageRouterButton';
 
 import Button from '@/components/common/button/Button';
@@ -44,6 +45,11 @@ export default function Home() {
         </div>
       </CommonWrapper>
       <Project />
+      <CommonWrapper>
+        <div className={styles.PgDonationContainer}>
+          <AsanDonation />
+        </div>
+      </CommonWrapper>
     </>
   );
 }

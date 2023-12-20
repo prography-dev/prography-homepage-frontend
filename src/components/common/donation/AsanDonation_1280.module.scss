@@ -1,0 +1,17 @@
+@import '@/styles/fonts.scss';
+
+.BreakPoint {
+  display: none;
+}
+
+.PgDonationWrapper {
+  .PgDonationLogo {
+    width: 295px;
+    height: 60px;
+  }
+  .PgDonationDescription {
+    @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+    margin-top: 32px;
+    color: $gray300;
+  }
+}
