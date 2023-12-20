@@ -42,7 +42,7 @@
   height: 100%;
   margin-top: 80px;
   overflow-y: auto;
-  padding-bottom: 80px;
+  padding-bottom: 92px;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -78,7 +78,6 @@
 .ModalWrapper {
   width: 100%;
   max-width: 1180px;
-  padding: 0 20px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

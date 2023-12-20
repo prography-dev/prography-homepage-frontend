@@ -1,11 +1,11 @@
+import Footer from '../Layout/footer/Footer';
 import { IconClose } from '../common/icon';
 import ModalContents from './ModalContents';
 import ModalCrew from './ModalCrew';
 import ModalTitle from './ModalTitle';
+import OtherProjects from './OtherProjects';
 import { ProjectCardData } from '@/apis/project';
 import styles from './Modal.module.scss';
-import OtherProjects from './OtherProjects';
-import Footer from '../Layout/footer/Footer';
 
 interface ProjectModalProps {
   isOpen: boolean;
