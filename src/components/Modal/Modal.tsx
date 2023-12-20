@@ -28,12 +28,13 @@ const Modal = ({
   return (
     <div>
       {isOpen && (
-        <div
-          className={`${styles.ModalOverlay} ${
-            isOpen ? styles.Open : styles.Close
-          }`}
-          onClick={onClose}
-        >
+        <>
+          <div
+            className={`${styles.ModalOverlay} ${
+              isOpen ? styles.Open : styles.Close
+            }`}
+            onClick={onClose}
+          />
           <div
             className={styles.ModalProject}
             onClick={e => e.stopPropagation()}
@@ -66,9 +67,9 @@ const Modal = ({
                 otherProjects={otherProjects}
               />
             </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </>
       )}
     </div>
   );

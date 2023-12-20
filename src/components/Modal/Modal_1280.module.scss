@@ -1,0 +1,13 @@
+.CloseButtonDiv {
+  padding-bottom: 22px;
+
+  .CloseButton {
+    width: 58px;
+    height: 58px;
+
+    > svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
