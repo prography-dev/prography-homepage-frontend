@@ -8,7 +8,7 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   function openLink(link: FooterLink) {
     if (typeof window === 'undefined') return '';
-    return window.open(FOOTER_LINK[link]) || '';
+    return window.open(FOOTER_LINK[link]);
   }
 
   return (
