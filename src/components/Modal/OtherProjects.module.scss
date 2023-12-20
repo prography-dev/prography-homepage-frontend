@@ -8,11 +8,10 @@
   > div:nth-child(2) {
     margin: 24px 0 20px;
     row-gap: 20px;
-    > div {
-      flex: 1 1 100%;
 
+    > div {
       @media (min-width: 768px) {
-        flex: 1 1 30%;
+        width: 32%;
       }
     }
   }
