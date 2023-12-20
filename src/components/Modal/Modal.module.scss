@@ -21,7 +21,6 @@
   &.Open {
     opacity: 1;
     visibility: visible;
-    animation: slideUp 0.2s ease-in-out;
   }
 
   .Close {
@@ -31,6 +30,7 @@
 }
 
 .ModalProject {
+  animation: slideUp 0.2s ease-in-out;
   position: fixed;
   top: 0;
   left: 0;
