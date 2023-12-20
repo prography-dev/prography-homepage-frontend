@@ -1,7 +1,16 @@
+'use client';
+
 import Image from 'next/image';
+import { FOOTER_LINK, FooterLink } from './footerLink';
+
 import styles from './Footer.module.scss';
 
 const Footer = () => {
+  function openLink(link: FooterLink) {
+    if (typeof window === 'undefined') return '';
+    return window.open(FOOTER_LINK[link]) || '';
+  }
+
   return (
     <div className={styles.FooterContainer}>
       <div className={styles.Footer_Top}>
@@ -11,18 +20,21 @@ const Footer = () => {
             height={32}
             src="/assets/logos/ic_behance.svg"
             alt="behance"
+            onClick={() => openLink(FooterLink.BEHANCE)}
           />
           <Image
             width={32}
             height={32}
             src="/assets/logos/ic_instagram.svg"
-            alt="behance"
+            alt="instagram"
+            onClick={() => openLink(FooterLink.INSTAGRAM)}
           />
           <Image
             width={32}
             height={32}
             src="/assets/logos/ic_github.svg"
-            alt="behance"
+            alt="github"
+            onClick={() => openLink(FooterLink.GITHUB)}
           />
         </div>
         <div className={`${styles.Contact_Texts}`}>
