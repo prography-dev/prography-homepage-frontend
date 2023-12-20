@@ -1,0 +1,23 @@
+@import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
+
+.BreakPoint {
+  display: block;
+}
+
+.PgDonationWrapper {
+  .PgDonationLogo {
+    display: block;
+    margin: 0 auto;
+  }
+  .PgDonationDescription {
+    @extend .pre_caption_1;
+    margin-top: 16px;
+    text-align: center;
+    color: $gray300;
+  }
+}
+
+@media (min-width: 1280px) {
+  @import './AsanDonation_1280.module.scss';
+}
