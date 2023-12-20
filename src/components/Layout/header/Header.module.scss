@@ -22,6 +22,7 @@
 @mixin common-header-styles {
   @include header-content;
   background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
   z-index: 99;
 }
 
@@ -85,7 +86,6 @@
 }
 
 .MobileMenuContainer {
-  top: 48px;
   height: 100vh;
   padding: 12px;
   width: 100%;
