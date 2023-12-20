@@ -18,13 +18,6 @@ const Footer = () => {
           <Image
             width={32}
             height={32}
-            src="/assets/logos/ic_behance.svg"
-            alt="behance"
-            onClick={() => openLink(FooterLink.BEHANCE)}
-          />
-          <Image
-            width={32}
-            height={32}
             src="/assets/logos/ic_instagram.svg"
             alt="instagram"
             onClick={() => openLink(FooterLink.INSTAGRAM)}
