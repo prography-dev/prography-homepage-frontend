@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Button from '../common/button/Button';
 import { ProjectCardData } from '@/apis/project';
+import { handleEmailClick } from '@/utils/contactToEmail';
 import styles from './ModalCrew.module.scss';
 
 const ModalCrew = ({ users }: Pick<ProjectCardData, 'users'>) => {
@@ -30,7 +31,9 @@ const ModalCrew = ({ users }: Pick<ProjectCardData, 'users'>) => {
             위 프로젝트를 응원하고 싶거나
             <br />더 알고 싶다면 이메일을 보내주세요.
           </div>
-          <Button buttonSize="56">프로젝트 문의</Button>
+          <Button buttonSize="56" onClick={handleEmailClick}>
+            프로젝트 문의
+          </Button>
         </div>
       </div>
     </div>
