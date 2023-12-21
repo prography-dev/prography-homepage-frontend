@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ProjectCardContainer from '../Project/ProjectCardContainer';
-import styles from './OtherProjects.module.scss';
-import { ProjectCardData } from '@/apis/project';
-import Icon80RoundButton from '../common/icon/Icon80RoundButton';
-import { isPhoneDevice } from '@/utils/device';
+
 import Icon64PageButton from '../common/icon/Icon64PageButton';
+import Icon80RoundButton from '../common/icon/Icon80RoundButton';
+import ProjectCardContainer from '../Project/ProjectCardContainer';
+import { ProjectCardData } from '@/apis/project';
+import { isPcDevice } from '@/utils/device';
+import styles from './OtherProjects.module.scss';
+import usePc from '@/hooks/usePc';
 
 const itemsPerPage = {
   pc: 3,
@@ -26,7 +28,7 @@ const OtherProjects = ({
   onClick,
   otherProjects,
 }: OtherProjectsProps) => {
-  const isMobile = isPhoneDevice();
+  const isPc = isPcDevice();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [projectData, setProjectData] =
@@ -34,16 +36,27 @@ const OtherProjects = ({
 
   let pagenationCount: number;
 
-  if (isMobile) {
-    pagenationCount = itemsPerPage.mobile;
-  } else {
+  if (isPc) {
     pagenationCount = itemsPerPage.pc;
+  } else {
+    pagenationCount = itemsPerPage.mobile;
   }
 
   const isAllProjects = pagenationCount * currentPage >= 11;
 
   const lastPageNumber = Math.ceil(otherProjects.length / pagenationCount) ?? 0;
   const totalPage = Array.from({ length: lastPageNumber }, (_, i) => i + 1);
+
+  const isChangePc = usePc();
+
+  useEffect(() => {
+    if (isChangePc) {
+      pagenationCount = itemsPerPage.pc;
+    } else {
+      pagenationCount = itemsPerPage.mobile;
+    }
+    setCurrentPage(1);
+  }, [isChangePc]);
 
   const handlePageCountUp = () => {
     setCurrentPage(currentPage + 1);
@@ -77,24 +90,7 @@ const OtherProjects = ({
     <div className={styles.OtherPjtWrapper}>
       <div className="sf_h3_to_h1">Other projects</div>
 
-      {isMobile ? (
-        <>
-          <ProjectCardContainer
-            projects={projectData.slice(0, pagenationCount * currentPage)}
-            onChange={onSelectCard}
-            onClick={onClick}
-          />
-
-          <div
-            className={`${styles.ArrowIconDiv} ${
-              isAllProjects ? styles.Hidden : ''
-            }`}
-            onClick={handlePageCountUp}
-          >
-            <Icon80RoundButton />
-          </div>
-        </>
-      ) : (
+      {isPc ? (
         <>
           <ProjectCardContainer
             projects={projectData.slice(
@@ -143,6 +139,23 @@ const OtherProjects = ({
                 }
               />
             </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <ProjectCardContainer
+            projects={projectData.slice(0, pagenationCount * currentPage)}
+            onChange={onSelectCard}
+            onClick={onClick}
+          />
+
+          <div
+            className={`${styles.ArrowIconDiv} ${
+              isAllProjects ? styles.Hidden : ''
+            }`}
+            onClick={handlePageCountUp}
+          >
+            <Icon80RoundButton />
           </div>
         </>
       )}
