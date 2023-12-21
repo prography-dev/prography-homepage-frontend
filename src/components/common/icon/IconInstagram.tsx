@@ -2,10 +2,7 @@
 
 import { IconProps } from '.';
 
-const IconInstagram = ({
-  size = 50,
-  color = 'white',
-}: IconProps): JSX.Element => {
+const IconInstagram = ({ size = 50, color = 'white', link }: IconProps) => {
   return (
     <svg
       width={size}
@@ -13,6 +10,7 @@ const IconInstagram = ({
       viewBox="0 0 50 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={() => window.open(link)}
     >
       <circle cx="25" cy="25" r="25" fill={color} />
       <g clipPath="url(#clip0_268_182)">
