@@ -25,13 +25,20 @@
 }
 
 .Icons {
-  > svg {
+  svg {
+    cursor: pointer;
     width: 32px;
     height: 32px;
 
     @media (min-width: 768px) {
       width: 40px;
       height: 40px;
+    }
+  }
+
+  svg:hover {
+    circle {
+      fill: #e1e3ed;
     }
   }
 }
