@@ -6,7 +6,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 160px 0 120px 0;
+  margin: 120px 0 80px;
+
+  @media (min-width: 1280px) {
+    margin: 160px 0 120px;
+  }
 
   .Footer_Top {
     display: flex;
@@ -17,6 +21,10 @@
       display: flex;
       gap: 16px;
       margin-bottom: 16px;
+
+      > img {
+        cursor: pointer;
+      }
     }
 
     .Contact_Texts {

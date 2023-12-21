@@ -1,16 +1,18 @@
+import Footer from '../Layout/footer/Footer';
 import { IconClose } from '../common/icon';
 import ModalContents from './ModalContents';
 import ModalCrew from './ModalCrew';
 import ModalTitle from './ModalTitle';
+import OtherProjects from './OtherProjects';
 import { ProjectCardData } from '@/apis/project';
 import styles from './Modal.module.scss';
-import OtherProjects from './OtherProjects';
 
 interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
   data: ProjectCardData;
   onClickPjtInModal: (target: string) => void;
+  otherProjects: ProjectCardData[];
 }
 
 const Modal = ({
@@ -18,6 +20,7 @@ const Modal = ({
   onClose,
   data,
   onClickPjtInModal,
+  otherProjects,
 }: ProjectModalProps) => {
   const onSelectOtherPjt = (target: string) => {
     onClickPjtInModal(target);
@@ -25,12 +28,13 @@ const Modal = ({
   return (
     <div>
       {isOpen && (
-        <div
-          className={`${styles.ModalOverlay} ${
-            isOpen ? styles.Open : styles.Close
-          }`}
-          onClick={onClose}
-        >
+        <>
+          <div
+            className={`${styles.ModalOverlay} ${
+              isOpen ? styles.Open : styles.Close
+            }`}
+            onClick={onClose}
+          />
           <div
             className={styles.ModalProject}
             onClick={e => e.stopPropagation()}
@@ -60,10 +64,12 @@ const Modal = ({
                 currentTitle={data.title}
                 onSelectOtherPjt={onSelectOtherPjt}
                 onClick={onClose}
+                otherProjects={otherProjects}
               />
             </div>
+            <Footer />
           </div>
-        </div>
+        </>
       )}
     </div>
   );

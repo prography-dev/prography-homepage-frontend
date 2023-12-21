@@ -1,11 +1,20 @@
+@import '@/styles/const.scss';
+
 .OtherPjtWrapper {
   margin-top: 120px;
   display: flex;
   flex-direction: column;
+  padding: 0 20px;
 
   > div:nth-child(2) {
     margin: 24px 0 20px;
     row-gap: 20px;
+
+    > div {
+      @media (min-width: 768px) {
+        width: 32%;
+      }
+    }
   }
 }
 
@@ -16,4 +25,42 @@
 
 .Hidden {
   display: none;
+}
+
+.PagenationDiv {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.NumberButtonDiv {
+  cursor: pointer;
+
+  > svg:hover {
+    > path {
+      stroke: $gray800;
+    }
+    > circle {
+      fill: white;
+    }
+  }
+}
+
+.NumberButtonDisabled {
+  pointer-events: none;
+}
+
+.PageNumber:hover {
+  color: $white;
+  cursor: pointer;
+}
+
+.PageNumberActive {
+  color: $white;
+}
+
+@media (min-width: 768px) {
+  @import './OtherProjects_768.module.scss';
 }

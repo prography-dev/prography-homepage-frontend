@@ -2,12 +2,19 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
+  padding: 0 20px;
 }
 
 .Contents {
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 }
 
 .TextDiv {
@@ -18,13 +25,14 @@
 }
 
 .Icons {
-  :first-child {
-    margin-right: 8px;
-  }
-
   > svg {
     width: 32px;
     height: 32px;
+
+    @media (min-width: 768px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 

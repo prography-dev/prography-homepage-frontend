@@ -1,4 +1,4 @@
-import { IconBehance, IconInstagram } from '../common/icon';
+import { IconInstagram } from '../common/icon';
 
 import { ProjectCardData } from '@/apis/project';
 import StackTag from '../common/stackTag/StackTag';
@@ -18,7 +18,6 @@ const ModalTitle = ({
         </div>
         <div className={styles.Icons}>
           <IconInstagram />
-          <IconBehance />
         </div>
       </div>
       <div className={styles.TagDiv}>

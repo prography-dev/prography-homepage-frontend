@@ -28,7 +28,8 @@ export const PROJECT_DATA: ProjectCardData[] = [
   {
     id: 1,
     title: 'I GO BOSS 5 ',
-    description: '둥다리당당저녁뭐먹지',
+    description:
+      "designed the mobile app for the eco-friendly company FREITAG. I used a simple Figma prototype and After Effects to enhance the project's completeness. The design concept for this project emphasized a casual feel, with an overall use of rounded shapes and pastel tones.  a casual feel, with an overall use of rounded shapes and pastel tones.",
     generation: 8,
     thumbnailUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
@@ -72,7 +73,8 @@ export const PROJECT_DATA: ProjectCardData[] = [
   {
     id: 2,
     title: '둥둥1',
-    description: '나갈까',
+    description:
+      "designed the mobile app for the eco-friendly company FREITAG. I used a simple Figma prototype and After Effects to enhance the project's completeness. The design concept for this project emphasized a casual feel, with an overall use of rounded shapes and pastel tones.  a casual feel, with an overall use of rounded shapes and pastel tones.",
     generation: 7,
     thumbnailUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
