@@ -1,110 +1,119 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
+import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
+import { isPcDevice, isTabletDevice } from '@/utils/device';
 
-const Modal = ({ isOpen, onClose, children }) => {
-  return (
-    <>
-      {isOpen && (
-        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-        <div className="modal-overlay" onClick={onClose}>
-          <div className="modal" onClick={e => e.stopPropagation()}>
-            <button type="button" className="close-button" onClick={onClose}>
-              Close
-            </button>
-            {children}
-          </div>
-        </div>
-      )}
-      <style>{`
-        .modal-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+import CommonWrapper from '@/components/common/layout/CommonWrapper';
+import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
+import Modal from '@/components/Modal/Modal';
+import { ProjectCardData } from '@/apis/project';
+import styles from './page.module.scss';
+import usePc from '@/hooks/usePc';
+import useTablet from '@/hooks/useTablet';
 
-        .modal {
-          background: white;
-          padding: 20px;
-          border-radius: 8px;
-        }
-
-        .close-button {
-          background: #ffcad6;
-          border: none;
-          padding: 8px 16px;
-          cursor: pointer;
-        }
-      `}</style>
-    </>
-  );
+const itemsPerPage = {
+  pc: 9,
+  tablet: 8,
+  mobile: 4,
 };
 
-const Project = () => {
+const ProjectCardContainer = dynamic(
+  () => import('@/components/Project/ProjectCardContainer'),
+  { ssr: false },
+);
+
+const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [prevUrl, setPrevUrl] = useState('');
+  const [projectDetail, setProjectDetail] =
+    useState<ProjectCardData>(EMPTY_DATA);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentTitle, setCurrentTitle] = useState('');
 
   const openModal = () => {
-    // 모달이 열릴 때 현재 URL을 기억
-    setPrevUrl(window.location.href);
-    // 모달을 열고 URL 변경
     setIsModalOpen(true);
-    window.history.pushState(
-      { path: `/project/project-1` },
-      '',
-      `/project/project-1`,
-    );
   };
 
   const closeModal = () => {
-    // 모달을 닫고 이전 URL로 돌아가기
     setIsModalOpen(false);
-    window.history.pushState({ path: prevUrl }, '', prevUrl);
   };
 
-  // 모달이 닫힐 때 이전 URL로 돌아가기 위한 useEffect
+  const onSelectCard = (target: string) => {
+    const projectIdx = PROJECT_DATA.findIndex(el => el.title === target);
+    setProjectDetail(PROJECT_DATA[projectIdx]);
+  };
+
+  const handlePageChange = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const onClickPjtInModal = (target: string) => {
+    setCurrentTitle(target);
+  };
+
   useEffect(() => {
-    const handlePopState = () => {
-      if (isModalOpen) {
-        setIsModalOpen(false);
-      }
-    };
+    if (currentTitle === '') return;
 
-    window.addEventListener('popstate', handlePopState);
+    const projectIdx = PROJECT_DATA.findIndex(el => el.title === currentTitle);
+    setProjectDetail(PROJECT_DATA[projectIdx]);
+    setIsModalOpen(true);
+  }, [currentTitle]);
 
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, [isModalOpen]);
+  let pagenationCount: number;
+  if (isPcDevice()) {
+    pagenationCount = itemsPerPage.pc;
+  } else if (isTabletDevice()) {
+    pagenationCount = itemsPerPage.tablet;
+  } else {
+    pagenationCount = itemsPerPage.mobile;
+  }
+
+  const isChangeTablet = useTablet();
+  const isChangePc = usePc();
+
+  useEffect(() => {
+    if (isChangePc) {
+      pagenationCount = itemsPerPage.pc;
+    } else if (isChangeTablet) {
+      pagenationCount = itemsPerPage.tablet;
+    } else {
+      pagenationCount = itemsPerPage.mobile;
+    }
+    setCurrentPage(1);
+  }, [isChangeTablet, isChangePc]);
+
+  const isAllProjects = pagenationCount * currentPage >= 12;
 
   return (
-    <div style={{ backgroundColor: '#FFCAD6' }}>
-      <h1>Project</h1>
+    <CommonWrapper>
+      <div className={styles.PageTitle}>
+        <div className="sf_heading_1">Project</div>
+        <div className="sf_body_2">12 Experiences in Prography</div>
+      </div>
+      <ProjectCardContainer
+        projects={PROJECT_DATA.slice(0, pagenationCount * currentPage)}
+        onChange={onSelectCard}
+        onClick={openModal}
+      />
 
-      {/* 프로젝트-1 페이지로 이동하는 링크 */}
-      <a href="/project/project-1">project-1</a>
-      <br />
-
-      {/* 모달 열기 버튼 */}
-      <button type="button" onClick={openModal}>
-        Open Modal
-      </button>
-
-      {/* 모달 */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <p>This is the content of the modal.</p>
-        <p>You can put any content or components here.</p>
-      </Modal>
-    </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        data={projectDetail}
+        onClickPjtInModal={onClickPjtInModal}
+        otherProjects={PROJECT_DATA}
+      />
+      <div
+        className={`${styles.ArrowIconDiv} ${
+          isAllProjects ? styles.Hidden : ''
+        }`}
+        onClick={handlePageChange}
+      >
+        <Icon80RoundButton />
+      </div>
+    </CommonWrapper>
   );
 };
 
-export default Project;
+export default Page;

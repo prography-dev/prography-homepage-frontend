@@ -1,0 +1,23 @@
+// swiper css overriding
+.swiper {
+  transition-timing-function: linear !important;
+}
+
+.swiper-wrapper {
+  margin-top: 32px;
+}
+
+.swiper-slide {
+  width: 280px !important;
+  padding-left: 20px;
+}
+
+@media (min-width: 1280px) {
+  .swiper-wrapper {
+    margin-top: 66px;
+  }
+
+  .swiper-slide {
+    width: 345px !important;
+  }
+}

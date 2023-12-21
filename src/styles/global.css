@@ -12,6 +12,8 @@
     Droid Sans,
     Helvetica Neue,
     sans-serif;
+  box-sizing: border-box;
+  color: #fff;
 }
 
 body {

@@ -1,0 +1,20 @@
+@import '@/styles/fonts.scss';
+
+.PgCountupContainer {
+  display: flex;
+}
+
+.PgCountupWrapper {
+  .PgCountupValue {
+    @include font-style($sf_pro, 700, 120px, 136px, 0px);
+  }
+
+  .PgCountupLabel {
+    @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+  }
+
+  &:last-child {
+    margin-top: 0px;
+    margin-left: 100px;
+  }
+}

@@ -1,0 +1,16 @@
+@import '@/styles/fonts.scss';
+
+.PgRouterLabel {
+  @include font-style($sf_pro, 700, 64px, 72px, 0px);
+}
+
+.PgIconWrapper {
+  width: 64px;
+  height: 64px;
+  margin-left: 16px;
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}

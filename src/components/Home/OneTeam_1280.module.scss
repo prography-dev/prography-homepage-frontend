@@ -1,0 +1,14 @@
+@import '@/styles/fonts.scss';
+
+.PgTeamText {
+  @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+}
+
+.PgTeamWrapper {
+  margin-top: 56px;
+}
+
+.PgTeam {
+  padding: 28px 48px;
+  margin: 0px 16px 16px 0px;
+}

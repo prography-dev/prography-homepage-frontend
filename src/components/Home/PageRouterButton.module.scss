@@ -1,0 +1,26 @@
+@import '@/styles/fonts.scss';
+@import '@/styles/const.scss';
+
+.PgRouterContainer {
+  display: inline-flex;
+  align-items: center;
+}
+
+.PgRouterLabel {
+  @extend .pre_heading_3;
+}
+
+.PgIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  border-radius: 100%;
+  border: 1px solid $gray600;
+}
+
+@media (min-width: 1280px) {
+  @import './PageRouterButton_1280.module.scss';
+}

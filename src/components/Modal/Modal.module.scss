@@ -1,0 +1,89 @@
+@import '@/styles/const.scss';
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.ModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba($black, 0.5);
+
+  &.Open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .Close {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.ModalProject {
+  animation: slideUp 0.2s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background-color: $gray900;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+  overflow-y: auto;
+  padding-bottom: 92px;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+}
+
+.CloseButtonDiv {
+  z-index: 200;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: $gray900;
+  padding-bottom: 23px;
+
+  .CloseButton {
+    all: unset;
+    cursor: pointer;
+    width: 41px;
+    height: 41px;
+    display: flex;
+    align-items: flex-end;
+
+    > svg {
+      width: 17.5px;
+      height: 17.5px;
+    }
+  }
+}
+
+.ModalWrapper {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1280px) {
+  @import './Modal_1280.module.scss';
+}

@@ -1,0 +1,68 @@
+@import '@/styles/const.scss';
+
+.CardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid $gray600;
+  border-radius: 32px;
+  padding: 12px 12px 24px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 49%;
+  }
+
+  @media (min-width: 1280px) {
+    width: 32%;
+  }
+
+  .ImageContainer {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .TextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 8px;
+  }
+
+  .TitleDiv {
+    display: flex;
+    gap: 4px;
+
+    .Title {
+      max-width: calc(100% - 54px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .Nth {
+      margin-top: 5px;
+    }
+  }
+
+  .TagDiv {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+}
+.CardContainer:hover {
+  cursor: pointer;
+  transform: translateY(-20px);
+  background-color: $gray800;
+  transition: transform 0.3s;
+  border: none;
+
+  div > div > div {
+    background-color: $gray700;
+  }
+}

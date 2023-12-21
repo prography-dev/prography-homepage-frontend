@@ -1,0 +1,15 @@
+.PageTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 120px 0px 48px;
+}
+
+.ArrowIconDiv {
+  text-align: center;
+  cursor: pointer;
+}
+
+.Hidden {
+  display: none;
+}

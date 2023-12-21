@@ -1,0 +1,23 @@
+.TitleWrapper {
+  gap: 16px;
+}
+
+.Contents {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.TextDiv {
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Icons {
+  > svg {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,22 @@
+@import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
+
+.PgCountupWrapper {
+  .PgCountupValue {
+    @extend .sf_heading_1;
+    color: $white;
+  }
+
+  .PgCountupLabel {
+    @extend .pre_heading_6;
+    color: $white;
+  }
+
+  &:last-child {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  @import './About_1280.module.scss';
+}
