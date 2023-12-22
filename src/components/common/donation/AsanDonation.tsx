@@ -16,7 +16,7 @@ const AsanDonation = () => {
         <div className={styles.BreakPoint} />
         아산나눔재단의 후원을 받고 있습니다.
         <br />
-        열정적인 스타트업들과 네트워킹 프로그램을
+        열정적인 스타트업들과 네트워킹 프로그램을{' '}
         <div className={styles.BreakPoint} />
         진행하고 있어요.
       </div>
