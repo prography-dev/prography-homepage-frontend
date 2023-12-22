@@ -7,11 +7,28 @@ interface ProjectCardProps {
   title: string;
   generation: number;
   thumbnailUrl: string;
+  onChange: (target: string) => void;
+  onClick: () => void;
 }
 
-const ProjectCard = ({ title, generation, thumbnailUrl }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  generation,
+  thumbnailUrl,
+  onChange,
+  onClick,
+}: ProjectCardProps) => {
+  const onClickCard = (e: React.MouseEvent<HTMLDivElement>) => {
+    onChange(e.currentTarget.id);
+    onClick();
+  };
+
   return (
-    <div className={styles.PgHomeProjectWrapper}>
+    <div
+      className={styles.PgHomeProjectWrapper}
+      onClick={onClickCard}
+      id={title}
+    >
       <Image
         className={styles.PgHomeProjectImage}
         width={280}
