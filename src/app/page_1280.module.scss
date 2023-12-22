@@ -9,7 +9,12 @@
   margin-top: 40px;
 
   button {
-    @include button-style(24px, 32px, 24px, 48px !important);
+    @include button-style(
+      24px !important,
+      32px !important,
+      24px !important,
+      48px !important
+    );
   }
 }
 
@@ -18,14 +23,15 @@
 }
 
 .PgTeamButtonContainer {
-  margin: 332px 0px 16px;
+  margin: 330px 0px 16px;
 }
 
 .PgScheduleHead {
   @include font-style($sf_pro, 700, 64px, 72px, 0px);
-  margin: 362px - 16px 0px 16px;
+  margin: 330px 0px 16px;
 }
 
-.PgProjectButtonContainer {
-  margin-top: 406px;
+.PgProjectButtonContainer,
+.PgDonationContainer {
+  margin-top: 330px;
 }
