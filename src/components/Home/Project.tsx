@@ -14,6 +14,8 @@ import usePc from '@/hooks/usePc';
 import ProjectCard from './ProjectCard';
 
 const Project = () => {
+  const MAX_PROJECT_CARD = 9;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [projectDetail, setProjectDetail] =
     useState<ProjectCardData>(EMPTY_DATA);
@@ -62,17 +64,19 @@ const Project = () => {
   return (
     <>
       <Swiper {...swiperOptions} slidesPerView="auto" loop={true}>
-        {PROJECT_DATA.map(({ id, title, generation, thumbnailUrl }, idx) => (
-          <SwiperSlide key={id + idx}>
-            <ProjectCard
-              title={title}
-              generation={generation}
-              thumbnailUrl={thumbnailUrl}
-              onChange={onSelectCard}
-              onClick={openModal}
-            />
-          </SwiperSlide>
-        ))}
+        {PROJECT_DATA.slice(0, MAX_PROJECT_CARD).map(
+          ({ id, title, generation, thumbnailUrl }, idx) => (
+            <SwiperSlide key={id + idx}>
+              <ProjectCard
+                title={title}
+                generation={generation}
+                thumbnailUrl={thumbnailUrl}
+                onChange={onSelectCard}
+                onClick={openModal}
+              />
+            </SwiperSlide>
+          ),
+        )}
       </Swiper>
       <Modal
         isOpen={isModalOpen}
