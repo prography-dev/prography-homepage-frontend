@@ -88,8 +88,8 @@ const Page = () => {
   return (
     <CommonWrapper>
       <div className={styles.PageTitle}>
-        <div className="sf_heading_1">Project</div>
-        <div className="sf_body_2">12 Experiences in Prography</div>
+        <div className="sf_h3_to_h1">Project</div>
+        <div className="sf_c1_to_b2 gray300">12 Experiences in Prography</div>
       </div>
       <ProjectCardContainer
         projects={PROJECT_DATA.slice(0, pagenationCount * currentPage)}
