@@ -1,18 +1,26 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Button from '@/components/common/button/Button';
 import styles from './Header.module.scss';
 import { IconClose, IconMenu } from '@/components/common/icon';
 
 const Header = () => {
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const onClickCategory = (pathname: string) => {
+    setIsMobileMenuOpen(false);
+    router.push(pathname);
+  };
 
   return (
     <header
-      className={styles.HeaderContainer}
-      style={{ position: isMobileMenuOpen ? 'absolute' : 'sticky' }}
+      className={`${styles.HeaderContainer} ${
+        isMobileMenuOpen ? styles.MobileMenuOpen : styles.MobileMenuClose
+      }`}
     >
       <div
         className={
@@ -36,29 +44,23 @@ const Header = () => {
         )}
 
         <ul>
-          <li>
-            <Link
-              href="/about"
-              className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
-            >
-              About
-            </Link>
+          <li
+            className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
+            onClick={() => onClickCategory('/about')}
+          >
+            About
           </li>
-          <li>
-            <Link
-              href="/project"
-              className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
-            >
-              Project
-            </Link>
+          <li
+            className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
+            onClick={() => onClickCategory('/project')}
+          >
+            Project
           </li>
-          <li>
-            <Link
-              href="/contact"
-              className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
-            >
-              Contact
-            </Link>
+          <li
+            className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
+            onClick={() => onClickCategory('/contact')}
+          >
+            Contact
           </li>
           <li>
             <Button buttonSize="56">9기 지원</Button>
