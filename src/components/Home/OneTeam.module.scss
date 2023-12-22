@@ -1,7 +1,9 @@
+@import '@/styles/const.scss';
 @import '@/styles/fonts.scss';
 
 .PgTeamText {
   @extend .pre_caption_1;
+  color: $gray300;
 }
 
 .PgTeamWrapper {
