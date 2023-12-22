@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import debounce from '@/utils/debounce';
 
 export default function usePc() {
   if (typeof window === 'undefined') return false;
@@ -10,7 +11,7 @@ export default function usePc() {
       if (innerWidth < 1280) setIsPc(false);
       else setIsPc(true);
     };
-    window.addEventListener('resize', resizeHandler);
+    window.addEventListener('resize', debounce(resizeHandler, 100));
     () => {
       window.removeEventListener('resize', resizeHandler);
     };
