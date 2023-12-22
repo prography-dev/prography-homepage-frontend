@@ -4,12 +4,12 @@ import './Project.scss';
 import { useState, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 import { ProjectCardData } from '@/apis/project';
 import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 import Modal from '@/components/Modal/Modal';
-import isPcDevice from '@/utils/isPcDevice';
+import usePc from '@/hooks/usePc';
 
 import ProjectCard from './ProjectCard';
 
@@ -47,19 +47,17 @@ const Project = () => {
   const mobileSwiperOptions = {
     speed: 1000,
     spaceBetween: 12,
+    autoplay: false,
   };
   const pcSwiperOptions = {
-    freeMode: true,
     speed: 3000,
     autoplay: {
       delay: 1,
-      waitForTransition: true,
-      stopOnLastSlide: false,
     },
     spaceBetween: 16,
-    modules: [Autoplay, FreeMode],
+    modules: [Autoplay],
   };
-  const swiperOptions = isPcDevice() ? pcSwiperOptions : mobileSwiperOptions;
+  const swiperOptions = usePc() ? pcSwiperOptions : mobileSwiperOptions;
 
   return (
     <>
