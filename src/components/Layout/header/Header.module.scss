@@ -89,6 +89,7 @@
   height: 100vh;
   padding: 12px;
   width: 100%;
+  backdrop-filter: blur(20px);
 
   .HeaderLogo,
   img {
@@ -117,4 +118,13 @@
   @media (min-width: 1280px) {
     display: none;
   }
+}
+
+.MobileMenuOpen {
+  position: absolute;
+}
+
+.MobileMenuClose {
+  position: sticky;
+  backdrop-filter: blur(20px);
 }

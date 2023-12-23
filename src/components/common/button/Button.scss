@@ -39,12 +39,6 @@
       background: $white;
       color: $gray900;
 
-      &:hover {
-        background: linear-gradient(90deg, white, transparent) $red300;
-        transition: background-color 1s;
-        place-content: center;
-      }
-
       &:disabled {
         background: $gray300;
         color: $gray500;
@@ -61,15 +55,33 @@
       background: $red500;
       color: $white;
 
-      &:hover {
-        background: linear-gradient(90deg, $red500, transparent) #ff87a2;
-        transition: background-color 1s;
-        place-content: center;
-      }
-
       &:disabled {
         background: $gray300;
         color: $gray500;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .button {
+    &.SIZE_80,
+    &.SIZE_56 {
+      &.primary {
+        &:hover {
+          background: linear-gradient(90deg, white, transparent) $red300;
+          transition: background-color 1s;
+          place-content: center;
+        }
+      }
+    }
+    &.SIZE_48 {
+      &.primary {
+        &:hover {
+          background: linear-gradient(90deg, $red500, transparent) #ff87a2;
+          transition: background-color 1s;
+          place-content: center;
+        }
       }
     }
   }
