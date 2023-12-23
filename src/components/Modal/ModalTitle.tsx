@@ -20,7 +20,7 @@ const ModalTitle = ({
       <div className={styles.Contents}>
         <div className={styles.TextDiv}>
           <div className="sf_c1_to_b1 gray400">{generation}th</div>
-          <div className="sf_h3_to_h1">{title}</div>
+          <div className={`${styles.Title} sf_h3_to_h1`}>{title}</div>
         </div>
         <div className={styles.Icons}>
           {/* TODO(meainigood): instagram 없을 때 대응 필요 */}

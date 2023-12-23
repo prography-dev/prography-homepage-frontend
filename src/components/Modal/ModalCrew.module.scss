@@ -1,7 +1,6 @@
 @import '@/styles/fonts.scss';
 
 .CrewWrapper {
-  width: 100%;
   padding: 0 20px;
 }
 
@@ -9,7 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px 116px;
-  margin: 20px 0 32px;
+  margin-top: 24px;
 }
 
 .CrewDiv {

@@ -333,7 +333,7 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 7,
-    title: '둥둥6',
+    title: 'WWWWWWWWWWWWWWWWWWW',
     description: '나갈까',
     generation: 7,
     thumbnailUrl:
