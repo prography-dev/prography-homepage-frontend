@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { get } from '@/utils/axios';
+import { get, SERVER_URL } from '@/utils/axios';
 
 export interface PartType {
   name: string;
@@ -7,7 +7,7 @@ export interface PartType {
 }
 
 export async function getParts(): Promise<PartType[] | []> {
-  const response: AxiosResponse = await get('/v1/parts');
+  const response: AxiosResponse = await get(`${SERVER_URL}/v1/parts`);
   const {
     data: { data },
   } = response;
