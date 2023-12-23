@@ -1,0 +1,79 @@
+@import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
+
+@mixin culture-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+  img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .CultureDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    gap: 16px;
+  }
+
+  .SectionDate {
+    @extend .sf_heading_4;
+    color: $red500;
+  }
+  .SectionDetail {
+    @extend .pre_body_2;
+    color: $gray400;
+  }
+
+  @media (min-width: 1280px) {
+    flex-direction: row;
+    gap: 57px;
+    margin-top: 48px;
+    justify-content: space-between;
+
+    img {
+      width: 480px;
+      height: 480px;
+    }
+
+    .CultureDescription {
+      width: 562px;
+    }
+  }
+}
+
+.CultureWrapper {
+  margin-top: 330px;
+}
+
+.CultureContainer {
+  display: flex;
+  overflow-y: scroll;
+  align-items: flex-start;
+
+  @media (min-width: 1280px) {
+    display: block;
+    overflow-y: auto;
+  }
+}
+
+.CultureSection {
+  @include culture-section;
+  flex-direction: column-reverse;
+
+  @media (min-width: 1280px) {
+  }
+}
+
+.CultureLeftSection {
+  @include culture-section;
+
+  @media (min-width: 1280px) {
+    margin-left: 40px;
+  }
+}

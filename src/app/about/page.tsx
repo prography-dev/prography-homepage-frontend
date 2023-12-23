@@ -5,6 +5,7 @@ import React from 'react';
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import styles from './page.module.scss';
 import CrewList from '@/components/About/CrewList';
+import Culture from '@/components/About/Culture';
 
 const AboutPage = () => {
   return (
@@ -65,6 +66,7 @@ const AboutPage = () => {
         </div>
 
         <CrewList />
+        <Culture />
       </div>
     </CommonWrapper>
   );

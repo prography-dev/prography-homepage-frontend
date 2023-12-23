@@ -2,7 +2,7 @@
 @import '@/styles/fonts.scss';
 
 .AboutContainer {
-  margin: 120px 0 160px 0;
+  margin: 64px 0 120px 0;
 }
 
 .ValueLeftWrapper {
@@ -24,7 +24,6 @@
 
 .ValueRightWrapper {
   display: flex;
-  align-items: flex-end;
   flex-direction: column;
   margin-bottom: 56px;
 
@@ -37,5 +36,15 @@
   .ValueText {
     @extend .sf_heading_4;
     color: $red500;
+  }
+}
+
+@media (min-width: 1280px) {
+  .AboutContainer {
+    margin: 120px 0 160px 0;
+  }
+
+  .ValueRightWrapper {
+    align-items: flex-end;
   }
 }
