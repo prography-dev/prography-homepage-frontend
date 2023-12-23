@@ -1,0 +1,41 @@
+@import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
+
+.AboutContainer {
+  margin: 120px 0 160px 0;
+}
+
+.ValueLeftWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 56px;
+
+  .ValueText {
+    @extend .sf_heading_4;
+    color: $red500;
+  }
+
+  .ValueBodyDescription {
+    @extend .pre_body_2;
+    color: $gray300;
+  }
+}
+
+.ValueRightWrapper {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-bottom: 56px;
+
+  .ValueContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ValueText {
+    @extend .sf_heading_4;
+    color: $red500;
+  }
+}
