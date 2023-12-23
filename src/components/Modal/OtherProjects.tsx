@@ -6,7 +6,6 @@ import Icon64PageButton from '../common/icon/Icon64PageButton';
 import Icon80RoundButton from '../common/icon/Icon80RoundButton';
 import ProjectCardContainer from '../Project/ProjectCardContainer';
 import { ProjectCardData } from '@/apis/project';
-import { isPcDevice } from '@/utils/device';
 import styles from './OtherProjects.module.scss';
 import usePc from '@/hooks/usePc';
 
@@ -28,7 +27,7 @@ const OtherProjects = ({
   onClick,
   otherProjects,
 }: OtherProjectsProps) => {
-  const isPc = isPcDevice();
+  const isChangePc = usePc();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [projectData, setProjectData] =
@@ -36,7 +35,7 @@ const OtherProjects = ({
 
   let pagenationCount: number;
 
-  if (isPc) {
+  if (isChangePc) {
     pagenationCount = itemsPerPage.pc;
   } else {
     pagenationCount = itemsPerPage.mobile;
@@ -46,8 +45,6 @@ const OtherProjects = ({
 
   const lastPageNumber = Math.ceil(otherProjects.length / pagenationCount) ?? 0;
   const totalPage = Array.from({ length: lastPageNumber }, (_, i) => i + 1);
-
-  const isChangePc = usePc();
 
   useEffect(() => {
     if (isChangePc) {
@@ -90,7 +87,7 @@ const OtherProjects = ({
     <div className={styles.OtherPjtWrapper}>
       <div className="sf_h3_to_h1">Other projects</div>
 
-      {isPc ? (
+      {isChangePc ? (
         <>
           <ProjectCardContainer
             projects={projectData.slice(
