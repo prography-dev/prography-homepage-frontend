@@ -17,7 +17,7 @@ const AboutPage = () => {
             <br />
             소통을 편안하게
           </p>
-          <p className="pre_body_1">
+          <p className={styles.ValueBodyDescription}>
             다채로운 경험을 통해 재밌게, <br />
             보다 편안하게 몰입합니다
           </p>
@@ -30,7 +30,7 @@ const AboutPage = () => {
               탁월한 동료와 <br />
               최상의 임팩트 추구
             </p>
-            <p className="pre_body_1">
+            <p className={styles.ValueBodyDescription}>
               각 분야의 실력 있는 크루가 모여 <br />
               도전적인 목표로 나아갑니다.
             </p>
@@ -43,7 +43,7 @@ const AboutPage = () => {
             함께하는 즐거움에서 <br />
             성취하는 짜릿함으로
           </p>
-          <p className="pre_body_1">
+          <p className={styles.ValueBodyDescription}>
             파트별 최소 인원으로 팀을 구성해
             <br />
             잠재력을 최대한 끌어냅니다.
@@ -57,7 +57,7 @@ const AboutPage = () => {
               서비스를 지속하기 위해 <br />
               끊임없이 고민
             </p>
-            <p className="pre_body_1">
+            <p className={styles.ValueBodyDescription}>
               런칭 후에도 빠르게 개선하며 <br />
               유저를 위한 정답을 만들어갑니다.
             </p>

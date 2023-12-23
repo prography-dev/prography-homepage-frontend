@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './CrewList.module.scss';
-import { MemberData, Position } from '@/apis/member';
+import { MemberData, Position, PositionDescriptions } from '@/apis/member';
 import { MEMBER_DATA } from './MEMBER_DATA';
 
 const CrewList = () => {
@@ -42,6 +42,13 @@ const CrewList = () => {
             {item}
           </div>
         ))}
+      </div>
+
+      {/* Position에 대한 설명 */}
+      <div className={styles.PositionDescription}>
+        {selectedPosition && (
+          <p>{PositionDescriptions[selectedPosition].description}</p>
+        )}
       </div>
 
       <div className={styles.MemberWrapper}>

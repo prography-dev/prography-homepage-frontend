@@ -4,7 +4,7 @@
 @mixin button-style {
   @extend .sf_heading_5;
   border-radius: 100px;
-  padding: 20px;
+  padding: 20px 30px;
   cursor: pointer;
 }
 
@@ -16,6 +16,11 @@
   display: flex;
   gap: 8px;
   margin: 48px 0 32px 0;
+}
+
+.PositionDescription {
+  @extend .pre_body_2;
+  margin-bottom: 64px;
 }
 
 .PositionButton {
@@ -67,7 +72,7 @@
       margin-top: 8px;
       position: relative;
       display: block;
-      padding: 10px 15px;
+      padding: 32px;
       background-color: $gray800;
       border-radius: 10px;
     }

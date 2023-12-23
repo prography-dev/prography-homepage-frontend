@@ -15,6 +15,11 @@
     @extend .sf_heading_4;
     color: $red500;
   }
+
+  .ValueBodyDescription {
+    @extend .pre_body_2;
+    color: $gray300;
+  }
 }
 
 .ValueRightWrapper {
