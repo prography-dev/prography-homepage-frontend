@@ -10,17 +10,13 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 40px;
+  gap: 8px;
 }
 
 .PgTeam {
   @extend .sf_heading_5;
   padding: 8px 16px;
   border-radius: 100px;
-  margin: 0px 8px 8px 0px;
-
-  &:last-child {
-    margin-right: 0px;
-  }
 }
 
 @media (min-width: 1280px) {
