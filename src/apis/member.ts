@@ -1,15 +1,15 @@
 export enum Position {
-  'Product Owner' = 'Product Owner',
+  'ProductOwner' = 'Product Owner',
   'Designer' = 'Designer',
   'Marketer' = 'Marketer',
   'iOS' = 'iOS',
   'Android' = 'Android',
-  'Web Front' = 'Web Front',
+  'WebFront' = 'Web Front',
   'Server' = 'Server',
 }
 
 export const PositionDescriptions = {
-  [Position['Product Owner']]: {
+  [Position.ProductOwner]: {
     description:
       '프로젝트를 리드하는 사람, P.O입니다. 논리를 바탕으로 원만하게 소통하며 방향성을 정의하고, 각 팀원의 일정을 조율하죠.',
   },
@@ -21,7 +21,7 @@ export const PositionDescriptions = {
     description:
       '사용자가 프로덕트를 경험하고 팬이 되게끔 하는 여정을 설계합니다. 사용자를 이해하는 것은 기본, 그에 맞는 전략을 수립하고 실행하죠.',
   },
-  [Position['Web Front']]: {
+  [Position.WebFront]: {
     description:
       '서비스의 가치를 극대화하기 위해 다양한 기능을 고민하고 개발합니다. 사용자 경험을 향상시키고, 비즈니스 성장을 도모하죠.',
   },

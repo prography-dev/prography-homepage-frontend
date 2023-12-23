@@ -7,7 +7,7 @@ const CrewList = () => {
   const allPositions: Position[] = Object.values(Position);
   const [selectedPosition, setSelectedPosition] = useState<
     Position | undefined
-  >(Position['Product Owner']);
+  >(Position.ProductOwner);
   const [selectedMemberList, setSelectedMemberList] = useState<MemberData[]>(
     [],
   );
