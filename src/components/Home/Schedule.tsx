@@ -1,35 +1,25 @@
-import styles from './Schedule.module.scss';
+'use client';
 
-interface TimeTableProps {
-  startDate: string;
-  endDate: string;
-  name: string;
+import { useState, useEffect } from 'react';
+import styles from './Schedule.module.scss';
+import { getSessions, SessionType } from '@/apis/session';
+
+interface ScheduleProps {
+  id: number;
+  status: string;
 }
 
-const Schedule = () => {
-  // toDo: api 교체 필요
-  const timeTable: TimeTableProps[] = [
-    {
-      startDate: '01.13',
-      endDate: '01.24',
-      name: '9기 서류 제출',
-    },
-    {
-      startDate: '01.30',
-      endDate: '02.04',
-      name: '사전 과제 기간',
-    },
-    {
-      startDate: '02.17',
-      endDate: '02.14',
-      name: '인터뷰 진행',
-    },
-    {
-      startDate: '02.19',
-      endDate: '02.19',
-      name: '결과 발표',
-    },
-  ];
+const Schedule = ({ id, status }: ScheduleProps) => {
+  const [sessions, setSessions] = useState<SessionType[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getSessions(id, status);
+      setSessions([...data]);
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className={styles.PgScheduleText}>
@@ -37,10 +27,10 @@ const Schedule = () => {
         <div className={styles.BreakPoint} />
         지원 관련 문의는 이메일 또는 Contact 페이지의 FAQ를 확인해 주세요.
       </div>
-      {timeTable.map(({ startDate, endDate, name }) => (
-        <div className={styles.PgScheduleWrapper} key={startDate + name}>
+      {sessions.map(({ startDateTime, endDateTime, name, isOnedaySession }) => (
+        <div className={styles.PgScheduleWrapper} key={name}>
           <p className={styles.PgScheduleDate}>
-            {startDate} {startDate !== endDate && `- ${endDate}`}
+            {startDateTime} {!isOnedaySession && `- ${endDateTime}`}
           </p>
           <p className={styles.PgScheduleName}>{name}</p>
         </div>

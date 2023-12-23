@@ -31,7 +31,7 @@ export default async function Home() {
   const generation = await getGenerationData();
 
   if (!generation) return alert('서버 문제 발생');
-  const { name, status, landingUrl } = generation;
+  const { id, name, status, landingUrl } = generation;
 
   return (
     <>
@@ -49,7 +49,7 @@ export default async function Home() {
         </div>
         <OneTeam team={team} />
         <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
-        <Schedule />
+        <Schedule id={id} status={status} />
         <div className={styles.PgProjectButtonContainer}>
           <PageRouterButton label="Project" href="/project" />
         </div>
