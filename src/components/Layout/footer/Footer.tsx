@@ -1,34 +1,21 @@
 'use client';
 
-import Image from 'next/image';
 import { FOOTER_LINK, FooterLink } from './footerLink';
+import { IconGithub, IconInstagram } from '@/components/common/icon';
 
 import styles from './Footer.module.scss';
 
 const Footer = () => {
-  function openLink(link: FooterLink) {
-    if (typeof window === 'undefined') return '';
-    return window.open(FOOTER_LINK[link]);
+  function getLink(link: FooterLink) {
+    return FOOTER_LINK[link];
   }
 
   return (
     <div className={styles.FooterContainer}>
       <div className={styles.Footer_Top}>
         <div className={styles.Icons}>
-          <Image
-            width={32}
-            height={32}
-            src="/assets/logos/ic_instagram.svg"
-            alt="instagram"
-            onClick={() => openLink(FooterLink.INSTAGRAM)}
-          />
-          <Image
-            width={32}
-            height={32}
-            src="/assets/logos/ic_github.svg"
-            alt="github"
-            onClick={() => openLink(FooterLink.GITHUB)}
-          />
+          <IconInstagram size={32} link={getLink(FooterLink.INSTAGRAM)} />
+          <IconGithub size={32} link={getLink(FooterLink.GITHUB)} />
         </div>
         <div className={`${styles.Contact_Texts}`}>
           <span className="sf_h6_to_h5 gray400">Contact</span>

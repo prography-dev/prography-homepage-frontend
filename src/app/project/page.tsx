@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
-import { isPcDevice, isTabletDevice } from '@/utils/device';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
@@ -30,6 +29,8 @@ const Page = () => {
     useState<ProjectCardData>(EMPTY_DATA);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentTitle, setCurrentTitle] = useState('');
+  const isChangePc = usePc();
+  const isChangeTablet = useTablet();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -61,16 +62,13 @@ const Page = () => {
   }, [currentTitle]);
 
   let pagenationCount: number;
-  if (isPcDevice()) {
+  if (isChangePc) {
     pagenationCount = itemsPerPage.pc;
-  } else if (isTabletDevice()) {
+  } else if (isChangeTablet) {
     pagenationCount = itemsPerPage.tablet;
   } else {
     pagenationCount = itemsPerPage.mobile;
   }
-
-  const isChangeTablet = useTablet();
-  const isChangePc = usePc();
 
   useEffect(() => {
     if (isChangePc) {
@@ -88,8 +86,8 @@ const Page = () => {
   return (
     <CommonWrapper>
       <div className={styles.PageTitle}>
-        <div className="sf_heading_1">Project</div>
-        <div className="sf_body_2">12 Experiences in Prography</div>
+        <div className="sf_h3_to_h1">Project</div>
+        <div className="sf_c1_to_b2 gray300">12 Experiences in Prography</div>
       </div>
       <ProjectCardContainer
         projects={PROJECT_DATA.slice(0, pagenationCount * currentPage)}

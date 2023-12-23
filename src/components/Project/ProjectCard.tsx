@@ -39,7 +39,7 @@ const ProjectCard = ({ project, onChange, onClick }: ProjectProps) => {
           <span className={`${styles.Title} sf_heading_5`}>
             {project.title}
           </span>
-          <span className={`${styles.Nth} sf_caption_1 gray400`}>
+          <span className={`${styles.Nth} sf_bd_to_c1 gray400`}>
             {project.generation}th
           </span>
         </div>

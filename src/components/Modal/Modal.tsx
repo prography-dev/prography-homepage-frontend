@@ -54,6 +54,7 @@ const Modal = ({
                 generation={data.generation}
                 title={data.title}
                 stacks={data.stacks}
+                socials={data.socials}
               />
               <ModalContents
                 description={data.description}
