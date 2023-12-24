@@ -5,19 +5,6 @@
   margin-top: 210px;
 }
 
-.PgApplyButtonContainer {
-  margin-top: 40px;
-
-  button {
-    @include button-style(
-      24px !important,
-      32px !important,
-      24px !important,
-      48px !important
-    );
-  }
-}
-
 .PgAboutButtonContainer {
   margin: 330px 0px 64px;
 }
