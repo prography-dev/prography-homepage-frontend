@@ -58,9 +58,9 @@ const Modal = ({
               />
               <ModalContents
                 description={data.description}
-                imageUrl={data.imageUrl}
+                imageUrl={data.detailImageUrl}
               />
-              <ModalCrew users={data.users} />
+              <ModalCrew users={data.members} />
               <OtherProjects
                 currentTitle={data.title}
                 onSelectOtherPjt={onSelectOtherPjt}
