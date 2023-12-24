@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
-import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 
+import dynamic from 'next/dynamic';
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
+import { EMPTY_DATA } from '@/components/Project/PROJECT_DATA';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
 import Modal from '@/components/Modal/Modal';
-import { ProjectCardData } from '@/apis/project';
+import ProjectCardLoading from '@/components/Project/ProjectCardLoading';
+import { getProjectData } from '@/apis/project';
 import styles from './page.module.scss';
 import usePc from '@/hooks/usePc';
 import useTablet from '@/hooks/useTablet';
@@ -24,29 +25,54 @@ const ProjectCardContainer = dynamic(
 );
 
 const Page = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [projectDetail, setProjectDetail] =
-    useState<ProjectCardData>(EMPTY_DATA);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [currentTitle, setCurrentTitle] = useState('');
   const isChangePc = usePc();
   const isChangeTablet = useTablet();
 
+  const [booleanState, setBooleanState] = useState({
+    isModalOpen: false,
+    isLoading: true,
+  });
+  const [projectData, setProjectData] = useState({
+    projectDetail: EMPTY_DATA,
+    projects: [EMPTY_DATA],
+  });
+  const [pagenation, setPagenation] = useState({
+    currentPage: 1,
+    pagenationCount: 0,
+  });
+  const [currentTitle, setCurrentTitle] = useState('');
+
+  useEffect(() => {
+    getProjectData()
+      .then(data => {
+        setProjectData(prev => ({ ...prev, projects: data }));
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+    setBooleanState(prev => ({ ...prev, isLoading: false }));
+  }, []);
+
   const openModal = () => {
-    setIsModalOpen(true);
+    setBooleanState(prev => ({ ...prev, isModalOpen: true }));
   };
 
   const closeModal = () => {
-    setIsModalOpen(false);
+    setBooleanState(prev => ({ ...prev, isModalOpen: false }));
   };
 
   const onSelectCard = (target: string) => {
-    const projectIdx = PROJECT_DATA.findIndex(el => el.title === target);
-    setProjectDetail(PROJECT_DATA[projectIdx]);
+    const projectIdx = projectData.projects.findIndex(
+      el => el.title === target,
+    );
+    setProjectData(prev => ({
+      ...prev,
+      projectDetail: projectData.projects[projectIdx],
+    }));
   };
 
   const handlePageChange = () => {
-    setCurrentPage(currentPage + 1);
+    setPagenation(prev => ({ ...prev, currentPage: prev.currentPage + 1 }));
   };
 
   const onClickPjtInModal = (target: string) => {
@@ -56,32 +82,35 @@ const Page = () => {
   useEffect(() => {
     if (currentTitle === '') return;
 
-    const projectIdx = PROJECT_DATA.findIndex(el => el.title === currentTitle);
-    setProjectDetail(PROJECT_DATA[projectIdx]);
-    setIsModalOpen(true);
+    const projectIdx = projectData.projects.findIndex(
+      el => el.title === currentTitle,
+    );
+    setProjectData(prev => ({
+      ...prev,
+      projectDetail: projectData.projects[projectIdx],
+    }));
+    setBooleanState(prev => ({ ...prev, isModalOpen: true }));
   }, [currentTitle]);
-
-  let pagenationCount: number;
-  if (isChangePc) {
-    pagenationCount = itemsPerPage.pc;
-  } else if (isChangeTablet) {
-    pagenationCount = itemsPerPage.tablet;
-  } else {
-    pagenationCount = itemsPerPage.mobile;
-  }
 
   useEffect(() => {
     if (isChangePc) {
-      pagenationCount = itemsPerPage.pc;
+      setPagenation(prev => ({ ...prev, pagenationCount: itemsPerPage.pc }));
     } else if (isChangeTablet) {
-      pagenationCount = itemsPerPage.tablet;
+      setPagenation(prev => ({
+        ...prev,
+        pagenationCount: itemsPerPage.tablet,
+      }));
     } else {
-      pagenationCount = itemsPerPage.mobile;
+      setPagenation(prev => ({
+        ...prev,
+        pagenationCount: itemsPerPage.mobile,
+      }));
     }
-    setCurrentPage(1);
+    setPagenation(prev => ({ ...prev, currentPage: 1 }));
   }, [isChangeTablet, isChangePc]);
 
-  const isAllProjects = pagenationCount * currentPage >= 12;
+  const isAllProjects =
+    pagenation.pagenationCount * pagenation.currentPage >= 12;
 
   return (
     <CommonWrapper>
@@ -89,18 +118,25 @@ const Page = () => {
         <div className="sf_h3_to_h1">Project</div>
         <div className="sf_c1_to_b2 gray300">12 Experiences in Prography</div>
       </div>
-      <ProjectCardContainer
-        projects={PROJECT_DATA.slice(0, pagenationCount * currentPage)}
-        onChange={onSelectCard}
-        onClick={openModal}
-      />
+      {booleanState.isLoading ? (
+        <ProjectCardLoading />
+      ) : (
+        <ProjectCardContainer
+          projects={projectData.projects.slice(
+            0,
+            pagenation.pagenationCount * pagenation.currentPage,
+          )}
+          onChange={onSelectCard}
+          onClick={openModal}
+        />
+      )}
 
       <Modal
-        isOpen={isModalOpen}
+        isOpen={booleanState.isModalOpen}
         onClose={closeModal}
-        data={projectDetail}
+        data={projectData.projectDetail}
         onClickPjtInModal={onClickPjtInModal}
-        otherProjects={PROJECT_DATA}
+        otherProjects={projectData.projects}
       />
       <div
         className={`${styles.ArrowIconDiv} ${
