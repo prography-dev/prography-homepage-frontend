@@ -7,7 +7,6 @@ import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import { EMPTY_DATA } from '@/components/Project/PROJECT_DATA';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
 import Modal from '@/components/Modal/Modal';
-import ProjectCardLoading from '@/components/Project/ProjectCardLoading';
 import { getProjectData } from '@/apis/project';
 import styles from './page.module.scss';
 import usePc from '@/hooks/usePc';
@@ -118,9 +117,7 @@ const Page = () => {
         <div className="sf_h3_to_h1">Project</div>
         <div className="sf_c1_to_b2 gray300">12 Experiences in Prography</div>
       </div>
-      {booleanState.isLoading ? (
-        <ProjectCardLoading />
-      ) : (
+
         <ProjectCardContainer
           projects={projectData.projects.slice(
             0,
@@ -129,7 +126,6 @@ const Page = () => {
           onChange={onSelectCard}
           onClick={openModal}
         />
-      )}
 
       <Modal
         isOpen={booleanState.isModalOpen}
