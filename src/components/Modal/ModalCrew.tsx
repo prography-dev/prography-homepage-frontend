@@ -4,12 +4,12 @@ import { ProjectCardData } from '@/apis/project';
 import { handleEmailClick } from '@/utils/contactToEmail';
 import styles from './ModalCrew.module.scss';
 
-const ModalCrew = ({ users }: Pick<ProjectCardData, 'users'>) => {
+const ModalCrew = ({ members }: Pick<ProjectCardData, 'members'>) => {
   return (
     <div className={styles.CrewWrapper}>
       <div className="sf_h3_to_h1">Crew</div>
       <div className={styles.Crews}>
-        {users.map((el, idx) => (
+        {members.map((el, idx) => (
           <div className={styles.CrewDiv} key={idx}>
             <div className={styles.ImageCon}>
               <Image
