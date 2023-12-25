@@ -29,11 +29,8 @@ const Modal = ({
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoading = (e: boolean) => {
-    console.log(e);
     setIsLoading(e);
   };
-
-  console.log(isLoading);
 
   return (
     <div>
