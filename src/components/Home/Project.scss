@@ -1,6 +1,7 @@
 // swiper css overriding
 .swiper {
   transition-timing-function: linear !important;
+  padding-left: 20px;
 }
 
 .swiper-wrapper {
@@ -9,7 +10,6 @@
 
 .swiper-slide {
   width: 280px !important;
-  padding-left: 20px;
 }
 
 @media (min-width: 1280px) {
