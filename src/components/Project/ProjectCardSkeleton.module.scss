@@ -1,0 +1,54 @@
+@import './ProjectCard.module.scss';
+@import './ProjectCardContainer.module.scss';
+
+.PjtCardContainerSkeleton {
+  @extend .PjtCardContainer;
+}
+
+.SkeletonWrapper {
+  background: linear-gradient(
+    90deg,
+    $gray800 20%,
+    $gray700 28%,
+    $gray700 40%,
+    $gray800 45%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 1s infinite;
+  border: 1px solid transparent;
+}
+
+.SkeletonDiv {
+  background: linear-gradient(
+    90deg,
+    $gray900 20%,
+    $gray700 28%,
+    $gray700 40%,
+    $gray900 45%
+  );
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  animation: load 1s infinite;
+}
+
+.CardContainerSkeleton {
+  @extend .CardContainer, .SkeletonWrapper;
+}
+
+.ImageContainerSkeleton {
+  @extend .ImageContainer, .SkeletonDiv;
+}
+
+.TitleDivSkeleton {
+  @extend .TitleDiv, .SkeletonDiv;
+  height: 32px;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.TagDivSkeleton {
+  @extend .SkeletonDiv;
+  height: 40px;
+  border-radius: 5px;
+}

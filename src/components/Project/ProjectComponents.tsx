@@ -7,6 +7,7 @@ import { ProjectCardData, getProjectData } from '@/apis/project';
 import { EMPTY_DATA } from '@/components/Project/PROJECT_DATA';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
 import Modal from '@/components/Modal/Modal';
+import ProjectCardSkeleton from './ProjectCardSkeleton';
 import styles from './ProjectComponents.module.scss';
 import usePc from '@/hooks/usePc';
 import useTablet from '@/hooks/useTablet';
@@ -19,7 +20,7 @@ const itemsPerPage = {
 
 const ProjectCardContainer = dynamic(
   () => import('@/components/Project/ProjectCardContainer'),
-  { ssr: false },
+  { ssr: false, loading: () => <ProjectCardSkeleton /> },
 );
 
 const ProjectComponents = () => {
@@ -33,7 +34,7 @@ const ProjectComponents = () => {
   const [projectData, setProjectData] = useState({
     projectDetail: EMPTY_DATA,
     projects: [] as ProjectCardData[],
-    projectsLength: '  ' as number | string,
+    projectsLength: null as null | number,
   });
   const [pagenation, setPagenation] = useState({
     currentPage: 1,
@@ -48,7 +49,7 @@ const ProjectComponents = () => {
         setProjectData(prev => ({
           ...prev,
           projects: data,
-          projectsLength: data.length + 1,
+          projectsLength: data.length,
         }));
       })
       .catch(error => {
@@ -120,9 +121,13 @@ const ProjectComponents = () => {
     <>
       <div className={styles.PageTitle}>
         <div className="sf_h3_to_h1">Project</div>
-        <div className="sf_c1_to_b2 gray300">
-          {projectData.projectsLength} Experiences in Prography
-        </div>
+        {projectData.projectsLength ? (
+          <div className="sf_c1_to_b2 gray300">
+            {projectData.projectsLength} Experiences in Prography
+          </div>
+        ) : (
+          <div className="sf_c1_to_b2">&nbsp;</div>
+        )}
       </div>
 
       <ProjectCardContainer
