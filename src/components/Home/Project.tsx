@@ -76,7 +76,13 @@ const Project = () => {
 
   return (
     <>
-      <Swiper {...swiperOptions} slidesPerView="auto" loop={true}>
+      <Swiper
+        {...swiperOptions}
+        slidesPerView="auto"
+        loop={true}
+        loopAddBlankSlides={true}
+        loopAdditionalSlides={1}
+      >
         {projectList
           .slice(0, MAX_PROJECT_CARD)
           .map(({ id, title, generation, thumbnailImageUrl }, idx) => (
