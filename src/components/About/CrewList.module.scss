@@ -14,19 +14,19 @@
 }
 
 .CrewContainer {
-  margin-top: 274px;
+  margin-top: 120px;
 }
 
 .PositionWrapper {
   overflow-y: scroll;
   display: flex;
   gap: 8px;
-  margin: 48px 0 32px 0;
+  margin: 32px 0 16px 0;
 }
 
 .PositionDescription {
-  @extend .pre_body_2;
-  margin-bottom: 64px;
+  @extend .pre_caption_1;
+  margin-bottom: 24px;
 }
 
 .PositionButton {
@@ -59,8 +59,9 @@
 
   .MemberProfileDetail {
     .Name {
-      @extend .pre_heading_5;
-      margin-right: 10px;
+      @extend .pre_heading_6;
+      margin-right: 8px;
+      font-weight: 700;
     }
 
     .Slash {
@@ -68,16 +69,17 @@
     }
 
     .Company {
-      @extend .sf_heading_5;
+      @extend .sf_heading_6;
       color: $gray400;
-      margin-left: 10px;
+      margin-left: 8px;
+      font-weight: 700;
     }
 
     .Bubble {
       margin-top: 8px;
       position: relative;
       display: block;
-      padding: 32px;
+      padding: 16px 24px;
       background-color: $gray800;
       border-radius: 10px;
     }
@@ -110,25 +112,5 @@
 }
 
 @media (min-width: 1280px) {
-  .PositionWrapper {
-    overflow-y: auto;
-  }
-
-  .MemberWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 40px;
-    column-gap: 32px;
-  }
-
-  .MemberContainer {
-    display: flex;
-    gap: 16px;
-
-    .MemberProfileImg {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-    }
-  }
+  @import './CrewList_1280.module.scss';
 }

@@ -15,19 +15,26 @@
   .CultureDescription {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     width: 300px;
-    gap: 16px;
   }
 
   .SectionDate {
-    @extend .sf_heading_4;
+    @extend .sf_heading_5;
     color: $red500;
+    margin-bottom: 8px;
   }
+
+  .SectionTitle {
+    @extend .sf_heading_5;
+  }
+
   .SectionDetail {
-    @extend .pre_body_2;
+    @extend .pre_caption_1;
     color: $gray400;
+    margin-bottom: 4px;
+    word-break: keep-all;
   }
 
   @media (min-width: 1280px) {
@@ -41,33 +48,50 @@
       height: 480px;
     }
 
+    .SectionTitle {
+      @include font-style($sf_pro, 700, 32px, 40px, 0px);
+    }
+    .SectionDate {
+      margin-bottom: 0;
+      @include font-style($sf_pro, 700, 24px, 32px, 0px);
+    }
+    .SectionDetail {
+      @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+      margin-bottom: 0;
+    }
+
     .CultureDescription {
       width: 562px;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
     }
   }
 }
 
 .CultureWrapper {
-  margin-top: 330px;
-}
+  margin-top: 120px;
 
+  @media (min-width: 1280px) {
+    margin-top: 330px;
+  }
+}
 .CultureContainer {
   display: flex;
   overflow-y: scroll;
   align-items: flex-start;
+  gap: 12px;
 
   @media (min-width: 1280px) {
     display: block;
     overflow-y: auto;
+    gap: 0;
   }
 }
 
 .CultureSection {
   @include culture-section;
   flex-direction: column-reverse;
-
-  @media (min-width: 1280px) {
-  }
 }
 
 .CultureLeftSection {

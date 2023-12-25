@@ -26,7 +26,7 @@ const CrewList = () => {
 
   return (
     <div className={styles.CrewContainer}>
-      <p className="sf_heading_1">Crew</p>
+      <p className="sf_h3_to_h1">Crew</p>
 
       <div className={styles.PositionWrapper}>
         {allPositions.map((item, idx) => (

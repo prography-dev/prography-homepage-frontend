@@ -13,7 +13,7 @@ const AboutPage = () => {
       <div className={styles.AboutContainer}>
         <div className={styles.ValueLeftWrapper}>
           <p className={styles.ValueText}>Communication</p>
-          <p className="pre_heading_1">
+          <p className={styles.ValueTitle}>
             서로 신뢰하며
             <br />
             소통을 편안하게
@@ -27,7 +27,7 @@ const AboutPage = () => {
         <div className={styles.ValueRightWrapper}>
           <div className={styles.ValueContent}>
             <p className={styles.ValueText}>High Quality</p>
-            <p className="pre_heading_1">
+            <p className={styles.ValueTitle}>
               탁월한 동료와 <br />
               최상의 임팩트 추구
             </p>
@@ -40,7 +40,7 @@ const AboutPage = () => {
 
         <div className={styles.ValueLeftWrapper}>
           <p className={styles.ValueText}>Synergy</p>
-          <p className="pre_heading_1">
+          <p className={styles.ValueTitle}>
             함께하는 즐거움에서 <br />
             성취하는 짜릿함으로
           </p>
@@ -54,7 +54,7 @@ const AboutPage = () => {
         <div className={styles.ValueRightWrapper}>
           <div className={styles.ValueContent}>
             <p className={styles.ValueText}>Improvement</p>
-            <p className="pre_heading_1">
+            <p className={styles.ValueTitle}>
               서비스를 지속하기 위해 <br />
               끊임없이 고민
             </p>
