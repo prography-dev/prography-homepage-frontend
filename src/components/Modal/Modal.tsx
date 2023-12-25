@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Footer from '../Layout/footer/Footer';
 import { IconClose } from '../common/icon';
 import ModalContents from './ModalContents';
@@ -25,6 +26,15 @@ const Modal = ({
   const onSelectOtherPjt = (target: string) => {
     onClickPjtInModal(target);
   };
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoading = (e: boolean) => {
+    console.log(e);
+    setIsLoading(e);
+  };
+
+  console.log(isLoading);
+
   return (
     <div>
       {isOpen && (
@@ -51,6 +61,7 @@ const Modal = ({
             </div>
             <div className={styles.ModalWrapper}>
               <ModalTitle
+                isLoading={isLoading}
                 generation={data.generation}
                 title={data.title}
                 stacks={data.stacks}
@@ -59,8 +70,9 @@ const Modal = ({
               <ModalContents
                 description={data.description}
                 detailImageUrl={data.detailImageUrl}
+                onLoading={handleLoading}
               />
-              <ModalCrew members={data.members} />
+              <ModalCrew members={data.members} isLoading={isLoading} />
               <OtherProjects
                 currentTitle={data.title}
                 onSelectOtherPjt={onSelectOtherPjt}

@@ -1,29 +1,42 @@
 import Image from 'next/image';
 import Button from '../common/button/Button';
+import { ModalCrewSkeleton } from './ModalSkeleton';
 import { ProjectCardData } from '@/apis/project';
 import { handleEmailClick } from '@/utils/contactToEmail';
 import styles from './ModalCrew.module.scss';
 
-const ModalCrew = ({ members }: Pick<ProjectCardData, 'members'>) => {
+interface ModalCrewProps extends Pick<ProjectCardData, 'members'> {
+  isLoading: boolean; // Corrected the typo in isLoading prop name
+}
+
+const ModalCrew = ({ members, isLoading }: ModalCrewProps) => {
   return (
     <div className={styles.CrewWrapper}>
       <div className="sf_h3_to_h1">Crew</div>
       <div className={styles.Crews}>
         {members.map((el, idx) => (
           <div className={styles.CrewDiv} key={idx}>
-            <div className={styles.ImageCon}>
-              <Image
-                src="/assets/images/defaultPersonImage.png"
-                alt="default"
-                width={100}
-                height={100}
-                layout="responsive"
-              />
-            </div>
-            <div className={`${styles.CrewName} pre_h6_to_h5`}>{el.name}</div>
-            <div className={`${styles.CrewPart} pre_h6_to_h5 gray400`}>
-              {el.part}
-            </div>
+            {isLoading ? (
+              <ModalCrewSkeleton />
+            ) : (
+              <>
+                <div className={styles.ImageCon}>
+                  <Image
+                    src="/assets/images/defaultPersonImage.png"
+                    alt="default"
+                    width={100}
+                    height={100}
+                    layout="responsive"
+                  />
+                </div>
+                <div className={`${styles.CrewName} pre_h6_to_h5`}>
+                  {el.name}
+                </div>
+                <div className={`${styles.CrewPart} pre_h6_to_h5 gray400`}>
+                  {el.part}
+                </div>
+              </>
+            )}
           </div>
         ))}
         <div className={styles.ProjectContact}>
