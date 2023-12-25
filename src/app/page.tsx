@@ -17,6 +17,10 @@ async function getPartData() {
   return getParts();
 }
 
+export const metadata = {
+  title: '프로그라피',
+};
+
 export default async function Home() {
   const team = await getPartData();
 
