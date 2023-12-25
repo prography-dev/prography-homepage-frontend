@@ -27,10 +27,7 @@ const ProjectComponents = () => {
   const isChangePc = usePc();
   const isChangeTablet = useTablet();
 
-  const [booleanState, setBooleanState] = useState({
-    isModalOpen: false,
-    isLoading: true,
-  });
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [projectData, setProjectData] = useState({
     projectDetail: EMPTY_DATA,
     projects: [] as ProjectCardData[],
@@ -55,15 +52,14 @@ const ProjectComponents = () => {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-    setBooleanState(prev => ({ ...prev, isLoading: false }));
   }, []);
 
   const openModal = () => {
-    setBooleanState(prev => ({ ...prev, isModalOpen: true }));
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setBooleanState(prev => ({ ...prev, isModalOpen: false }));
+    setIsModalOpen(false);
   };
 
   const onSelectCard = (target: string) => {
@@ -94,7 +90,7 @@ const ProjectComponents = () => {
       ...prev,
       projectDetail: projectData.projects[projectIdx],
     }));
-    setBooleanState(prev => ({ ...prev, isModalOpen: true }));
+    setIsModalOpen(true);
   }, [currentTitle]);
 
   useEffect(() => {
@@ -140,7 +136,7 @@ const ProjectComponents = () => {
       />
 
       <Modal
-        isOpen={booleanState.isModalOpen}
+        isOpen={isModalOpen}
         onClose={closeModal}
         data={projectData.projectDetail}
         onClickPjtInModal={onClickPjtInModal}
