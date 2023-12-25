@@ -1,6 +1,12 @@
 @import './ProjectCard.module.scss';
 @import './ProjectCardContainer.module.scss';
 
+@keyframes load {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
 .PjtCardContainerSkeleton {
   @extend .PjtCardContainer;
 }
@@ -34,6 +40,10 @@
 
 .CardContainerSkeleton {
   @extend .CardContainer, .SkeletonWrapper;
+
+  &:hover {
+    transform: none;
+  }
 }
 
 .ImageContainerSkeleton {

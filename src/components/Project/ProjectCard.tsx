@@ -30,8 +30,12 @@ const ProjectCard = ({ project, onChange, onClick }: ProjectProps) => {
         <Image
           src={`${project.thumbnailImageUrl}`}
           alt="thumbnail"
-          layout="fill"
-          objectFit="cover"
+          width={345}
+          height={430}
+          style={{
+            objectFit: 'fill',
+            width: '100%',
+          }}
         />
       </div>
       <div className={styles.TextContainer}>
