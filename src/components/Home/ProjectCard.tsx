@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import styles from './ProjectCard.module.scss';
-
 import formatGeneration from '@/utils/formatGeneration';
+import styles from './ProjectCard.module.scss';
 
 interface ProjectCardProps {
   title: string;
   generation: number;
-  thumbnailUrl: string;
+  thumbnailImageUrl: string;
   onChange: (target: string) => void;
   onClick: () => void;
 }
@@ -14,7 +13,7 @@ interface ProjectCardProps {
 const ProjectCard = ({
   title,
   generation,
-  thumbnailUrl,
+  thumbnailImageUrl,
   onChange,
   onClick,
 }: ProjectCardProps) => {
@@ -33,7 +32,7 @@ const ProjectCard = ({
         className={styles.PgHomeProjectImage}
         width={280}
         height={344}
-        src={thumbnailUrl}
+        src={thumbnailImageUrl}
         alt="thumbnail"
         objectFit="cover"
       />

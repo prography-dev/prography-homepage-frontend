@@ -8,7 +8,7 @@ import styles from './ProjectCard.module.scss';
 export interface ProjectProps {
   project: Pick<
     ProjectCardData,
-    'thumbnailUrl' | 'title' | 'generation' | 'stacks'
+    'thumbnailImageUrl' | 'title' | 'generation' | 'stacks'
   >;
   onChange: (target: string) => void;
   onClick: () => void;
@@ -28,10 +28,14 @@ const ProjectCard = ({ project, onChange, onClick }: ProjectProps) => {
     >
       <div className={styles.ImageContainer}>
         <Image
-          src={`${project.thumbnailUrl}`}
+          src={`${project.thumbnailImageUrl}`}
           alt="thumbnail"
-          layout="fill"
-          objectFit="cover"
+          width={345}
+          height={430}
+          style={{
+            objectFit: 'fill',
+            width: '100%',
+          }}
         />
       </div>
       <div className={styles.TextContainer}>

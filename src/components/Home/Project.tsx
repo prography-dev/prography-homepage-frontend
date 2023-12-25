@@ -3,17 +3,15 @@
 import 'swiper/css';
 import './Project.scss';
 
-import { useState, useEffect } from 'react';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { useEffect, useState } from 'react';
 
-import { ProjectCardData } from '@/apis/project';
+import { Autoplay } from 'swiper/modules';
 import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
 import Modal from '@/components/Modal/Modal';
-import usePc from '@/hooks/usePc';
-
 import ProjectCard from './ProjectCard';
+import { ProjectCardData } from '@/apis/project';
+import usePc from '@/hooks/usePc';
 
 const Project = () => {
   const MAX_PROJECT_CARD = 9;
@@ -67,12 +65,12 @@ const Project = () => {
     <>
       <Swiper {...swiperOptions} slidesPerView="auto" loop={true}>
         {PROJECT_DATA.slice(0, MAX_PROJECT_CARD).map(
-          ({ id, title, generation, thumbnailUrl }, idx) => (
+          ({ id, title, generation, thumbnailImageUrl }, idx) => (
             <SwiperSlide key={id + idx}>
               <ProjectCard
                 title={title}
                 generation={generation}
-                thumbnailUrl={thumbnailUrl}
+                thumbnailImageUrl={thumbnailImageUrl}
                 onChange={onSelectCard}
                 onClick={openModal}
               />
