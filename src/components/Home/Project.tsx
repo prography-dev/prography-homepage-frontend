@@ -67,7 +67,7 @@ const Project = () => {
   const pcSwiperOptions = {
     speed: 3000,
     autoplay: {
-      delay: 1,
+      delay: 1000,
     },
     spaceBetween: 16,
     modules: [Autoplay],
