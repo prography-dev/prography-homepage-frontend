@@ -7,7 +7,7 @@ import { handleEmailClick } from '@/utils/contactToEmail';
 import styles from './ModalCrew.module.scss';
 
 interface ModalCrewProps extends Pick<ProjectCardData, 'members'> {
-  isLoading: boolean; // Corrected the typo in isLoading prop name
+  isLoading: boolean;
 }
 
 const ModalCrew = ({ members, isLoading }: ModalCrewProps) => {
