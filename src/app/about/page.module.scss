@@ -1,0 +1,57 @@
+@import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
+
+.AboutContainer {
+  margin: 64px 0 120px 0;
+}
+
+.ValueLeftWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 64px;
+
+  .ValueText {
+    @extend .sf_heading_6;
+    color: $red500;
+  }
+
+  .ValueTitle {
+    @extend .pre_heading_3;
+  }
+
+  .ValueBodyDescription {
+    @extend .pre_caption_1;
+    color: $gray300;
+  }
+}
+
+.ValueRightWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 64px;
+
+  .ValueContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ValueTitle {
+    @extend .pre_heading_3;
+  }
+
+  .ValueText {
+    @extend .sf_heading_6;
+    color: $red500;
+  }
+
+  .ValueBodyDescription {
+    @extend .pre_caption_1;
+    color: $gray300;
+  }
+}
+
+@media (min-width: 1280px) {
+  @import './page_1280.module.scss';
+}

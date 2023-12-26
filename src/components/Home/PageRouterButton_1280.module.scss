@@ -1,3 +1,4 @@
+@import '@/styles/const.scss';
 @import '@/styles/fonts.scss';
 
 .PgRouterLabel {
@@ -12,5 +13,13 @@
   svg {
     width: 32px;
     height: 32px;
+  }
+
+  &:hover {
+    background-color: $white;
+
+    path {
+      stroke: black;
+    }
   }
 }

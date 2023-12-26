@@ -1,0 +1,140 @@
+@import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
+@import '@/styles/responsiveFonts.scss';
+
+@mixin culture-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+  img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .CultureDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 300px;
+  }
+
+  .SectionDate {
+    @extend .sf_heading_5;
+    color: $red500;
+    margin-bottom: 8px;
+  }
+
+  .SectionTitle {
+    @extend .sf_heading_5;
+    margin-bottom: 4px;
+  }
+
+  .SectionDetail {
+    @extend .pre_caption_1;
+    color: $gray400;
+    margin-bottom: 4px;
+    word-break: keep-all;
+  }
+
+  @media (min-width: 1280px) {
+    flex-direction: row;
+    gap: 57px;
+    margin-top: 48px;
+    justify-content: space-between;
+
+    img {
+      width: 480px;
+      height: 480px;
+    }
+
+    .SectionTitle {
+      margin-bottom: 0;
+      @include font-style($sf_pro, 700, 32px, 40px, 0px);
+    }
+    .SectionDate {
+      margin-bottom: 0;
+      @include font-style($sf_pro, 700, 24px, 32px, 0px);
+    }
+    .SectionDetail {
+      @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+      margin-bottom: 0;
+    }
+
+    .CultureDescription {
+      width: 562px;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+  }
+}
+
+.CultureTitle {
+  @extend .sf_h3_to_h1;
+  margin-left: 20px;
+  margin-bottom: 30px;
+
+  @media (min-width: 1280px) {
+    margin-left: 0;
+  }
+}
+
+.CultureWrapper {
+  margin: 0px auto;
+  margin-top: 120px;
+  padding: 0px;
+
+  @media (min-width: 1280px) {
+    margin-top: 330px;
+    max-width: 1140px;
+    padding: 0px;
+  }
+}
+
+.CultureContainer {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-items: flex-start;
+  gap: 12px;
+
+  @media (min-width: 1280px) {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    gap: 0;
+    margin-left: 0;
+  }
+}
+
+.CultureSection {
+  @include culture-section;
+  flex-direction: column-reverse;
+}
+
+.CultureLeftSection {
+  @include culture-section;
+
+  &:first-child {
+    margin-left: 20px;
+  }
+
+  &:last-child {
+    margin-right: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-left: 40px;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}

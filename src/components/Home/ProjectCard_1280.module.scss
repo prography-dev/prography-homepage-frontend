@@ -1,8 +1,13 @@
 @import '@/styles/const.scss';
 
+.PgHomeProjectWrapper {
+  width: 345px;
+}
+
 .PgHomeProjectImage {
   width: 345px;
   height: 430px;
+  object-fit: cover;
 }
 
 .PgHomeProjectText {

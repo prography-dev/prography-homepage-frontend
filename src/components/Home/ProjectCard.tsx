@@ -1,24 +1,39 @@
 import Image from 'next/image';
-import styles from './ProjectCard.module.scss';
-
 import formatGeneration from '@/utils/formatGeneration';
+import styles from './ProjectCard.module.scss';
 
 interface ProjectCardProps {
   title: string;
   generation: number;
-  thumbnailUrl: string;
+  thumbnailImageUrl: string;
+  onChange: (target: string) => void;
+  onClick: () => void;
 }
 
-const ProjectCard = ({ title, generation, thumbnailUrl }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  generation,
+  thumbnailImageUrl,
+  onChange,
+  onClick,
+}: ProjectCardProps) => {
+  const onClickCard = (e: React.MouseEvent<HTMLDivElement>) => {
+    onChange(e.currentTarget.id);
+    onClick();
+  };
+
   return (
-    <div className={styles.PgHomeProjectWrapper}>
+    <div
+      className={styles.PgHomeProjectWrapper}
+      onClick={onClickCard}
+      id={title}
+    >
       <Image
         className={styles.PgHomeProjectImage}
         width={280}
         height={344}
-        src={thumbnailUrl}
+        src={thumbnailImageUrl}
         alt="thumbnail"
-        objectFit="cover"
       />
       <div className={styles.PgHomeProjectText}>
         <span className={styles.PgHomeProjectTitle}>{title}</span>

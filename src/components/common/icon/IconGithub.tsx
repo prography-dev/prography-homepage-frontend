@@ -2,7 +2,11 @@
 
 import { IconProps } from '.';
 
-const IconGithub = ({ size = 50, color = 'white' }: IconProps): JSX.Element => {
+const IconGithub = ({
+  size = 50,
+  color = 'white',
+  link,
+}: IconProps): JSX.Element => {
   return (
     <svg
       width={size}
@@ -10,6 +14,7 @@ const IconGithub = ({ size = 50, color = 'white' }: IconProps): JSX.Element => {
       viewBox="0 0 50 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={() => window.open(link)}
     >
       <g clipPath="url(#clip0_268_184)">
         <path

@@ -6,10 +6,10 @@ export const EMPTY_DATA: ProjectCardData = {
   title: '',
   description: '',
   generation: 0,
-  thumbnailUrl: '',
-  imageUrl: '',
+  thumbnailImageUrl: '',
+  detailImageUrl: '',
   stacks: [],
-  users: [
+  members: [
     {
       id: 0,
       name: '',
@@ -24,6 +24,7 @@ export const EMPTY_DATA: ProjectCardData = {
   ],
 };
 
+// TODO(meaningood/smsun) : API 연동 후 삭제
 export const PROJECT_DATA: ProjectCardData[] = [
   {
     id: 1,
@@ -31,12 +32,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     description:
       "designed the mobile app for the eco-friendly company FREITAG. I used a simple Figma prototype and After Effects to enhance the project's completeness. The design concept for this project emphasized a casual feel, with an overall use of rounded shapes and pastel tones.  a casual feel, with an overall use of rounded shapes and pastel tones.",
     generation: 8,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'iOS', 'AOS', 'Design', 'Gradle'],
-    users: [
+    members: [
       {
         id: 123,
         name: '문범우',
@@ -76,12 +77,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     description:
       "designed the mobile app for the eco-friendly company FREITAG. I used a simple Figma prototype and After Effects to enhance the project's completeness. The design concept for this project emphasized a casual feel, with an overall use of rounded shapes and pastel tones.  a casual feel, with an overall use of rounded shapes and pastel tones.",
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -125,12 +126,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '7인프로젝트',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -179,12 +180,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '사람8명',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -238,12 +239,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '둥둥4',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -287,12 +288,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '둥둥5',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -333,15 +334,15 @@ export const PROJECT_DATA: ProjectCardData[] = [
   },
   {
     id: 7,
-    title: '둥둥6',
+    title: 'WWWWWWWWWWWWWWWWWWW',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -385,12 +386,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '둥둥7',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -434,12 +435,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '둥둥8',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -483,12 +484,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '둥둥9',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -532,12 +533,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '둥둥10',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',
@@ -581,12 +582,12 @@ export const PROJECT_DATA: ProjectCardData[] = [
     title: '둥둥11',
     description: '나갈까',
     generation: 7,
-    thumbnailUrl:
+    thumbnailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjg0/MDAxNjQzMTAyOTg0Nzgz.sLrqOJ2S3r6pLboUm5yJTjB_JECC0zO9Tt3y_h86aJcg.w5VER_KDRAW3yRq8-nypsm2aGmKurM5YieSFcr1Vg0Qg.JPEG.minziminzi128/IMG_7374.JPG?type=w800',
-    imageUrl:
+    detailImageUrl:
       'https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjMy/MDAxNjQzMTAyOTg1NzI0.bkW6TJVG82Gi8uG643n5SaSTYOyEcNAq0Y7xsEkOBSUg.rU7SY3uYHJGnigm3WzvBk0LkXt_cO6UOyVsfeKxbEPAg.JPEG.minziminzi128/IMG_7370.JPG?type=w800',
     stacks: ['Java', 'React', 'Spring Boot', 'MySQL', 'AWS EC2', 'Type Script'],
-    users: [
+    members: [
       {
         id: 1,
         name: '또범우',

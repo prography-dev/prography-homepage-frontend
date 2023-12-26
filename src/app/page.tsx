@@ -1,8 +1,10 @@
-'use client';
-
 import styles from './page.module.scss';
 
+import { getParts } from '@/apis/part';
+import { getLastGeneration } from '@/apis/generation';
+
 import Typo from '@/components/Home/Typo';
+import LandingButton from '@/components/Home/LandingButton';
 import About from '@/components/Home/About';
 import OneTeam from '@/components/Home/OneTeam';
 import Schedule from '@/components/Home/Schedule';
@@ -10,14 +12,26 @@ import Project from '@/components/Home/Project';
 import AsanDonation from '@/components/common/donation/AsanDonation';
 import PageRouterButton from '@/components/Home/PageRouterButton';
 
-import Button from '@/components/common/button/Button';
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 
-export default function Home() {
-  const handleApplyButton = () => {
-    // toDo: 구글 폼 나온 후 수정 필요
-    window.open('https://prography.org/');
-  };
+async function getPartData() {
+  return getParts();
+}
+
+async function getGenerationData() {
+  return getLastGeneration();
+}
+
+export const metadata = {
+  title: '프로그라피',
+};
+
+export default async function Home() {
+  const team = await getPartData();
+  const generation = await getGenerationData();
+
+  if (!generation) return alert('서버 문제 발생');
+  const { id, name, status, landingUrl } = generation;
 
   return (
     <>
@@ -25,21 +39,17 @@ export default function Home() {
         <div className={styles.PgTypoContainer}>
           <Typo />
         </div>
-        <div className={styles.PgApplyButtonContainer}>
-          <Button buttonSize="56" onClick={handleApplyButton}>
-            9기 지원
-          </Button>
-        </div>
+        <LandingButton name={name} status={status} url={landingUrl} />
         <div className={styles.PgAboutButtonContainer}>
           <PageRouterButton label="About" href="/about" />
         </div>
         <About />
         <div className={styles.PgTeamButtonContainer}>
-          <PageRouterButton label="One team" href="/about" />
+          <PageRouterButton label="One team" href="/about#crew" />
         </div>
-        <OneTeam />
+        <OneTeam team={team} />
         <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
-        <Schedule />
+        <Schedule id={id} status={status} />
         <div className={styles.PgProjectButtonContainer}>
           <PageRouterButton label="Project" href="/project" />
         </div>

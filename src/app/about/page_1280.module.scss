@@ -1,0 +1,46 @@
+@import '@/styles/const.scss';
+@import '@/styles/fonts.scss';
+
+@media (min-width: 1280px) {
+  .AboutContainer {
+    margin: 120px 0 160px 0;
+  }
+
+  .ValueRightWrapper {
+    align-items: flex-end;
+    margin-bottom: 56px;
+
+    .ValueContent {
+      gap: 24px;
+    }
+
+    .ValueText {
+      @include font-style($sf_pro, 700, 24px, 32px, 0px);
+    }
+
+    .ValueTitle {
+      @include font-style($pretendard, 700, 64px, 72px, -2px);
+    }
+
+    .ValueBodyDescription {
+      @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+    }
+  }
+
+  .ValueLeftWrapper {
+    gap: 24px;
+    margin-bottom: 56px;
+
+    .ValueText {
+      @include font-style($sf_pro, 700, 24px, 32px, 0px);
+    }
+
+    .ValueTitle {
+      @include font-style($pretendard, 700, 64px, 72px, -2px);
+    }
+
+    .ValueBodyDescription {
+      @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+    }
+  }
+}

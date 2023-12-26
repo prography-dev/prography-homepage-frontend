@@ -1,0 +1,120 @@
+@import './Modal.module.scss';
+@import './ModalTitle.module.scss';
+@import './ModalContents.module.scss';
+@import './ModalCrew.module.scss';
+
+.ModalWrapper {
+  @extend .ModalWrapper;
+}
+
+@keyframes load {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.SkeletonWrapper {
+  background: linear-gradient(
+    90deg,
+    $gray800 20%,
+    $gray700 28%,
+    $gray700 40%,
+    $gray800 45%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 1s infinite;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.TitleSkeletonWrapper {
+  @extend .TitleWrapper;
+
+  padding: 0;
+
+  .GenerationSkeleton {
+    @extend .SkeletonWrapper;
+    height: 24px;
+    width: 36px;
+
+    @media (min-width: 1280px) {
+      height: 32px;
+    }
+  }
+
+  .TitleSkeleton {
+    @extend .SkeletonWrapper;
+    height: 40px;
+    width: 330px;
+
+    @media (min-width: 1280px) {
+      height: 72px;
+    }
+  }
+}
+
+.IconsSkeleton {
+  @extend .Icons, .SkeletonWrapper;
+  height: 32px;
+  width: 70px;
+  border-radius: 30px;
+
+  @media (min-width: 768px) {
+    height: 40px;
+    width: 100px;
+  }
+
+  @media (min-width: 1280px) {
+    height: 50px;
+    width: 120px;
+  }
+}
+
+.TagDivSkeleton {
+  @extend .TagDiv, .SkeletonWrapper;
+  height: 42px;
+  width: 70%;
+  border-radius: 10px;
+}
+
+.ContentsDivSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ContentsDecriptionSkeleton {
+  @extend .SkeletonWrapper;
+
+  height: 24px;
+  width: 100%;
+
+  > div:last-child {
+    padding: 0;
+  }
+
+  @media (min-width: 1280px) {
+    height: 32px;
+  }
+}
+
+.ContentsImageSkeleton {
+  @extend .SkeletonWrapper;
+  height: 30px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    height: 100px;
+  }
+}
+
+.CrewSkeleton {
+  @extend .SkeletonWrapper;
+  width: 100%;
+  height: 64px;
+
+  @media (min-width: 1280px) {
+    height: 90px;
+  }
+}

@@ -1,15 +1,14 @@
 @import '@/styles/fonts.scss';
 
 .CrewWrapper {
-  width: 100%;
   padding: 0 20px;
 }
 
 .Crews {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 116px;
-  margin: 20px 0 32px;
+  gap: 20px 14px;
+  margin-top: 24px;
 }
 
 .CrewDiv {
@@ -22,7 +21,11 @@
   }
 
   @media (min-width: 1280px) {
-    width: 26%;
+    width: 32%;
+  }
+
+  svg {
+    margin: 0 8px;
   }
 }
 
@@ -33,12 +36,6 @@
 
 .CrewName {
   font-weight: 700;
-
-  &::after {
-    content: '/';
-    margin: 0 6px;
-    color: $gray600;
-  }
 }
 
 .CrewPart {

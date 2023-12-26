@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 import '../styles/global.css';
 import '../styles/fonts.scss';
 import '../styles/colors.scss';
@@ -14,7 +16,13 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           rel="stylesheet"
           as="style"
           crossOrigin=""
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+        />
+        <link
+          href="https://fonts.cdnfonts.com/css/sf-pro-display"
+          as="style"
+          crossOrigin=""
+          rel="stylesheet"
         />
         <link rel="icon" href="/assets/favicon.ico" />
         <meta
@@ -29,6 +37,20 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           content="디자이너와 개발자가 함께 즐겁게 성장하는 커뮤니티, Prography"
         />
         <meta property="og:title" content="프로그라피" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-L99YNJCVMW"
+          strategy="afterInteractive"
+          async
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-L99YNJCVMW');
+        `}
+        </Script>
         <title>Prography</title>
       </head>
       <body>

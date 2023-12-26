@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import debounce from '@/utils/debounce';
 
 export default function useTablet() {
   if (typeof window === 'undefined') return false;
@@ -12,7 +13,7 @@ export default function useTablet() {
       if (innerWidth < 768 || innerWidth > 1280) setIsTablet(false);
       else setIsTablet(true);
     };
-    window.addEventListener('resize', resizeHandler);
+    window.addEventListener('resize', debounce(resizeHandler, 100));
     () => {
       window.removeEventListener('resize', resizeHandler);
     };

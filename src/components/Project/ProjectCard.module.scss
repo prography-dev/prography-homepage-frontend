@@ -10,19 +10,27 @@
   width: 100%;
 
   @media (min-width: 768px) {
-    width: 49%;
+    width: calc((100% - 15px) / 2);
   }
 
   @media (min-width: 1280px) {
-    width: 32%;
+    width: 370px;
   }
 
   .ImageContainer {
     position: relative;
     width: 100%;
-    height: 430px;
+    height: 410px;
     border-radius: 20px;
     overflow: hidden;
+
+    @media (min-width: 768px) {
+      height: 430px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 345px;
+    }
   }
 
   .TextContainer {
@@ -34,6 +42,7 @@
 
   .TitleDiv {
     display: flex;
+    align-items: center;
     gap: 4px;
 
     .Title {
@@ -50,19 +59,25 @@
 
   .TagDiv {
     display: flex;
-    gap: 6px;
+    gap: 10px 6px;
     flex-wrap: wrap;
     flex: 1;
   }
 }
+
 .CardContainer:hover {
   cursor: pointer;
-  transform: translateY(-20px);
-  background-color: $gray800;
-  transition: transform 0.3s;
-  border: none;
+}
 
-  div > div > div {
-    background-color: $gray700;
+@media (min-width: 768px) {
+  .CardContainer:hover {
+    transform: translateY(-20px);
+    background-color: $gray800;
+    transition: transform 0.3s;
+    border: none;
+
+    div > div > div {
+      background-color: $gray700;
+    }
   }
 }
