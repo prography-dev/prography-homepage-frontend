@@ -5,12 +5,14 @@ import './Project.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useState } from 'react';
-
 import { Autoplay } from 'swiper/modules';
-import { EMPTY_DATA, PROJECT_DATA } from '@/components/Project/PROJECT_DATA';
-import Modal from '@/components/Modal/Modal';
+
 import ProjectCard from './ProjectCard';
-import { ProjectCardData } from '@/apis/project';
+
+import { EMPTY_DATA } from '@/components/Project/PROJECT_DATA';
+import Modal from '@/components/Modal/Modal';
+
+import { getProjectData, ProjectCardData } from '@/apis/project';
 import usePc from '@/hooks/usePc';
 
 const Project = () => {
@@ -19,13 +21,23 @@ const Project = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [projectDetail, setProjectDetail] =
     useState<ProjectCardData>(EMPTY_DATA);
+  const [projectList, setProjectList] = useState<ProjectCardData[]>([]);
   const [currentTitle, setCurrentTitle] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getProjectData();
+      setProjectList(data);
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     if (currentTitle === '') return;
 
-    const projectIdx = PROJECT_DATA.findIndex(el => el.title === currentTitle);
-    setProjectDetail(PROJECT_DATA[projectIdx]);
+    const projectIdx = projectList.findIndex(el => el.title === currentTitle);
+    setProjectDetail(projectList[projectIdx]);
     setIsModalOpen(true);
   }, [currentTitle]);
 
@@ -42,8 +54,9 @@ const Project = () => {
   };
 
   const onSelectCard = (target: string) => {
-    const projectIdx = PROJECT_DATA.findIndex(el => el.title === target);
-    setProjectDetail(PROJECT_DATA[projectIdx]);
+    const projectIdx = projectList.findIndex(el => el.title === target);
+
+    setProjectDetail(projectList[projectIdx]);
   };
 
   const mobileSwiperOptions = {
@@ -63,9 +76,16 @@ const Project = () => {
 
   return (
     <>
-      <Swiper {...swiperOptions} slidesPerView="auto" loop={true}>
-        {PROJECT_DATA.slice(0, MAX_PROJECT_CARD).map(
-          ({ id, title, generation, thumbnailImageUrl }, idx) => (
+      <Swiper
+        {...swiperOptions}
+        slidesPerView="auto"
+        loop={true}
+        loopAddBlankSlides={true}
+        loopAdditionalSlides={1}
+      >
+        {projectList
+          .slice(0, MAX_PROJECT_CARD)
+          .map(({ id, title, generation, thumbnailImageUrl }, idx) => (
             <SwiperSlide key={id + idx}>
               <ProjectCard
                 title={title}
@@ -75,15 +95,14 @@ const Project = () => {
                 onClick={openModal}
               />
             </SwiperSlide>
-          ),
-        )}
+          ))}
       </Swiper>
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
         data={projectDetail}
         onClickPjtInModal={onClickPjtInModal}
-        otherProjects={PROJECT_DATA}
+        otherProjects={projectList}
       />
     </>
   );

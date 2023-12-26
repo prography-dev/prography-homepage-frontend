@@ -2,7 +2,7 @@
 @import '@/styles/fonts.scss';
 
 .PgHomeProjectWrapper {
-  width: 100%;
+  width: 280px;
   cursor: pointer;
 }
 
@@ -13,8 +13,15 @@
 
 .PgHomeProjectText {
   margin-top: 16px;
+  display: flex;
+  align-items: center;
 
   .PgHomeProjectTitle {
+    display: inline-block;
+    max-width: calc(100% - 30px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     @extend .sf_heading_6;
   }
 
