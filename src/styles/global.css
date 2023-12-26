@@ -52,17 +52,13 @@ blockquote {
   background-clip: padding-box;
   border: 1px solid transparent;
   border-radius: 20px;
-  background-color: #333336;
+  background-color: #1c1c1e;
 }
 
 div::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-div::-webkit-scrollbar-thumb {
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  border-radius: 20px;
-  background-color: #111113;
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+  -webkit-appearance: none;
 }

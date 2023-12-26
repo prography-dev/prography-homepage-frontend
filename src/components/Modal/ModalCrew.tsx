@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Button from '../common/button/Button';
+import IconSlash from '../common/icon/IconSlash';
 import { ModalCrewSkeleton } from './ModalSkeleton';
 import { ProjectCardData } from '@/apis/project';
 import { handleEmailClick } from '@/utils/contactToEmail';
@@ -32,6 +33,7 @@ const ModalCrew = ({ members, isLoading }: ModalCrewProps) => {
                 <div className={`${styles.CrewName} pre_h6_to_h5`}>
                   {el.name}
                 </div>
+                <IconSlash />
                 <div className={`${styles.CrewPart} pre_h6_to_h5 gray400`}>
                   {el.part}
                 </div>

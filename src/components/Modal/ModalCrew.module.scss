@@ -7,7 +7,7 @@
 .Crews {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 20px;
+  gap: 20px 14px;
   margin-top: 24px;
 }
 
@@ -23,6 +23,10 @@
   @media (min-width: 1280px) {
     width: 32%;
   }
+
+  svg {
+    margin: 0 8px;
+  }
 }
 
 .ImageCon {
@@ -32,12 +36,6 @@
 
 .CrewName {
   font-weight: 700;
-
-  &::after {
-    content: '/';
-    margin: 0 6px;
-    color: $gray600;
-  }
 }
 
 .CrewPart {
