@@ -96,13 +96,15 @@
 
 .CultureContainer {
   display: flex;
-  overflow-y: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
   align-items: flex-start;
   gap: 12px;
 
   @media (min-width: 1280px) {
     display: block;
     overflow-x: hidden;
+    overflow-y: hidden;
     gap: 0;
     margin-left: 0;
   }
