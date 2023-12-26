@@ -56,6 +56,10 @@
   display: flex;
   gap: 16px;
 
+  .MemberProfileImgContainer {
+    width: 120px;
+  }
+
   .MemberProfileImg {
     width: 120px;
     height: 120px;
