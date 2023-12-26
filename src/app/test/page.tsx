@@ -54,7 +54,7 @@ const Page = () => {
           <span className="pre_heading_4_underline">안녕하세요</span>
         </div>
         <div>
-          <span>sf-pro</span>
+          <span>sf_pro</span>
           <span className="sf_display_1">hello</span>
           <span className="sf_display_2">hello</span>
           <span className="sf_heading_1">hello</span>
