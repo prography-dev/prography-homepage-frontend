@@ -2,40 +2,56 @@
 @import '@/styles/fonts.scss';
 
 .AboutContainer {
-  margin: 120px 0 160px 0;
+  margin: 64px 0 120px 0;
 }
 
 .ValueLeftWrapper {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 56px;
+  gap: 12px;
+  margin-bottom: 64px;
 
   .ValueText {
-    @extend .sf_heading_4;
+    @extend .sf_heading_6;
     color: $red500;
   }
 
+  .ValueTitle {
+    @extend .pre_heading_3;
+  }
+
   .ValueBodyDescription {
-    @extend .pre_body_2;
+    @extend .pre_caption_1;
     color: $gray300;
   }
 }
 
 .ValueRightWrapper {
   display: flex;
-  align-items: flex-end;
   flex-direction: column;
-  margin-bottom: 56px;
+  margin-bottom: 64px;
 
   .ValueContent {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
+  }
+
+  .ValueTitle {
+    @extend .pre_heading_3;
   }
 
   .ValueText {
-    @extend .sf_heading_4;
+    @extend .sf_heading_6;
     color: $red500;
   }
+
+  .ValueBodyDescription {
+    @extend .pre_caption_1;
+    color: $gray300;
+  }
+}
+
+@media (min-width: 1280px) {
+  @import './page_1280.module.scss';
 }

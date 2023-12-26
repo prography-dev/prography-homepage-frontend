@@ -1,19 +1,24 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import styles from './CrewList.module.scss';
 import { MemberData, Position, PositionDescriptions } from '@/apis/member';
-import { MEMBER_DATA } from './MEMBER_DATA';
 
-const CrewList = () => {
+interface CrewListProps {
+  members: MemberData[];
+}
+
+const CrewList: React.FC<CrewListProps> = ({ members }) => {
   const allPositions: Position[] = Object.values(Position);
   const [selectedPosition, setSelectedPosition] = useState<
     Position | undefined
-  >(Position.ProductOwner);
+  >(Position['Product Owner']);
   const [selectedMemberList, setSelectedMemberList] = useState<MemberData[]>(
     [],
   );
 
   useEffect(() => {
-    const filteredMembers = MEMBER_DATA.filter(
+    const filteredMembers = members.filter(
       member => member.partName === selectedPosition,
     );
 
@@ -26,7 +31,9 @@ const CrewList = () => {
 
   return (
     <div className={styles.CrewContainer}>
-      <p className="sf_heading_1">Crew</p>
+      <p id="crew" className={styles.CrewTitle}>
+        Crew
+      </p>
 
       <div className={styles.PositionWrapper}>
         {allPositions.map((item, idx) => (
@@ -54,11 +61,13 @@ const CrewList = () => {
       <div className={styles.MemberWrapper}>
         {selectedMemberList.map(member => (
           <div className={styles.MemberContainer} key={member.id}>
-            <img
-              src={member.profileImageUrl}
-              className={styles.MemberProfileImg}
-              alt="profile"
-            />
+            <div className={styles.MemberProfileImgContainer}>
+              <img
+                src={member.profileImageUrl}
+                className={styles.MemberProfileImg}
+                alt="profile"
+              />
+            </div>
 
             <div className={styles.MemberProfileDetail}>
               <span className={styles.Name}>{member.name}</span>

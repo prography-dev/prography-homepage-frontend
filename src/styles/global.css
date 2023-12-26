@@ -1,7 +1,6 @@
 * {
   font-family:
-    'Pretandard',
-    -apple-system,
+    'Pretendard GOV Variable',
     BlinkMacSystemFont,
     Segoe UI,
     Roboto,
@@ -42,4 +41,28 @@ h4,
 blockquote {
   padding: 0;
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background-color: #333336;
+}
+
+div::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background-color: #111113;
 }

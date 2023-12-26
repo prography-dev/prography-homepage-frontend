@@ -32,7 +32,7 @@ export default async function Home() {
         </div>
         <About />
         <div className={styles.PgTeamButtonContainer}>
-          <PageRouterButton label="One team" href="/about" />
+          <PageRouterButton label="One team" href="/about#crew" />
         </div>
         <OneTeam team={team} />
         <h3 className={styles.PgScheduleHead}>9th Schedule</h3>

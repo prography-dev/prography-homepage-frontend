@@ -11,7 +11,7 @@ export const MEMBER_DATA: MemberData[] = [
     introduction:
       '안녕하세요 어쩌구,, 저쩌구,,, 프론트엔드 개발자 심은지,, 어쩌구',
     partId: 1,
-    partName: Position['Web Front'],
+    partName: Position['Frontend(React)'],
   },
   {
     id: '1',

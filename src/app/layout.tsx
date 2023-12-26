@@ -14,7 +14,13 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           rel="stylesheet"
           as="style"
           crossOrigin=""
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css"
+        />
+        <link
+          href="https://fonts.cdnfonts.com/css/sf-pro-display"
+          as="style"
+          crossOrigin=""
+          rel="stylesheet"
         />
         <link rel="icon" href="/assets/favicon.ico" />
         <meta
