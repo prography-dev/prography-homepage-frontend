@@ -22,6 +22,8 @@ async function getGenerationData() {
   return getLastGeneration();
 }
 
+export const revalidate = 60;
+
 export const metadata = {
   title: '프로그라피',
 };
