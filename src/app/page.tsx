@@ -1,6 +1,7 @@
 import styles from './page.module.scss';
 
 import { getParts } from '@/apis/part';
+import { getLastGeneration } from '@/apis/generation';
 
 import Typo from '@/components/Home/Typo';
 import LandingButton from '@/components/Home/LandingButton';
@@ -17,12 +18,20 @@ async function getPartData() {
   return getParts();
 }
 
+async function getGenerationData() {
+  return getLastGeneration();
+}
+
 export const metadata = {
   title: '프로그라피',
 };
 
 export default async function Home() {
   const team = await getPartData();
+  const generation = await getGenerationData();
+
+  if (!generation) return alert('서버 문제 발생');
+  const { id, name, status, landingUrl } = generation;
 
   return (
     <>
@@ -30,7 +39,7 @@ export default async function Home() {
         <div className={styles.PgTypoContainer}>
           <Typo />
         </div>
-        <LandingButton />
+        <LandingButton name={name} status={status} url={landingUrl} />
         <div className={styles.PgAboutButtonContainer}>
           <PageRouterButton label="About" href="/about" />
         </div>
@@ -40,7 +49,7 @@ export default async function Home() {
         </div>
         <OneTeam team={team} />
         <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
-        <Schedule />
+        <Schedule id={id} status={status} />
         <div className={styles.PgProjectButtonContainer}>
           <PageRouterButton label="Project" href="/project" />
         </div>
