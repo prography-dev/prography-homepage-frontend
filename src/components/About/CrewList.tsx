@@ -61,11 +61,13 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
       <div className={styles.MemberWrapper}>
         {selectedMemberList.map(member => (
           <div className={styles.MemberContainer} key={member.id}>
-            <img
-              src={member.profileImageUrl}
-              className={styles.MemberProfileImg}
-              alt="profile"
-            />
+            <div className={styles.MemberProfileImgContainer}>
+              <img
+                src={member.profileImageUrl}
+                className={styles.MemberProfileImg}
+                alt="profile"
+              />
+            </div>
 
             <div className={styles.MemberProfileDetail}>
               <span className={styles.Name}>{member.name}</span>

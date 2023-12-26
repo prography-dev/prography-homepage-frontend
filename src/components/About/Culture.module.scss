@@ -126,5 +126,13 @@
 
   @media (min-width: 1280px) {
     margin-left: 40px;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
   }
 }
