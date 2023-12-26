@@ -7,6 +7,8 @@
 
 .CrewContainer {
   margin-top: 274px;
+  max-width: 1140px;
+  padding: 0px;
 }
 
 .MemberWrapper {
@@ -14,6 +16,7 @@
   grid-template-columns: 1fr 1fr;
   row-gap: 40px;
   column-gap: 32px;
+  margin: 0;
 }
 
 .PositionWrapper {
@@ -22,15 +25,31 @@
 
 .PositionDescription {
   @include font-style($pretendard, 400, 20px, 32px, -0.25px);
-  margin-bottom: 64px;
+  margin: 0 0 64px 0;
 }
 
 .PositionButton {
   @include font-style($sf_pro, 700, 20px, 32px, 0px);
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .SelectedPositionButton {
   @include font-style($sf_pro, 700, 20px, 32px, 0px);
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .MemberContainer {
@@ -53,6 +72,7 @@
     }
 
     .Bubble {
+      @include font-style($pretendard, 400, 20px, 32px, -0.25px);
       padding: 32px;
     }
 

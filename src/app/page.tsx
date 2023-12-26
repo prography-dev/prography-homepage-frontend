@@ -35,7 +35,7 @@ export default function Home() {
         </div>
         <About />
         <div className={styles.PgTeamButtonContainer}>
-          <PageRouterButton label="One team" href="/about" />
+          <PageRouterButton label="One team" href="/about#crew" />
         </div>
         <OneTeam />
         <h3 className={styles.PgScheduleHead}>9th Schedule</h3>

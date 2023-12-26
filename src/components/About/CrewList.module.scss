@@ -1,5 +1,6 @@
 @import '@/styles/const.scss';
 @import '@/styles/fonts.scss';
+@import '@/styles/responsiveFonts.scss';
 
 @mixin button-style {
   @extend .sf_heading_6;
@@ -13,8 +14,19 @@
   }
 }
 
+.CrewTitle {
+  @extend .sf_h3_to_h1;
+  margin-left: 20px;
+  margin-bottom: 32px;
+
+  @media (min-width: 1280px) {
+    margin-left: 0;
+  }
+}
+
 .CrewContainer {
   margin-top: 120px;
+  margin: 0px auto;
 }
 
 .PositionWrapper {
@@ -26,12 +38,20 @@
 
 .PositionDescription {
   @extend .pre_caption_1;
-  margin-bottom: 24px;
+  margin: 0 20px 24px 20px;
 }
 
 .PositionButton {
   border: 1px solid $gray600;
   @include button-style;
+
+  &:first-child {
+    margin-left: 20px;
+  }
+
+  &:last-child {
+    margin-right: 20px;
+  }
 }
 
 .SelectedPositionButton {
@@ -39,12 +59,21 @@
   background-color: $white;
   color: $gray800;
   @include button-style;
+
+  &:first-child {
+    margin-left: 20px;
+  }
+
+  &:last-child {
+    margin-right: 20px;
+  }
 }
 
 .MemberWrapper {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin: 0 20px;
 }
 
 .MemberContainer {
@@ -76,6 +105,7 @@
     }
 
     .Bubble {
+      @extend .sf_caption_1;
       margin-top: 8px;
       position: relative;
       display: block;

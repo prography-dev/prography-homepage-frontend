@@ -17,8 +17,6 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
     [],
   );
 
-  console.log(members);
-
   useEffect(() => {
     const filteredMembers = members.filter(
       member => member.partName === selectedPosition,
@@ -28,13 +26,14 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
   }, [selectedPosition, setSelectedMemberList]);
 
   const handlePositionClick = (position: Position) => {
-    console.log(position);
     setSelectedPosition(position);
   };
 
   return (
     <div className={styles.CrewContainer}>
-      <p className="sf_h3_to_h1">Crew</p>
+      <p id="crew" className={styles.CrewTitle}>
+        Crew
+      </p>
 
       <div className={styles.PositionWrapper}>
         {allPositions.map((item, idx) => (

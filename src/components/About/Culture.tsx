@@ -8,7 +8,7 @@ const Culture = () => {
 
   return (
     <div className={styles.CultureWrapper}>
-      <p className="sf_h3_to_h1">Culture</p>
+      <p className={styles.CultureTitle}>Culture</p>
       <div className={styles.CultureContainer}>
         <div className={styles.CultureLeftSection}>
           <img src="/assets/images/culture-img-1.png" alt="" />

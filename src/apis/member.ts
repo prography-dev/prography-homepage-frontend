@@ -63,7 +63,5 @@ export async function getMembers(
     data: { data },
   } = response;
 
-  console.log(response);
-
   return (data as MemberData[]) || [];
 }
