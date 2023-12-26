@@ -1,7 +1,10 @@
-export interface IconProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
+export interface IconType extends React.SVGProps<SVGSVGElement> {
+  size: number;
+  color: string;
+  link: string;
 }
+
+export type IconProps = Partial<IconType>;
 
 export { default as IconArrowDown } from './IconArrowDown';
 export { default as IconArrowLeft } from './IconArrowLeft';

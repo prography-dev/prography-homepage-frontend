@@ -1,42 +1,6 @@
 import styles from './OneTeam.module.scss';
 
-interface TeamProps {
-  value: string;
-  backgroundColor: string;
-}
-
-const OneTeam = () => {
-  // toDo: api 교체 필요
-  const pgTeam: TeamProps[] = [
-    {
-      value: 'Product Owner',
-      backgroundColor: '#FFB904',
-    },
-    {
-      value: 'Marketer',
-      backgroundColor: '#1033FF',
-    },
-    {
-      value: 'Designer',
-      backgroundColor: '#FF6929',
-    },
-    {
-      value: 'IOS',
-      backgroundColor: '#FA2454',
-    },
-    {
-      value: 'Android',
-      backgroundColor: '#FA2454',
-    },
-    {
-      value: 'Frontend(React)',
-      backgroundColor: '#FA2454',
-    },
-    {
-      value: 'Backend(Spring)',
-      backgroundColor: '#FA2454',
-    },
-  ];
+const OneTeam = ({ team }) => {
   return (
     <>
       <p className={styles.PgTeamText}>
@@ -44,13 +8,13 @@ const OneTeam = () => {
         만듭니다.
       </p>
       <div className={styles.PgTeamWrapper}>
-        {pgTeam.map(({ value, backgroundColor }) => (
+        {team.map(({ name, homeColor }) => (
           <div
             className={styles.PgTeam}
-            style={{ backgroundColor }}
-            key={value}
+            style={{ backgroundColor: homeColor }}
+            key={name}
           >
-            {value}
+            {name}
           </div>
         ))}
       </div>

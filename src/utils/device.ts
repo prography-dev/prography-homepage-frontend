@@ -11,7 +11,7 @@ export function isPcDevice() {
 export function isTabletDevice() {
   if (typeof window !== 'undefined') {
     const currentWidth = window.innerWidth;
-    const TABLET_WIDTH = 770;
+    const TABLET_WIDTH = 768;
     const PC_WIDTH = 1280;
     return TABLET_WIDTH <= currentWidth && currentWidth <= PC_WIDTH;
   }

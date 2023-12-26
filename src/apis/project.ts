@@ -1,12 +1,14 @@
+import { getData } from '.';
+
 export interface ProjectCardData {
   id: number;
   title: string;
   description: string;
   generation: number;
-  thumbnailUrl: string;
-  imageUrl: string;
+  thumbnailImageUrl: string;
+  detailImageUrl: string;
   stacks: string[];
-  users: {
+  members: {
     id: number;
     name: string;
     part: string;
@@ -16,3 +18,5 @@ export interface ProjectCardData {
     landingUrl: string;
   }[];
 }
+
+export const getProjectData = () => getData<ProjectCardData[]>('projects');

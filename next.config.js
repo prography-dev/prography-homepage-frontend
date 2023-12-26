@@ -3,15 +3,17 @@
  */
 const nextConfig = {
   images: {
-    // FIXME(meaningood): 추후 이미지 서버 도메인으로 변경
-    domains: ['mblogthumb-phinf.pstatic.net'],
+    domains: [
+      'mblogthumb-phinf.pstatic.net',
+      's3.ap-northeast-2.amazonaws.com',
+    ],
   },
   reactStrictMode: false,
   async rewrites() {
     return [
       {
-        source: '/:path*',
-        destination: 'http://43.202.243.99:8080/:path*',
+        source: '/v1/:path*',
+        destination: 'http://43.202.243.99:8080/v1/:path*',
       },
     ];
   },

@@ -3,29 +3,29 @@
   flex-direction: column;
   gap: 28px;
   padding: 0 20px;
-}
 
-.Contents {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  .Contents {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  .TextDiv {
+    min-width: 353px;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
-.TextDiv {
-  min-width: 353px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 .Icons {
-  > svg {
+  svg {
+    cursor: pointer;
     width: 32px;
     height: 32px;
 
@@ -34,12 +34,25 @@
       height: 40px;
     }
   }
+
+  svg:hover {
+    circle {
+      fill: #e1e3ed;
+    }
+  }
+
+  .Title {
+    display: flex;
+    flex-wrap: wrap;
+    width: 720px;
+    word-break: break-all;
+  }
 }
 
 .TagDiv {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px 6px;
 }
 
 @media (min-width: 1280px) {

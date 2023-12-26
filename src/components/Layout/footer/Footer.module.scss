@@ -22,8 +22,20 @@
       gap: 16px;
       margin-bottom: 16px;
 
-      > img {
+      svg {
         cursor: pointer;
+      }
+
+      svg:first-child:hover {
+        circle {
+          fill: #e1e3ed;
+        }
+      }
+
+      svg:last-child:hover {
+        g > path {
+          fill: #e1e3ed;
+        }
       }
     }
 

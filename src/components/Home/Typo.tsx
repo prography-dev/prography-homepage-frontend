@@ -1,3 +1,5 @@
+'use client';
+
 import { TypeAnimation } from 'react-type-animation';
 import styles from './Typo.module.scss';
 

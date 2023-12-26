@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const BASE_URL = '/';
-export const SERVER_URL = '/';
+export const SERVER_URL = 'http://43.202.243.99:8080';
 
 export const instance = axios.create({
   baseURL: BASE_URL,
