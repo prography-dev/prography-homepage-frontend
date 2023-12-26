@@ -34,7 +34,6 @@ const ProjectCard = ({
         height={344}
         src={thumbnailImageUrl}
         alt="thumbnail"
-        objectFit="cover"
       />
       <div className={styles.PgHomeProjectText}>
         <span className={styles.PgHomeProjectTitle}>{title}</span>
