@@ -1,7 +1,7 @@
 @import '@/styles/const.scss';
 
 @mixin button-style($font-size, $line-height, $paddingx, $paddingy) {
-  font-family: Pretendard;
+  font-family: $pretendard;
   font-weight: 700;
   letter-spacing: -0.25px;
   border-radius: 100px;
