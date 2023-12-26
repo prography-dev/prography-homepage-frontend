@@ -1,19 +1,26 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import styles from './CrewList.module.scss';
 import { MemberData, Position, PositionDescriptions } from '@/apis/member';
-import { MEMBER_DATA } from './MEMBER_DATA';
 
-const CrewList = () => {
+interface CrewListProps {
+  members: MemberData[];
+}
+
+const CrewList: React.FC<CrewListProps> = ({ members }) => {
   const allPositions: Position[] = Object.values(Position);
   const [selectedPosition, setSelectedPosition] = useState<
     Position | undefined
-  >(Position.ProductOwner);
+  >(Position['Product Owner']);
   const [selectedMemberList, setSelectedMemberList] = useState<MemberData[]>(
     [],
   );
 
+  console.log(members);
+
   useEffect(() => {
-    const filteredMembers = MEMBER_DATA.filter(
+    const filteredMembers = members.filter(
       member => member.partName === selectedPosition,
     );
 
@@ -21,6 +28,7 @@ const CrewList = () => {
   }, [selectedPosition, setSelectedMemberList]);
 
   const handlePositionClick = (position: Position) => {
+    console.log(position);
     setSelectedPosition(position);
   };
 

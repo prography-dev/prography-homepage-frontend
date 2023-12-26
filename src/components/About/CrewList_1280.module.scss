@@ -41,9 +41,12 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    flex: 1;
   }
 
   .MemberProfileDetail {
+    width: 418px;
+
     .Name {
       @include font-style($pretendard, 700, 20px, 32px, -0.25px);
       margin-right: 10px;

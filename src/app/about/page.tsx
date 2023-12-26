@@ -1,13 +1,20 @@
-'use client';
-
 import React from 'react';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import styles from './page.module.scss';
 import CrewList from '@/components/About/CrewList';
 import Culture from '@/components/About/Culture';
+import { getMembers } from '@/apis/member';
 
-const AboutPage = () => {
+async function getMemberData() {
+  return getMembers(1);
+}
+
+export default async function AboutPage() {
+  const members = await getMemberData();
+
+  if (!members) return alert('서버 문제 발생');
+
   return (
     <CommonWrapper>
       <div className={styles.AboutContainer}>
@@ -65,11 +72,9 @@ const AboutPage = () => {
           </div>
         </div>
 
-        <CrewList />
+        <CrewList members={members} />
         <Culture />
       </div>
     </CommonWrapper>
   );
-};
-
-export default AboutPage;
+}

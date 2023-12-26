@@ -1,3 +1,5 @@
+'use client';
+
 import usePc from '@/hooks/usePc';
 import styles from './Culture.module.scss';
 
