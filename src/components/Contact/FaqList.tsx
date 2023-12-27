@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FAQ_DATA, FaqData } from './FAQ_DATA';
 import styles from './FaqList.module.scss';
 import { IconArrowDown, IconArrowUp } from '../common/icon';
+import usePc from '@/hooks/usePc';
 
 type FaqItem = FaqData & {
   selected: boolean;
@@ -11,6 +12,16 @@ type FaqItem = FaqData & {
 
 const FaqList = () => {
   const [faqList, setFaqList] = useState<FaqItem[]>([]);
+  const [iconSize, setIconSize] = useState(24);
+  const isChangePc = usePc();
+
+  useEffect(() => {
+    if (isChangePc) {
+      setIconSize(24);
+    } else {
+      setIconSize(16);
+    }
+  }, []);
 
   useEffect(() => {
     const faqlist = FAQ_DATA.map(item => {
@@ -44,7 +55,11 @@ const FaqList = () => {
           <p className={styles.FaqTitle}>
             {item.question}
 
-            {item.selected ? <IconArrowUp /> : <IconArrowDown />}
+            {item.selected ? (
+              <IconArrowUp size={iconSize} />
+            ) : (
+              <IconArrowDown size={iconSize} />
+            )}
           </p>
           {item.selected && (
             <p
