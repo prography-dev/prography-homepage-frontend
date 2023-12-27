@@ -76,21 +76,14 @@
   margin: 0 20px;
 }
 
-.MemberContainer {
+.MemberMobileContainer {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
 
   .MemberProfileImgContainer {
-    width: 64px;
-  }
+    display: flex;
+    align-items: center;
 
-  .MemberProfileImg {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-  }
-
-  .MemberProfileDetail {
     .Name {
       @extend .pre_heading_6;
       margin-right: 8px;
@@ -107,7 +100,17 @@
       margin-left: 8px;
       font-weight: 700;
     }
+  }
 
+  .MemberProfileImg {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+
+  .MemberProfileDetail {
     .Bubble {
       @extend .sf_caption_1;
       margin-top: 8px;
@@ -117,31 +120,7 @@
       background-color: $gray800;
       border-radius: 10px;
       white-space: pre-wrap;
-    }
-
-    .Bubble::before,
-    .Bubble::after {
-      content: '';
-      position: absolute;
-      border-style: solid;
-    }
-
-    /* 왼쪽 화살표 */
-    .Bubble::before {
-      top: 50%;
-      right: 100%;
-      margin-top: -10px;
-      border-width: 10px;
-      border-color: transparent $gray800 transparent transparent;
-    }
-
-    /* 말풍선의 body 부분 */
-    .Bubble::after {
-      top: 10%;
-      right: 100%;
-      margin-top: -2px;
-      border-width: 2px;
-      border-color: transparent $gray800 transparent transparent;
+      position: relative;
     }
   }
 }
