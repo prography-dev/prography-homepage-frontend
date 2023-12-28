@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { ProjectCardData, getProjectData } from '@/apis/project';
+import { ProjectType, getProjectData } from '@/apis/project';
 
 import { EMPTY_DATA } from '@/components/Project/PROJECT_DATA';
 import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
@@ -30,7 +30,7 @@ const ProjectComponents = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [projectData, setProjectData] = useState({
     projectDetail: EMPTY_DATA,
-    projects: [] as ProjectCardData[],
+    projects: [] as ProjectType[],
     projectsLength: null as null | number,
   });
   const [pagenation, setPagenation] = useState({

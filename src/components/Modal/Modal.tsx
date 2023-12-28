@@ -5,15 +5,15 @@ import ModalContents from './ModalContents';
 import ModalCrew from './ModalCrew';
 import ModalTitle from './ModalTitle';
 import OtherProjects from './OtherProjects';
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 import styles from './Modal.module.scss';
 
 interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
-  data: ProjectCardData;
+  data: ProjectType;
   onClickPjtInModal: (target: string) => void;
-  otherProjects: ProjectCardData[];
+  otherProjects: ProjectType[];
 }
 
 const Modal = ({

@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import { ModalContentsSkeleton } from './ModalSkeleton';
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 import styles from './ModalContents.module.scss';
 
 interface ModalContentsType
-  extends Pick<ProjectCardData, 'description' | 'detailImageUrl'> {
+  extends Pick<ProjectType, 'description' | 'detailImageUrl'> {
   onLoading: (status: boolean) => void;
 }
 

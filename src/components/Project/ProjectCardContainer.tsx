@@ -1,10 +1,10 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 import styles from './ProjectCardContainer.module.scss';
 
 export interface ProjectCardContainerProps {
-  projects: ProjectCardData[];
+  projects: ProjectType[];
   onChange: (target: string) => void;
   onClick: () => void;
 }
