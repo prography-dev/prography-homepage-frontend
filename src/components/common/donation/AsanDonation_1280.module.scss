@@ -1,4 +1,5 @@
 @import '@/styles/fonts.scss';
+@import '@/components/common/button/Button.scss';
 
 .BreakPoint {
   display: none;
@@ -13,5 +14,10 @@
     @include font-style($pretendard, 400, 20px, 32px, -0.25px);
     margin-top: 32px;
     color: $gray300;
+  }
+  .PgDonationButtonWrapper {
+    .PgDonationButton {
+      @include button-style(24px, 32px, 24px, 48px);
+    }
   }
 }
