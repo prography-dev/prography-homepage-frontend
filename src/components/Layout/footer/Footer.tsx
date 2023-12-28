@@ -17,10 +17,10 @@ const Footer = () => {
           <IconInstagram size={32} link={getLink(FooterLink.INSTAGRAM)} />
           <IconGithub size={32} link={getLink(FooterLink.GITHUB)} />
         </div>
-        <div className={`${styles.Contact_Texts}`}>
+        <div className={styles.Contact_Texts}>
           <span className="sf_h6_to_h5 gray400">Contact</span>
           <span className="sf_c1_to_b2 gray400">
-            prography.contact@gmail.com
+            contact.prography@gmail.com
           </span>
         </div>
       </div>
