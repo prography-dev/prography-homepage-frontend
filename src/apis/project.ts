@@ -1,5 +1,17 @@
 import { getData } from '.';
 
+export interface SocialsType {
+  type:
+    | 'BEHANCE'
+    | 'GITHUB_BE'
+    | 'GITHUB_FE'
+    | 'INSTAGRAM'
+    | 'APP_STORE'
+    | 'GOOGLE_PLAY'
+    | 'WEB'
+    | 'EMPTY';
+  landingUrl: string;
+}
 export interface ProjectType {
   id: number;
   title: string;
@@ -13,10 +25,7 @@ export interface ProjectType {
     name: string;
     part: string;
   }[];
-  socials: {
-    type: string;
-    landingUrl: string;
-  }[];
+  socials: SocialsType[];
 }
 
 export const getProjectData = () => getData<ProjectType[]>('projects');
