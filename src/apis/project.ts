@@ -1,6 +1,6 @@
 import { getData } from '.';
 
-export interface ProjectCardData {
+export interface ProjectType {
   id: number;
   title: string;
   description: string;
@@ -19,4 +19,4 @@ export interface ProjectCardData {
   }[];
 }
 
-export const getProjectData = () => getData<ProjectCardData[]>('projects');
+export const getProjectData = () => getData<ProjectType[]>('projects');

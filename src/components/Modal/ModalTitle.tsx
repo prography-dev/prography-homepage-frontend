@@ -1,11 +1,11 @@
 import { IconInstagram } from '../common/icon';
 import { ModalTitleSkeleton } from './ModalSkeleton';
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 import StackTag from '../common/stackTag/StackTag';
 import styles from './ModalTitle.module.scss';
 
 interface ModalTitleProps
-  extends Pick<ProjectCardData, 'generation' | 'title' | 'stacks' | 'socials'> {
+  extends Pick<ProjectType, 'generation' | 'title' | 'stacks' | 'socials'> {
   isLoading: boolean;
 }
 

@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Button from '../common/button/Button';
 import IconSlash from '../common/icon/IconSlash';
 import { ModalCrewSkeleton } from './ModalSkeleton';
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 import { handleEmailClick } from '@/utils/contactToEmail';
 import styles from './ModalCrew.module.scss';
 
-interface ModalCrewProps extends Pick<ProjectCardData, 'members'> {
+interface ModalCrewProps extends Pick<ProjectType, 'members'> {
   isLoading: boolean;
 }
 

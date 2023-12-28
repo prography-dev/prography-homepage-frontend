@@ -1,7 +1,7 @@
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 
 // 더미데이터
-export const EMPTY_DATA: ProjectCardData = {
+export const EMPTY_DATA: ProjectType = {
   id: 0,
   title: '',
   description: '',
@@ -25,7 +25,7 @@ export const EMPTY_DATA: ProjectCardData = {
 };
 
 // TODO(meaningood/smsun) : API 연동 후 삭제
-export const PROJECT_DATA: ProjectCardData[] = [
+export const PROJECT_DATA: ProjectType[] = [
   {
     id: 1,
     title: 'I GO BOSS 5 ',
