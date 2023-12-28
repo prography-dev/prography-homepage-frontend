@@ -1,7 +1,7 @@
-import { IconInstagram } from '../common/icon';
 import { ModalTitleSkeleton } from './ModalSkeleton';
 import { ProjectType } from '@/apis/project';
 import StackTag from '../common/stackTag/StackTag';
+import { getIconToUrl } from '../common/icon/getIconToUrl';
 import styles from './ModalTitle.module.scss';
 
 interface ModalTitleProps
@@ -16,12 +16,6 @@ const ModalTitle = ({
   socials,
   isLoading,
 }: ModalTitleProps) => {
-  // TODO(meainigood): type에 instgram만 있는지 확인 필요, 공통 함수로 뺼지 확인 필요
-  function getLandingURL(socialType: string) {
-    const social = socials.find(s => s.type === socialType);
-    return social ? social.landingUrl : '';
-  }
-
   return (
     <div className={styles.TitleWrapper}>
       {isLoading ? (
@@ -34,8 +28,13 @@ const ModalTitle = ({
               <div className={`${styles.Title} sf_h3_to_h1`}>{title}</div>
             </div>
             <div className={styles.Icons}>
-              {/* TODO(meainigood): instagram 없을 때 대응 필요 */}
-              <IconInstagram link={getLandingURL('INSTAGRAM')} />
+              {socials.map((el, idx) =>
+                getIconToUrl({
+                  type: el.type,
+                  landingUrl: el.landingUrl,
+                  key: idx,
+                }),
+              )}
             </div>
           </div>
           <div className={styles.TagDiv}>
