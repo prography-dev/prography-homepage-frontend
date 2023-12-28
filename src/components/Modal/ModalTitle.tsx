@@ -1,7 +1,7 @@
+import GetIconToUrl from '../common/icon/GetIconToUrl';
 import { ModalTitleSkeleton } from './ModalSkeleton';
 import { ProjectType } from '@/apis/project';
 import StackTag from '../common/stackTag/StackTag';
-import { getIconToUrl } from '../common/icon/getIconToUrl';
 import styles from './ModalTitle.module.scss';
 
 interface ModalTitleProps
@@ -28,13 +28,13 @@ const ModalTitle = ({
               <div className={`${styles.Title} sf_h3_to_h1`}>{title}</div>
             </div>
             <div className={styles.Icons}>
-              {socials.map((el, idx) =>
-                getIconToUrl({
-                  type: el.type,
-                  landingUrl: el.landingUrl,
-                  key: idx,
-                }),
-              )}
+              {socials.map((el, idx) => (
+                <GetIconToUrl
+                  type={el.type}
+                  landingUrl={el.landingUrl}
+                  key={idx}
+                />
+              ))}
             </div>
           </div>
           <div className={styles.TagDiv}>
