@@ -8,7 +8,8 @@ export interface SocialsType {
     | 'INSTAGRAM'
     | 'APP_STORE'
     | 'GOOGLE_PLAY'
-    | 'WEB';
+    | 'WEB'
+    | 'EMPTY';
   landingUrl: string;
 }
 export interface ProjectType {
