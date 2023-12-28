@@ -23,15 +23,26 @@ const LandingButton = ({ name, status, url }: LandingButtonProps) => {
     window.open(url);
   };
 
-  const buttonName = `${name} ${
-    status === 'RECRUIT' ? '지원' : '모집 알림 신청'
-  }`;
+  const buttonName = (() => {
+    if (status === 'WAIT') {
+      return `${name} 모집 알림 신청`;
+    }
+    if (status === 'RECRUIT') {
+      return `${name} 지원`;
+    }
+    if (status === 'ACTIVE') {
+      return `${name} 활동 스토리`;
+    }
+    return '';
+  })();
 
   return (
     <div className={styles.PgApplyButtonContainer}>
-      <Button buttonSize="56" onClick={handleApplyButton}>
-        {buttonName}
-      </Button>
+      {buttonName && (
+        <Button buttonSize="56" onClick={handleApplyButton}>
+          {buttonName}
+        </Button>
+      )}
     </div>
   );
 };

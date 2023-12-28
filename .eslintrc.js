@@ -46,5 +46,12 @@ module.exports = {
     'no-unused-expressions': 'off',
     'unused-imports/no-unused-imports': 'error',
     'react/function-component-definition': 'off',
+    '@typescript-eslint/ban-ts-comment': [
+      'error',
+      {
+        'ts-expect-error': false,
+        'ts-ignore': false,
+      },
+    ],
   },
 };

@@ -54,6 +54,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         <title>Prography</title>
       </head>
       <body>
+        {/* @ts-ignore: pr64 참고 */}
         <Header />
         {children}
         <Footer />

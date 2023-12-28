@@ -16,15 +16,19 @@ interface LandingButtonProps {
 
 const HeaderComponent = ({ name, status, url }: LandingButtonProps) => {
   const router = useRouter();
-
-  const buttonName = `${name} ${
-    status === 'RECRUIT' ? '지원' : '모집 알림 신청'
-  }`;
+  const buttonName = (() => {
+    if (status === 'WAIT') {
+      return `${name} 모집 알림 신청`;
+    }
+    if (status === 'RECRUIT') {
+      return `${name} 지원`;
+    }
+    return '';
+  })();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleApplyButton = () => {
-    // toDo: 구글 폼 나온 후 수정 필요
     window.open(url);
   };
 
@@ -79,11 +83,13 @@ const HeaderComponent = ({ name, status, url }: LandingButtonProps) => {
           >
             Contact
           </li>
-          <li>
-            <Button buttonSize="56" onClick={handleApplyButton}>
-              {buttonName}
-            </Button>
-          </li>
+          {buttonName && (
+            <li>
+              <Button buttonSize="56" onClick={handleApplyButton}>
+                {buttonName}
+              </Button>
+            </li>
+          )}
         </ul>
       </div>
     </header>

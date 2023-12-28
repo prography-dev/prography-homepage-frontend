@@ -43,7 +43,6 @@ const CrewList = () => {
     setSelectedPosition(position);
   };
 
-  console.log(isChangePc);
   return (
     <div className={styles.CrewContainer}>
       <p id="crew" className={styles.CrewTitle}>
