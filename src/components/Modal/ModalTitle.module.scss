@@ -24,20 +24,25 @@
 }
 
 .Icons {
+  :last-child {
+    margin-right: 0;
+  }
+
   svg {
     cursor: pointer;
     width: 32px;
     height: 32px;
+    margin-right: 8px;
 
     @media (min-width: 768px) {
       width: 40px;
       height: 40px;
     }
-  }
 
-  svg:hover {
-    circle {
-      fill: #e1e3ed;
+    &:hover {
+      circle {
+        fill: #e1e3ed;
+      }
     }
   }
 
@@ -47,6 +52,10 @@
     width: 720px;
     word-break: break-all;
   }
+}
+
+.Github:hover {
+  fill: #e1e3ed;
 }
 
 .TagDiv {
