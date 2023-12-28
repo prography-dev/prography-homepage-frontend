@@ -2,21 +2,10 @@ import React from 'react';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 import styles from './page.module.scss';
-import CrewList from '@/components/About/CrewList';
 import Culture from '@/components/About/Culture';
-import { getMembers } from '@/apis/member';
+import CrewList from '@/components/About/CrewList';
 
-async function getMemberData() {
-  return getMembers(1);
-}
-
-export const revalidate = 60;
-
-export default async function AboutPage() {
-  const members = await getMemberData();
-
-  if (!members) return alert('서버 문제 발생');
-
+export default function AboutPage() {
   return (
     <>
       <CommonWrapper>
@@ -76,7 +65,7 @@ export default async function AboutPage() {
           </div>
         </div>
       </CommonWrapper>
-      <CrewList members={members} />
+      <CrewList />
       <Culture />
     </>
   );

@@ -61,12 +61,7 @@ const FaqList = () => {
               <IconArrowDown size={iconSize} />
             )}
           </p>
-          {item.selected && (
-            <p
-              className={styles.FaqContent}
-              dangerouslySetInnerHTML={{ __html: item.answer }}
-            />
-          )}
+          {item.selected && <p className={styles.FaqContent}>{item.answer}</p>}
         </div>
       ))}
     </div>

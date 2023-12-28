@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import styles from './CrewList.module.scss';
-import { MemberData, Position, PositionDescriptions } from '@/apis/member';
+import {
+  MemberData,
+  Position,
+  PositionDescriptions,
+  getMembers,
+} from '@/apis/member';
 import usePc from '@/hooks/usePc';
 
-interface CrewListProps {
-  members: MemberData[];
-}
-
-const CrewList: React.FC<CrewListProps> = ({ members }) => {
+const CrewList = () => {
+  const [members, setMembers] = useState<MemberData[]>([]);
   const allPositions: Position[] = Object.values(Position);
   const [selectedPosition, setSelectedPosition] = useState<
     Position | undefined
@@ -17,11 +19,16 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
   const [selectedMemberList, setSelectedMemberList] = useState<MemberData[]>(
     [],
   );
-  const [isPc, setIsPc] = useState(false);
   const isChangePc = usePc();
 
   useEffect(() => {
-    setIsPc(isChangePc);
+    getMembers(1)
+      .then(data => {
+        setMembers(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
   }, []);
 
   useEffect(() => {
@@ -30,12 +37,13 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
     );
 
     setSelectedMemberList(filteredMembers);
-  }, [selectedPosition, setSelectedMemberList]);
+  }, [members, selectedPosition, setSelectedMemberList]);
 
   const handlePositionClick = (position: Position) => {
     setSelectedPosition(position);
   };
 
+  console.log(isChangePc);
   return (
     <div className={styles.CrewContainer}>
       <p id="crew" className={styles.CrewTitle}>
@@ -67,7 +75,7 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
 
       <div className={styles.MemberWrapper}>
         {selectedMemberList.map(member =>
-          isPc ? (
+          isChangePc ? (
             <div className={styles.MemberContainer} key={member.id}>
               <div className={styles.MemberProfileImgContainer}>
                 <img

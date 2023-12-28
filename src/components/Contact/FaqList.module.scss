@@ -11,7 +11,6 @@
   width: 100%;
   padding: 20px 24px;
   border-radius: 20px;
-  justify: space-between;
   box-sizing: border-box;
   cursor: pointer;
   margin-bottom: 8px;
@@ -29,9 +28,10 @@
   .FaqContent {
     @extend .pre_caption_1;
     border-top: 1px solid $gray700;
-    padding-top: 40px;
-    margin-top: 40px;
+    padding-top: 20px;
+    margin-top: 20px;
     color: $gray300;
+    white-space: pre-wrap;
   }
 }
 
@@ -49,6 +49,8 @@
     }
 
     .FaqContent {
+      margin-top: 40px;
+      padding-top: 40px;
       @include font-style($pretendard, 400, 20px, 32px, -0.25px);
     }
   }

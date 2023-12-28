@@ -18,15 +18,15 @@ const FaqPage = () => {
         </p>
 
         <div className={styles.ContactWrapper}>
-          <Link target="_blank" href="mailto:prography.contact@gmail.com">
-            prography.contact@gmail.com
+          <Link target="_blank" href="mailto:contact.prography@gmail.com">
+            contact.prography@gmail.com
           </Link>
 
           <Link
             target="_blank"
             href="https://www.instagram.com/prography_official/"
           >
-            @Phrogrphy
+            @Prography
           </Link>
         </div>
       </div>
@@ -34,7 +34,7 @@ const FaqPage = () => {
       <p className={styles.FAQTitle}>FAQ</p>
       <FaqList />
       <div className={styles.DonationWrapper}>
-        <AsanDonation />
+        <AsanDonation showDonationButton />
       </div>
     </CommonWrapper>
   );
