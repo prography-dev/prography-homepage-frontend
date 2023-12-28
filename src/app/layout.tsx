@@ -54,6 +54,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         <title>Prography</title>
       </head>
       <body>
+        {/* @ts-expect-error Async Server Component */}
         <Header />
         {children}
         <Footer />
