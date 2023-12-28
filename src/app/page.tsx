@@ -51,7 +51,7 @@ export default async function Home() {
         </div>
         <OneTeam team={team} />
         <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
-        <Schedule id={id} status={status} />
+        <Schedule id={id} />
         <div className={styles.PgProjectButtonContainer}>
           <PageRouterButton label="Project" href="/project" />
         </div>
