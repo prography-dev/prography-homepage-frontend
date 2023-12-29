@@ -8,6 +8,7 @@ import ProjectCardContainer from '../Project/ProjectCardContainer';
 import { ProjectType } from '@/apis/project';
 import styles from './OtherProjects.module.scss';
 import usePc from '@/hooks/usePc';
+import triggerGtm from '@/utils/triggerGtm';
 
 const itemsPerPage = {
   pc: 3,
@@ -80,6 +81,10 @@ const OtherProjects = ({
 
   const onSelectCard = (target: string) => {
     onSelectOtherPjt(target);
+    triggerGtm({
+      event: `project.otherproject`,
+      title: target,
+    });
   };
 
   return (

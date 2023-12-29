@@ -69,7 +69,11 @@ const Modal = ({
                 detailImageUrl={data.detailImageUrl}
                 onLoading={handleLoading}
               />
-              <ModalCrew members={data.members} isLoading={isLoading} />
+              <ModalCrew
+                members={data.members}
+                isLoading={isLoading}
+                title={data.title}
+              />
               <OtherProjects
                 currentTitle={data.title}
                 onSelectOtherPjt={onSelectOtherPjt}

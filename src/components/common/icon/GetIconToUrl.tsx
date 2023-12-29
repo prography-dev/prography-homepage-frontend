@@ -10,25 +10,34 @@ import IconAppStore from './IconAppStore';
 import IconPlayStore from './IconPlayStore';
 import IconUrl from './IconUrl';
 import { SocialsType } from '@/apis/project';
+import triggerGtm from '@/utils/triggerGtm';
 
-function GetIconToUrl({ type, landingUrl }: SocialsType) {
+function GetIconToUrl({ type, landingUrl, title }: SocialsType) {
   if (!type) return null;
+
+  const handleButton = (type: string) => {
+    triggerGtm({
+      event: `project.social.${type}`,
+      title,
+    });
+    window.open(landingUrl);
+  };
 
   switch (type) {
     case 'INSTAGRAM':
-      return <IconInstagram link={landingUrl} />;
+      return <IconInstagram onClick={() => handleButton('instagram')} />;
     case 'BEHANCE':
-      return <IconBehance link={landingUrl} />;
+      return <IconBehance onClick={() => handleButton('behance')} />;
     case 'GITHUB_BE':
-      return <IconGithub link={landingUrl} />;
+      return <IconGithub onClick={() => handleButton('github_be')} />;
     case 'GITHUB_FE':
-      return <IconGithub link={landingUrl} />;
+      return <IconGithub onClick={() => handleButton('github_fe')} />;
     case 'APP_STORE':
-      return <IconAppStore link={landingUrl} />;
+      return <IconAppStore onClick={() => handleButton('appstore')} />;
     case 'GOOGLE_PLAY':
-      return <IconPlayStore link={landingUrl} />;
+      return <IconPlayStore onClick={() => handleButton('googleplay')} />;
     case 'WEB':
-      return <IconUrl link={landingUrl} />;
+      return <IconUrl onClick={() => handleButton('web')} />;
     default:
       return null;
   }

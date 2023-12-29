@@ -11,6 +11,7 @@ import ProjectCardSkeleton from './ProjectCardSkeleton';
 import styles from './ProjectComponents.module.scss';
 import usePc from '@/hooks/usePc';
 import useTablet from '@/hooks/useTablet';
+import triggerGtm from '@/utils/triggerGtm';
 
 const itemsPerPage = {
   pc: 9,
@@ -70,6 +71,10 @@ const ProjectComponents = () => {
       ...prev,
       projectDetail: projectData.projects[projectIdx],
     }));
+    triggerGtm({
+      event: `project.project.${target}`,
+      device: isChangePc ? 'pc' : 'mobile',
+    });
   };
 
   const handlePageChange = () => {
