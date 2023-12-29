@@ -2,13 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import styles from './CrewList.module.scss';
-import { MemberData, Position, PositionDescriptions } from '@/apis/member';
+import {
+  MemberData,
+  Position,
+  PositionDescriptions,
+  getMembers,
+} from '@/apis/member';
+import usePc from '@/hooks/usePc';
+import triggerGtm from '@/utils/triggerGtm';
 
-interface CrewListProps {
-  members: MemberData[];
-}
-
-const CrewList: React.FC<CrewListProps> = ({ members }) => {
+const CrewList = () => {
+  const [members, setMembers] = useState<MemberData[]>([]);
   const allPositions: Position[] = Object.values(Position);
   const [selectedPosition, setSelectedPosition] = useState<
     Position | undefined
@@ -16,6 +20,17 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
   const [selectedMemberList, setSelectedMemberList] = useState<MemberData[]>(
     [],
   );
+  const isChangePc = usePc();
+
+  useEffect(() => {
+    getMembers(1)
+      .then(data => {
+        setMembers(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   useEffect(() => {
     const filteredMembers = members.filter(
@@ -23,10 +38,13 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
     );
 
     setSelectedMemberList(filteredMembers);
-  }, [selectedPosition, setSelectedMemberList]);
+  }, [members, selectedPosition, setSelectedMemberList]);
 
   const handlePositionClick = (position: Position) => {
     setSelectedPosition(position);
+    triggerGtm({
+      event: `about.crew.${position}`,
+    });
   };
 
   return (
@@ -59,25 +77,44 @@ const CrewList: React.FC<CrewListProps> = ({ members }) => {
       </div>
 
       <div className={styles.MemberWrapper}>
-        {selectedMemberList.map(member => (
-          <div className={styles.MemberContainer} key={member.id}>
-            <div className={styles.MemberProfileImgContainer}>
-              <img
-                src={member.profileImageUrl}
-                className={styles.MemberProfileImg}
-                alt="profile"
-              />
-            </div>
+        {selectedMemberList.map(member =>
+          isChangePc ? (
+            <div className={styles.MemberContainer} key={member.id}>
+              <div className={styles.MemberProfileImgContainer}>
+                <img
+                  src={member.profileImageUrl}
+                  className={styles.MemberProfileImg}
+                  alt="profile"
+                />
+              </div>
 
-            <div className={styles.MemberProfileDetail}>
-              <span className={styles.Name}>{member.name}</span>
-              <span className={styles.Slash}>/</span>
-              <span className={styles.Company}>{member.company}</span>
+              <div className={styles.MemberProfileDetail}>
+                <span className={styles.Name}>{member.name}</span>
+                <span className={styles.Slash}>/</span>
+                <span className={styles.Company}>{member.company}</span>
 
-              <div className={styles.Bubble}>{member.introduction}</div>
+                <div className={styles.Bubble}>{member.introduction}</div>
+              </div>
             </div>
-          </div>
-        ))}
+          ) : (
+            <div className={styles.MemberMobileContainer} key={member.id}>
+              <div className={styles.MemberProfileImgContainer}>
+                <img
+                  src={member.profileImageUrl}
+                  className={styles.MemberProfileImg}
+                  alt="profile"
+                />
+                <span className={styles.Name}>{member.name}</span>
+                <span className={styles.Slash}>/</span>
+                <span className={styles.Company}>{member.company}</span>
+              </div>
+
+              <div className={styles.MemberProfileDetail}>
+                <div className={styles.Bubble}>{member.introduction}</div>
+              </div>
+            </div>
+          ),
+        )}
       </div>
     </div>
   );

@@ -9,16 +9,16 @@ const Typo = () => {
   const sequence = [
     'Pro P.O',
     DELAY_TIME,
-    '',
+    'Pro',
     'Pro Marketer',
     DELAY_TIME,
-    '',
+    'Pro',
     'Pro Designer',
     DELAY_TIME,
-    '',
+    'Pro',
     'Pro Developer',
     DELAY_TIME,
-    '',
+    'Pro',
   ];
 
   return (

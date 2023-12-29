@@ -1,7 +1,14 @@
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './AsanDonation.module.scss';
 
-const AsanDonation = () => {
+interface AsanDonationProps {
+  showDonationButton?: boolean;
+}
+
+const AsanDonation: React.FC<AsanDonationProps> = ({ showDonationButton }) => {
   return (
     <div className={styles.PgDonationWrapper}>
       <Image
@@ -20,6 +27,17 @@ const AsanDonation = () => {
         <div className={styles.BreakPoint} />
         진행하고 있어요.
       </div>
+      {showDonationButton && (
+        <Link
+          className={styles.PgDonationButtonWrapper}
+          target="_blank"
+          href="https://pf.kakao.com/_tusXG"
+        >
+          <button className={styles.PgDonationButton} type="button">
+            후원 문의
+          </button>
+        </Link>
+      )}
     </div>
   );
 };

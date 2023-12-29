@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FAQ_DATA, FaqData } from './FAQ_DATA';
 import styles from './FaqList.module.scss';
 import { IconArrowDown, IconArrowUp } from '../common/icon';
+import usePc from '@/hooks/usePc';
 
 type FaqItem = FaqData & {
   selected: boolean;
@@ -11,6 +12,16 @@ type FaqItem = FaqData & {
 
 const FaqList = () => {
   const [faqList, setFaqList] = useState<FaqItem[]>([]);
+  const [iconSize, setIconSize] = useState(24);
+  const isChangePc = usePc();
+
+  useEffect(() => {
+    if (isChangePc) {
+      setIconSize(24);
+    } else {
+      setIconSize(16);
+    }
+  }, []);
 
   useEffect(() => {
     const faqlist = FAQ_DATA.map(item => {
@@ -36,22 +47,20 @@ const FaqList = () => {
   return (
     <div className={styles.FaqContainer}>
       {faqList.map((item, idx) => (
-        <div
-          className={styles.FaqItemContainer}
-          key={idx}
-          onClick={() => onClickFaqItem(item.question, !item.selected)}
-        >
-          <p className={styles.FaqTitle}>
+        <div className={styles.FaqItemContainer} key={idx}>
+          <p
+            className={styles.FaqTitle}
+            onClick={() => onClickFaqItem(item.question, !item.selected)}
+          >
             {item.question}
 
-            {item.selected ? <IconArrowUp /> : <IconArrowDown />}
+            {item.selected ? (
+              <IconArrowUp size={iconSize} />
+            ) : (
+              <IconArrowDown size={iconSize} />
+            )}
           </p>
-          {item.selected && (
-            <p
-              className={styles.FaqContent}
-              dangerouslySetInnerHTML={{ __html: item.answer }}
-            />
-          )}
+          {item.selected && <p className={styles.FaqContent}>{item.answer}</p>}
         </div>
       ))}
     </div>

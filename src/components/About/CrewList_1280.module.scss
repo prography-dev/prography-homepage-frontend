@@ -54,7 +54,7 @@
 
 .MemberContainer {
   display: flex;
-  gap: 16px;
+  gap: 36px;
 
   .MemberProfileImgContainer {
     width: 120px;
@@ -65,6 +65,7 @@
     height: 120px;
     border-radius: 50%;
     flex: 1;
+    object-fit: cover;
   }
 
   .MemberProfileDetail {
@@ -78,6 +79,25 @@
     .Bubble {
       @include font-style($pretendard, 400, 20px, 32px, -0.25px);
       padding: 32px;
+      margin-top: 8px;
+      position: relative;
+      display: block;
+      background-color: $gray800;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      position: relative;
+    }
+
+    /* 왼쪽 화살표 */
+    .Bubble::before {
+      position: absolute;
+      content: '';
+      background-size: 58px 57px;
+      height: 57px;
+      width: 58px;
+      left: -25px;
+      top: 15px;
+      background-image: url('/assets//images/bubble.svg');
     }
 
     .Slash {

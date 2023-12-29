@@ -24,10 +24,6 @@ async function getGenerationData() {
 
 export const revalidate = 60;
 
-export const metadata = {
-  title: '프로그라피',
-};
-
 export default async function Home() {
   const team = await getPartData();
   const generation = await getGenerationData();
@@ -51,7 +47,7 @@ export default async function Home() {
         </div>
         <OneTeam team={team} />
         <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
-        <Schedule id={id} status={status} />
+        <Schedule id={id} />
         <div className={styles.PgProjectButtonContainer}>
           <PageRouterButton label="Project" href="/project" />
         </div>

@@ -6,15 +6,14 @@ import { getSessions, SessionType } from '@/apis/session';
 
 interface ScheduleProps {
   id: number;
-  status: string;
 }
 
-const Schedule = ({ id, status }: ScheduleProps) => {
+const Schedule = ({ id }: ScheduleProps) => {
   const [sessions, setSessions] = useState<SessionType[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getSessions(id, status);
+      const data = await getSessions(id);
       setSessions([...data]);
     };
     fetchData();

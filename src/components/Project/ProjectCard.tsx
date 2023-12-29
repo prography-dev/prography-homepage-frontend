@@ -1,13 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 import StackTag from '../common/stackTag/StackTag';
 import styles from './ProjectCard.module.scss';
 
 export interface ProjectProps {
   project: Pick<
-    ProjectCardData,
+    ProjectType,
     'thumbnailImageUrl' | 'title' | 'generation' | 'stacks'
   >;
   onChange: (target: string) => void;

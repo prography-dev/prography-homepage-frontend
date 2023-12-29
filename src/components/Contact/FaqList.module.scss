@@ -4,34 +4,54 @@
 .FaqContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 48px;
+  margin-top: 24px;
 }
 
 .FaqItemContainer {
   width: 100%;
-  padding: 40px;
   border-radius: 20px;
-  justify: space-between;
   box-sizing: border-box;
   cursor: pointer;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   background-color: $gray900;
 
   .FaqTitle {
-    @extend .pre_heading_5;
-
+    @extend .pre_caption_1;
     text-align: left;
-
     display: flex;
     justify-content: space-between;
     color: $white;
+    align-items: center;
+    padding: 20px 24px;
   }
 
   .FaqContent {
-    @extend .pre_body_2;
+    @extend .pre_caption_1;
     border-top: 1px solid $gray700;
-    padding-top: 40px;
-    margin-top: 40px;
     color: $gray300;
+    white-space: pre-wrap;
+    padding: 20px 0px;
+    margin: 0px 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .FaqContainer {
+    margin-top: 48px;
+  }
+
+  .FaqItemContainer {
+    margin-bottom: 16px;
+
+    .FaqTitle {
+      padding: 40px 40px 40px 40px;
+      @include font-style($pretendard, 700, 20px, 32px, -0.25px);
+    }
+
+    .FaqContent {
+      padding: 40px 0px;
+      margin: 0px 40px;
+      @include font-style($pretendard, 400, 20px, 32px, -0.25px);
+    }
   }
 }

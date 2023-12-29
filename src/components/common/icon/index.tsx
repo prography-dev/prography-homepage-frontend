@@ -1,7 +1,8 @@
 export interface IconType extends React.SVGProps<SVGSVGElement> {
   size: number;
   color: string;
-  link: string;
+  link?: string;
+  onClick?: () => void;
 }
 
 export type IconProps = Partial<IconType>;

@@ -11,12 +11,14 @@ export interface SessionType {
 
 export async function getSessions(
   generationId: number,
-  status: string,
 ): Promise<SessionType[] | []> {
-  const sessionTypes =
-    status === 'RECRUIT'
-      ? ['RECRUIT'].join(',')
-      : ['EVENT', 'GENERAL_ALL', 'GENERAL_TEAM', 'GENERAL_PART'].join(',');
+  const sessionTypes = [
+    'RECRUIT',
+    'EVENT',
+    'GENERAL_ALL',
+    'GENERAL_TEAM',
+    'GENERAL_PART',
+  ].join(',');
   const params = { generationId, sessionTypes };
 
   const response: AxiosResponse = await get('/v1/sessions', { params });

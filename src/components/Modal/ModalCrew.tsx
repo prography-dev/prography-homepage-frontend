@@ -2,15 +2,16 @@ import Image from 'next/image';
 import Button from '../common/button/Button';
 import IconSlash from '../common/icon/IconSlash';
 import { ModalCrewSkeleton } from './ModalSkeleton';
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 import { handleEmailClick } from '@/utils/contactToEmail';
 import styles from './ModalCrew.module.scss';
 
-interface ModalCrewProps extends Pick<ProjectCardData, 'members'> {
+interface ModalCrewProps extends Pick<ProjectType, 'members'> {
   isLoading: boolean;
+  title: string;
 }
 
-const ModalCrew = ({ members, isLoading }: ModalCrewProps) => {
+const ModalCrew = ({ members, isLoading, title }: ModalCrewProps) => {
   return (
     <div className={styles.CrewWrapper}>
       <div className="sf_h3_to_h1">Crew</div>
@@ -46,7 +47,7 @@ const ModalCrew = ({ members, isLoading }: ModalCrewProps) => {
             위 프로젝트를 응원하고 싶거나
             <br />더 알고 싶다면 이메일을 보내주세요.
           </div>
-          <Button buttonSize="56" onClick={handleEmailClick}>
+          <Button buttonSize="56" onClick={() => handleEmailClick(title)}>
             프로젝트 문의
           </Button>
         </div>

@@ -5,23 +5,22 @@ import './Project.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useState } from 'react';
+
 import { Autoplay } from 'swiper/modules';
-
-import ProjectCard from './ProjectCard';
-
+import { ProjectType, getProjectData } from '@/apis/project';
 import { EMPTY_DATA } from '@/components/Project/PROJECT_DATA';
 import Modal from '@/components/Modal/Modal';
-
-import { getProjectData, ProjectCardData } from '@/apis/project';
+import ProjectCard from './ProjectCard';
 import usePc from '@/hooks/usePc';
+import triggerGtm from '@/utils/triggerGtm';
 
 const Project = () => {
   const MAX_PROJECT_CARD = 9;
+  const isPc = usePc();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [projectDetail, setProjectDetail] =
-    useState<ProjectCardData>(EMPTY_DATA);
-  const [projectList, setProjectList] = useState<ProjectCardData[]>([]);
+  const [projectDetail, setProjectDetail] = useState<ProjectType>(EMPTY_DATA);
+  const [projectList, setProjectList] = useState<ProjectType[]>([]);
   const [currentTitle, setCurrentTitle] = useState('');
 
   useEffect(() => {
@@ -41,8 +40,13 @@ const Project = () => {
     setIsModalOpen(true);
   }, [currentTitle]);
 
-  const openModal = () => {
+  const openModal = (title: string, generation: number) => {
     setIsModalOpen(true);
+    triggerGtm({
+      event: `home.project.${title}`,
+      device: isPc ? 'pc' : 'mobile',
+      generation,
+    });
   };
 
   const closeModal = () => {
@@ -72,7 +76,7 @@ const Project = () => {
     spaceBetween: 16,
     modules: [Autoplay],
   };
-  const swiperOptions = usePc() ? pcSwiperOptions : mobileSwiperOptions;
+  const swiperOptions = isPc ? pcSwiperOptions : mobileSwiperOptions;
 
   return (
     <>
@@ -92,7 +96,7 @@ const Project = () => {
                 generation={generation}
                 thumbnailImageUrl={thumbnailImageUrl}
                 onChange={onSelectCard}
-                onClick={openModal}
+                onClick={() => openModal(title, generation)}
               />
             </SwiperSlide>
           ))}

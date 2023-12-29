@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react';
 import Icon64PageButton from '../common/icon/Icon64PageButton';
 import Icon80RoundButton from '../common/icon/Icon80RoundButton';
 import ProjectCardContainer from '../Project/ProjectCardContainer';
-import { ProjectCardData } from '@/apis/project';
+import { ProjectType } from '@/apis/project';
 import styles from './OtherProjects.module.scss';
 import usePc from '@/hooks/usePc';
+import triggerGtm from '@/utils/triggerGtm';
 
 const itemsPerPage = {
   pc: 3,
@@ -18,7 +19,7 @@ interface OtherProjectsProps {
   currentTitle: string;
   onSelectOtherPjt: (selectedNewPjt: string) => void;
   onClick: () => void;
-  otherProjects: ProjectCardData[];
+  otherProjects: ProjectType[];
 }
 
 const OtherProjects = ({
@@ -30,8 +31,7 @@ const OtherProjects = ({
   const isChangePc = usePc();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [projectData, setProjectData] =
-    useState<ProjectCardData[]>(otherProjects);
+  const [projectData, setProjectData] = useState<ProjectType[]>(otherProjects);
 
   let pagenationCount: number;
 
@@ -81,6 +81,10 @@ const OtherProjects = ({
 
   const onSelectCard = (target: string) => {
     onSelectOtherPjt(target);
+    triggerGtm({
+      event: `project.otherproject`,
+      title: target,
+    });
   };
 
   return (

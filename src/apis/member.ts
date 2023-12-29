@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { SERVER_URL, get } from '@/utils/axios';
+import { get } from '@/utils/axios';
 
 export enum Position {
   'Product Owner' = 'Product Owner',
@@ -66,7 +66,7 @@ export async function getMembers(
   generationId: number,
 ): Promise<MemberData[] | []> {
   const params = { generationId };
-  const response: AxiosResponse = await get(`${SERVER_URL}/v1/managers`, {
+  const response: AxiosResponse = await get(`/v1/managers`, {
     params,
   });
   const {
