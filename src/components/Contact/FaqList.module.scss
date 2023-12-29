@@ -9,7 +9,6 @@
 
 .FaqItemContainer {
   width: 100%;
-  padding: 20px 24px;
   border-radius: 20px;
   box-sizing: border-box;
   cursor: pointer;
@@ -23,15 +22,16 @@
     justify-content: space-between;
     color: $white;
     align-items: center;
+    padding: 20px 24px;
   }
 
   .FaqContent {
     @extend .pre_caption_1;
     border-top: 1px solid $gray700;
-    padding-top: 20px;
-    margin-top: 20px;
     color: $gray300;
     white-space: pre-wrap;
+    padding: 20px 0px;
+    margin: 0px 24px;
   }
 }
 
@@ -41,16 +41,16 @@
   }
 
   .FaqItemContainer {
-    padding: 40px;
     margin-bottom: 16px;
 
     .FaqTitle {
+      padding: 40px 40px 40px 40px;
       @include font-style($pretendard, 700, 20px, 32px, -0.25px);
     }
 
     .FaqContent {
-      margin-top: 40px;
-      padding-top: 40px;
+      padding: 40px 0px;
+      margin: 0px 40px;
       @include font-style($pretendard, 400, 20px, 32px, -0.25px);
     }
   }

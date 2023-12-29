@@ -24,10 +24,6 @@ async function getGenerationData() {
 
 export const revalidate = 60;
 
-export const metadata = {
-  title: '프로그라피',
-};
-
 export default async function Home() {
   const team = await getPartData();
   const generation = await getGenerationData();

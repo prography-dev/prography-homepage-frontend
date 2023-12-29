@@ -32,6 +32,7 @@ const ModalTitle = ({
                 <GetIconToUrl
                   type={el.type}
                   landingUrl={el.landingUrl}
+                  title={title}
                   key={idx}
                 />
               ))}

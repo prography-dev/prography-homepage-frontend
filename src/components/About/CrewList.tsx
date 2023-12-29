@@ -9,6 +9,7 @@ import {
   getMembers,
 } from '@/apis/member';
 import usePc from '@/hooks/usePc';
+import triggerGtm from '@/utils/triggerGtm';
 
 const CrewList = () => {
   const [members, setMembers] = useState<MemberData[]>([]);
@@ -41,6 +42,9 @@ const CrewList = () => {
 
   const handlePositionClick = (position: Position) => {
     setSelectedPosition(position);
+    triggerGtm({
+      event: `about.crew.${position}`,
+    });
   };
 
   return (

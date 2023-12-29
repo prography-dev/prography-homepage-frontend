@@ -5,7 +5,7 @@ import { IconProps } from '.';
 const IconBehance = ({
   size = 50,
   color = 'white',
-  link,
+  onClick,
 }: IconProps): JSX.Element => {
   return (
     <svg
@@ -14,7 +14,7 @@ const IconBehance = ({
       viewBox="0 0 50 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={() => window.open(link)}
+      onClick={onClick}
     >
       <circle cx="25" cy="25" r="25" fill={color} />
       <path

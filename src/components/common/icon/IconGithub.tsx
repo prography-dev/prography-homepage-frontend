@@ -6,7 +6,7 @@ import styles from '../../Modal/ModalTitle.module.scss';
 const IconGithub = ({
   size = 50,
   color = 'white',
-  link,
+  onClick,
 }: IconProps): JSX.Element => {
   return (
     <svg
@@ -15,7 +15,7 @@ const IconGithub = ({
       viewBox="0 0 50 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={() => window.open(link)}
+      onClick={onClick}
     >
       <g clipPath="url(#clip0_268_184)">
         <path
