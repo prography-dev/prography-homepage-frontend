@@ -47,12 +47,11 @@ const FaqList = () => {
   return (
     <div className={styles.FaqContainer}>
       {faqList.map((item, idx) => (
-        <div
-          className={styles.FaqItemContainer}
-          key={idx}
-          onClick={() => onClickFaqItem(item.question, !item.selected)}
-        >
-          <p className={styles.FaqTitle}>
+        <div className={styles.FaqItemContainer} key={idx}>
+          <p
+            className={styles.FaqTitle}
+            onClick={() => onClickFaqItem(item.question, !item.selected)}
+          >
             {item.question}
 
             {item.selected ? (
