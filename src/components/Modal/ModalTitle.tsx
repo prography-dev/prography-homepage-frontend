@@ -27,16 +27,18 @@ const ModalTitle = ({
               <div className="sf_c1_to_b1 gray400">{generation}th</div>
               <div className={`${styles.Title} sf_h3_to_h1`}>{title}</div>
             </div>
-            <div className={styles.Icons}>
-              {socials.map((el, idx) => (
-                <GetIconToUrl
-                  type={el.type}
-                  landingUrl={el.landingUrl}
-                  title={title}
-                  key={idx}
-                />
-              ))}
-            </div>
+            {socials.length > 0 && (
+              <div className={styles.Icons}>
+                {socials.map((el, idx) => (
+                  <GetIconToUrl
+                    type={el.type}
+                    landingUrl={el.landingUrl}
+                    title={title}
+                    key={idx}
+                  />
+                ))}
+              </div>
+            )}
           </div>
           <div className={styles.TagDiv}>
             {stacks.map((el, idx) => (

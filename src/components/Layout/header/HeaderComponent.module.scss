@@ -53,6 +53,10 @@
     ul,
     li {
       display: none;
+
+      &:hover {
+        color: $red500;
+      }
     }
   }
 
@@ -128,4 +132,8 @@
 .MobileMenuClose {
   position: sticky;
   backdrop-filter: blur(20px);
+}
+
+.ActiveCategory {
+  color: $red500;
 }
