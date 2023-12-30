@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { FAQ_DATA, FaqData } from './FAQ_DATA';
 import styles from './FaqList.module.scss';
 import { IconArrowDown, IconArrowUp } from '../common/icon';
+import { getFaqs, FaqType } from '@/apis/faq';
 import usePc from '@/hooks/usePc';
 
-type FaqItem = FaqData & {
-  selected: boolean;
+type FaqItem = FaqType & {
+  selected?: boolean;
 };
 
 const FaqList = () => {
@@ -24,14 +24,12 @@ const FaqList = () => {
   }, []);
 
   useEffect(() => {
-    const faqlist = FAQ_DATA.map(item => {
-      return {
-        ...item,
-        selected: false,
-      };
-    });
-    setFaqList(faqlist);
-  }, [FAQ_DATA]);
+    const fetchData = async () => {
+      const data = await getFaqs();
+      setFaqList([...data]);
+    };
+    fetchData();
+  }, []);
 
   const onClickFaqItem = (question, selected) => {
     setFaqList(
