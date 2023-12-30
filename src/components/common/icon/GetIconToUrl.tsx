@@ -12,7 +12,7 @@ import IconUrl from './IconUrl';
 import { SocialsType } from '@/apis/project';
 import triggerGtm from '@/utils/triggerGtm';
 
-function GetIconToUrl({ type, landingUrl, title }: SocialsType) {
+function GetIconToUrl({ type, landingUrl, title }: Omit<SocialsType, 'order'>) {
   if (!type) return null;
 
   const handleButton = (type: string) => {

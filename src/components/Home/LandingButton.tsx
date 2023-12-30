@@ -15,10 +15,8 @@ const LandingButton = ({ name, status, url }: LandingButtonProps) => {
     // toDo: 구글 폼 나온 후 수정 필요
     window.open('https://prography.org/');
     triggerGtm({
-      event: '지원버튼',
-      parameter: {
-        path: '/',
-      },
+      event: 'home.button',
+      status,
     });
     window.open(url);
   };

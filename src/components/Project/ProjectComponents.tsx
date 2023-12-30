@@ -9,9 +9,9 @@ import Icon80RoundButton from '@/components/common/icon/Icon80RoundButton';
 import Modal from '@/components/Modal/Modal';
 import ProjectCardSkeleton from './ProjectCardSkeleton';
 import styles from './ProjectComponents.module.scss';
+import triggerGtm from '@/utils/triggerGtm';
 import usePc from '@/hooks/usePc';
 import useTablet from '@/hooks/useTablet';
-import triggerGtm from '@/utils/triggerGtm';
 
 const itemsPerPage = {
   pc: 9,

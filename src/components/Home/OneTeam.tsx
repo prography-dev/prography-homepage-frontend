@@ -1,6 +1,15 @@
 import styles from './OneTeam.module.scss';
+import { getParts } from '@/apis/part';
 
-const OneTeam = ({ team }) => {
+async function getPartData() {
+  return getParts();
+}
+
+export const revalidate = 3600;
+
+const OneTeam = async () => {
+  const team = await getPartData();
+
   return (
     <>
       <p className={styles.PgTeamText}>

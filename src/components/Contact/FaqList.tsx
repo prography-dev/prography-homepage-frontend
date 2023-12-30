@@ -5,6 +5,7 @@ import styles from './FaqList.module.scss';
 import { IconArrowDown, IconArrowUp } from '../common/icon';
 import { getFaqs, FaqType } from '@/apis/faq';
 import usePc from '@/hooks/usePc';
+import triggerGtm from '@/utils/triggerGtm';
 
 type FaqItem = FaqType & {
   selected?: boolean;
@@ -40,6 +41,11 @@ const FaqList = () => {
         return faq;
       }),
     );
+    triggerGtm({
+      event: 'Contact.faq',
+      question,
+      isOpen: selected,
+    });
   };
 
   return (
