@@ -8,6 +8,7 @@ import styles from './HeaderComponent.module.scss';
 import Button from '@/components/common/button/Button';
 import { IconClose, IconMenu } from '@/components/common/icon';
 import triggerGtm from '@/utils/triggerGtm';
+import usePc from '@/hooks/usePc';
 
 interface LandingButtonProps {
   name: string;
@@ -16,6 +17,7 @@ interface LandingButtonProps {
 }
 
 const HeaderComponent = ({ name, status, url }: LandingButtonProps) => {
+  const isPc = usePc();
   const router = useRouter();
   const buttonName = (() => {
     if (status === 'WAIT') {
@@ -38,6 +40,10 @@ const HeaderComponent = ({ name, status, url }: LandingButtonProps) => {
   };
 
   const onClickCategory = (pathname: string) => {
+    triggerGtm({
+      event: `home.${pathname.substring(1)}`,
+      isPc,
+    });
     setIsMobileMenuOpen(false);
     router.push(pathname);
   };
