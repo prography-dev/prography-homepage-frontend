@@ -48,6 +48,7 @@
 
 .ImageContainerSkeleton {
   @extend .ImageContainer, .SkeletonDiv;
+  height: 410px;
 }
 
 .TitleDivSkeleton {
