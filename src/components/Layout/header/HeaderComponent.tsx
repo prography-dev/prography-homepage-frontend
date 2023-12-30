@@ -7,6 +7,7 @@ import styles from './HeaderComponent.module.scss';
 
 import Button from '@/components/common/button/Button';
 import { IconClose, IconMenu } from '@/components/common/icon';
+import triggerGtm from '@/utils/triggerGtm';
 
 interface LandingButtonProps {
   name: string;
@@ -30,6 +31,10 @@ const HeaderComponent = ({ name, status, url }: LandingButtonProps) => {
 
   const handleApplyButton = () => {
     window.open(url);
+    triggerGtm({
+      event: 'top.button',
+      status,
+    });
   };
 
   const onClickCategory = (pathname: string) => {
