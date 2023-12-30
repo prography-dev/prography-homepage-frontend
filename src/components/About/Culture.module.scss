@@ -36,7 +36,6 @@
     @extend .pre_caption_1;
     color: $gray400;
     margin-bottom: 4px;
-    word-break: keep-all;
   }
 
   @media (min-width: 1280px) {
@@ -64,7 +63,7 @@
     }
 
     .CultureDescription {
-      width: 562px;
+      width: 580px;
       align-items: center;
       text-align: center;
       gap: 16px;
