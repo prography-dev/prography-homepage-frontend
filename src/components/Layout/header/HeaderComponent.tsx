@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import styles from './HeaderComponent.module.scss';
 
 import Button from '@/components/common/button/Button';
@@ -37,6 +37,16 @@ const HeaderComponent = ({ name, status, url }: LandingButtonProps) => {
     router.push(pathname);
   };
 
+  const categoryCss = (pathname: string) => {
+    const isActiveCategory = usePathname() === pathname;
+    const activeCss = isActiveCategory ? styles.ActiveCategory : '';
+
+    if (isMobileMenuOpen) {
+      return `sf_heading_3 ${activeCss}`;
+    }
+    return `sf_caption_1 ${activeCss}`;
+  };
+
   return (
     <header
       className={`${styles.HeaderContainer} ${
@@ -66,28 +76,34 @@ const HeaderComponent = ({ name, status, url }: LandingButtonProps) => {
 
         <ul>
           <li
-            className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
+            className={categoryCss('/about')}
             onClick={() => onClickCategory('/about')}
           >
             About
           </li>
           <li
-            className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
+            className={categoryCss('/project')}
             onClick={() => onClickCategory('/project')}
           >
             Project
           </li>
           <li
-            className={isMobileMenuOpen ? 'sf_heading_3' : 'sf_caption_1'}
+            className={categoryCss('/contact')}
             onClick={() => onClickCategory('/contact')}
           >
             Contact
           </li>
           {buttonName && (
             <li>
-              <Button buttonSize="56" onClick={handleApplyButton}>
-                {buttonName}
-              </Button>
+              {isMobileMenuOpen ? (
+                <Button buttonSize="56" onClick={handleApplyButton}>
+                  {buttonName}
+                </Button>
+              ) : (
+                <Button buttonSize="48" onClick={handleApplyButton}>
+                  {buttonName}
+                </Button>
+              )}
             </li>
           )}
         </ul>
