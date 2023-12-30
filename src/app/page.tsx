@@ -1,6 +1,6 @@
+import { revalidateTag } from 'next/cache';
 import styles from './page.module.scss';
 
-import { getParts } from '@/apis/part';
 import { getLastGeneration } from '@/apis/generation';
 
 import Typo from '@/components/Home/Typo';
@@ -14,18 +14,14 @@ import PageRouterButton from '@/components/Home/PageRouterButton';
 
 import CommonWrapper from '@/components/common/layout/CommonWrapper';
 
-async function getPartData() {
-  return getParts();
-}
-
 async function getGenerationData() {
+  revalidateTag('generation');
   return getLastGeneration();
 }
 
-export const revalidate = 60;
+export const revalidate = 300;
 
 export default async function Home() {
-  const team = await getPartData();
   const generation = await getGenerationData();
 
   if (!generation) return alert('서버 문제 발생');
@@ -45,7 +41,8 @@ export default async function Home() {
         <div className={styles.PgTeamButtonContainer}>
           <PageRouterButton label="One team" href="/about#crew" />
         </div>
-        <OneTeam team={team} />
+        {/* @ts-ignore: server-side component */}
+        <OneTeam />
         <h3 className={styles.PgScheduleHead}>9th Schedule</h3>
         <Schedule id={id} />
         <div className={styles.PgProjectButtonContainer}>
