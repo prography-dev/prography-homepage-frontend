@@ -9,6 +9,17 @@ export function formatDateToString(inputDateString: string) {
   return formattedDate;
 }
 
+export function formatEndDate(endDate: string) {
+  const oneSecondBeforeTime = new Date(new Date(endDate).getTime() - 1);
+
+  const month = (oneSecondBeforeTime.getMonth() + 1)
+    .toString()
+    .padStart(2, '0');
+  const day = oneSecondBeforeTime.getDate().toString().padStart(2, '0');
+
+  return `${month}.${day}`;
+}
+
 export function isOnedaySession(startDate: string, endDate: string) {
   const seperator = 'T';
   if (!endDate.includes(seperator)) return false;

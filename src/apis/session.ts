@@ -1,6 +1,10 @@
 import { AxiosResponse } from 'axios';
 import { get } from '@/utils/axios';
-import { formatDateToString, isOnedaySession } from '@/utils/formatDate';
+import {
+  formatDateToString,
+  formatEndDate,
+  isOnedaySession,
+} from '@/utils/formatDate';
 
 export interface SessionType {
   name: string;
@@ -12,13 +16,7 @@ export interface SessionType {
 export async function getSessions(
   generationId: number,
 ): Promise<SessionType[] | []> {
-  const sessionTypes = [
-    'RECRUIT',
-    'EVENT',
-    'GENERAL_ALL',
-    'GENERAL_TEAM',
-    'GENERAL_PART',
-  ].join(',');
+  const sessionTypes = ['RECRUIT', 'EVENT'].join(',');
   const params = { generationId, sessionTypes };
 
   const response: AxiosResponse = await get('/v1/sessions', { params });
@@ -36,7 +34,7 @@ export async function getSessions(
         session.endDateTime,
       ),
       startDateTime: formatDateToString(session.startDateTime),
-      endDateTime: formatDateToString(session.endDateTime),
+      endDateTime: formatEndDate(session.endDateTime),
     };
   });
   return (formatData as SessionType[]) || [];
