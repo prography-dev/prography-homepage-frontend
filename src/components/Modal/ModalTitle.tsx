@@ -16,6 +16,7 @@ const ModalTitle = ({
   socials,
   isLoading,
 }: ModalTitleProps) => {
+  const sortedSocials = socials.sort((a, b) => a.order - b.order);
   return (
     <div className={styles.TitleWrapper}>
       {isLoading ? (
@@ -27,9 +28,9 @@ const ModalTitle = ({
               <div className="sf_c1_to_b1 gray400">{generation}th</div>
               <div className={`${styles.Title} sf_h3_to_h1`}>{title}</div>
             </div>
-            {socials.length > 0 && (
+            {sortedSocials.length > 0 && (
               <div className={styles.Icons}>
-                {socials.map((el, idx) => (
+                {sortedSocials.map((el, idx) => (
                   <GetIconToUrl
                     type={el.type}
                     landingUrl={el.landingUrl}

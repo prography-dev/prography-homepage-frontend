@@ -12,6 +12,7 @@ export interface SocialsType {
     | 'EMPTY';
   landingUrl: string;
   title?: string;
+  order: number;
 }
 export interface ProjectType {
   id: number;

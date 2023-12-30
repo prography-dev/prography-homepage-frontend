@@ -20,6 +20,7 @@ export const EMPTY_DATA: ProjectType = {
     {
       type: 'EMPTY',
       landingUrl: '',
+      order: -1,
     },
   ],
 };
