@@ -6,6 +6,7 @@ export type RoundButtonType = Partial<{
   circleColor: string;
   fill: string;
   rotate: number;
+  reverse: boolean;
 }>;
 
 const Icon80RoundButton = ({

@@ -28,8 +28,8 @@ const Modal = ({
   };
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleLoading = (e: boolean) => {
-    setIsLoading(e);
+  const handleLoading = () => {
+    setIsLoading(false);
   };
 
   return (
