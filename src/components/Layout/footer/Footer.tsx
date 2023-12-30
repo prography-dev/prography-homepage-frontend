@@ -10,12 +10,22 @@ const Footer = () => {
     return FOOTER_LINK[link];
   }
 
+  const handleIcon = (pathname: string) => {
+    window.open(pathname);
+  };
+
   return (
     <div className={styles.FooterContainer}>
       <div className={styles.Footer_Top}>
         <div className={styles.Icons}>
-          <IconInstagram size={32} link={getLink(FooterLink.INSTAGRAM)} />
-          <IconGithub size={32} link={getLink(FooterLink.GITHUB)} />
+          <IconInstagram
+            size={32}
+            onClick={() => handleIcon(getLink(FooterLink.INSTAGRAM))}
+          />
+          <IconGithub
+            size={32}
+            onClick={() => handleIcon(getLink(FooterLink.GITHUB))}
+          />
         </div>
         <div className={styles.Contact_Texts}>
           <span className="sf_h6_to_h5 gray400">Contact</span>
