@@ -134,7 +134,7 @@ const OtherProjects = ({
               onClick={handlePageCountUp}
             >
               <Icon64PageButton
-                rotate={180}
+                reverse={true}
                 arrowColor={
                   currentPage === lastPageNumber ? '#47474B' : 'white'
                 }
