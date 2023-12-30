@@ -59,7 +59,7 @@ const HeaderComponent = ({ name, status, url }: LandingButtonProps) => {
         }
       >
         <Link href="/" className={styles.HeaderLogo}>
-          <img src="/assets/logos/logo_prography.svg" alt="logo" />
+          <img src="/assets/logos/logo_prography.png" alt="logo" />
         </Link>
 
         {isMobileMenuOpen ? (
