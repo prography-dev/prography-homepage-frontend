@@ -27,6 +27,7 @@
 
   .FaqContent {
     @extend .pre_caption_1;
+    cursor: default;
     border-top: 1px solid $gray700;
     color: $gray300;
     white-space: pre-wrap;
