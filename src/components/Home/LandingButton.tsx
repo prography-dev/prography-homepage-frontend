@@ -1,7 +1,7 @@
 'use client';
 
-import styles from './LandingButton.module.scss';
 import Button from '@/components/common/button/Button';
+import styles from './LandingButton.module.scss';
 import triggerGtm from '@/utils/triggerGtm';
 
 interface LandingButtonProps {
@@ -12,8 +12,6 @@ interface LandingButtonProps {
 
 const LandingButton = ({ name, status, url }: LandingButtonProps) => {
   const handleApplyButton = () => {
-    // toDo: 구글 폼 나온 후 수정 필요
-    window.open('https://prography.org/');
     triggerGtm({
       event: 'home.button',
       status,
