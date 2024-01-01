@@ -48,20 +48,6 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           property="og:image"
           content="https://cdn.prography.org/logo/prography_og.webp"
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-L99YNJCVMW"
-          strategy="afterInteractive"
-          async
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-L99YNJCVMW');
-        `}
-        </Script>
         <title>Prography</title>
       </head>
       <body>
