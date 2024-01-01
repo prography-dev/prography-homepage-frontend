@@ -17,8 +17,9 @@ function GetIconToUrl({ type, landingUrl, title }: Omit<SocialsType, 'order'>) {
 
   const handleButton = (type: string) => {
     triggerGtm({
-      event: `project.social.${type}`,
-      title,
+      event: `project.social`,
+      projectTitle: title,
+      socialType: type,
     });
     window.open(landingUrl);
   };

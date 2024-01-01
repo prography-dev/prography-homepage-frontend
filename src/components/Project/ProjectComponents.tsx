@@ -72,8 +72,9 @@ const ProjectComponents = () => {
       projectDetail: projectData.projects[projectIdx],
     }));
     triggerGtm({
-      event: `project.project.${target}`,
+      event: 'project.project',
       device: isChangePc ? 'pc' : 'mobile',
+      title: target,
     });
   };
 
