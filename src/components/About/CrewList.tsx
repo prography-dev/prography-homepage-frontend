@@ -43,7 +43,8 @@ const CrewList = () => {
   const handlePositionClick = (position: Position) => {
     setSelectedPosition(position);
     triggerGtm({
-      event: `about.crew.${position}`,
+      event: `about.crew`,
+      position,
     });
   };
 

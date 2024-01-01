@@ -83,7 +83,7 @@ const OtherProjects = ({
     onSelectOtherPjt(target);
     triggerGtm({
       event: `project.otherproject`,
-      title: target,
+      projectTitle: target,
     });
   };
 
