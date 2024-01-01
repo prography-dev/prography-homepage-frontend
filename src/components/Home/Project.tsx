@@ -43,7 +43,8 @@ const Project = () => {
   const openModal = (title: string, generation: number) => {
     setIsModalOpen(true);
     triggerGtm({
-      event: `home.project.${title}`,
+      event: 'home.project.slider',
+      projectTitle: title,
       device: isPc ? 'pc' : 'mobile',
       generation,
     });
