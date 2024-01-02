@@ -62,17 +62,11 @@ const Culture = () => {
           <div className={styles.CultureDescription}>
             <div className={styles.SectionDate}>05.11 - 05.12</div>
             <p className={styles.SectionTitle}>Hakathon</p>
-            {isPc ? (
-              <p className={styles.SectionDetail}>
-                정규 세션 외 별도의 프로덕트를 만드는 세션으로, <br />
-                팀원들과 합을 맞추고 프로젝트에 대한 열망을 키워갑니다.
-              </p>
-            ) : (
-              <p className={styles.SectionDetail}>
-                정규 세션 외 별도의 프로덕트를 만드는 세션으로, 팀원들과 합을
-                맞추고 프로젝트에 대한 열망을 키워갑니다.
-              </p>
-            )}
+            <p className={styles.SectionDetail}>
+              기존에 구상중인 프로덕트를 완성도 높게 구체화하는 세션으로,
+              {isPc && <br />}
+              팀원들과 합을 맞추고 프로덕트에 대한 열망을 키워갑니다
+            </p>
           </div>
         </div>
 
