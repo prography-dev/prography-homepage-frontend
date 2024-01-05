@@ -61,7 +61,7 @@ const Culture = () => {
 
           <div className={styles.CultureDescription}>
             <div className={styles.SectionDate}>05.11 - 05.12</div>
-            <p className={styles.SectionTitle}>Hakathon</p>
+            <p className={styles.SectionTitle}>Hackathon</p>
             <p className={styles.SectionDetail}>
               기존에 구상중인 프로덕트를 완성도 높게 구체화하는 세션으로,
               {isPc && <br />}
